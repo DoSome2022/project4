@@ -1,0 +1,38 @@
+{% extends 'users/settings/base.html' %}
+{% load i18n %}
+{% load common_extras %}
+
+{% block settings %}
+  <p class="subtitle">{% trans 'Settings: Subscription' %}</p>
+  <h1 class="mb-3">{% trans 'Invoices' %}</h1>
+
+  {% if orders %}
+    <table class="table table-sm text-center table-receipts">
+      <thead>
+        <tr>
+          <th class="text-start">{% trans 'Date' %}</th>
+          <th class="text-start">{% trans 'Description' %} </th>
+          <th>{% trans 'Invoice' %}</th>
+          <th class="text-end">{% trans 'Amount' %}</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for o in orders %}
+          <tr>
+            <td class="text-start">{{ o.paid_at|date|default:'unknown' }}</td>
+            <td class="text-start">{{ o.name }}</td>
+            <td class="">
+              <a href="{% url 'subscriptions:receipt' order_id=o.pk %}">{% trans 'View' %}</a>
+              |
+              <a href="{% url 'subscriptions:receipt-pdf' order_id=o.pk %}">{% trans 'Download' %}</a>
+            </td>
+            <td class="text-end">{{ o.price.with_currency_symbol_nonocents }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You have no invoices.</p>
+  {% endif %}
+{% endblock settings %}

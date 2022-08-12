@@ -1,0 +1,10 @@
+{% extends "emails/email_base.html" %}
+{% load i18n %}
+{% block body %}
+  {{ email.html_message|safe }}
+{% endblock body %}
+
+{% block footer %}
+ {% trans 'Don't want to receive these emails?'%} <a href="%mailing_list_unsubscribe_url%">{% trans 'Unsubscribe' %}</a><br />
+  <br/>
+{% endblock footer %}

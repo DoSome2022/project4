@@ -1,0 +1,56 @@
+{% extends "checkout/checkout_base_empty.html" %}
+{% load looper %}
+{% load pipeline %}
+{% load i18n %}
+{% load common_extras %}
+
+{% block content %}
+  <div class="checkout-container">
+    <section class="checkout">
+      <div class="mx-auto">
+        <a class="text-muted" class="float-end" href="{% url 'user-settings-billing' %}"><i class="fa fa-angle-left pe-3"></i>{% trans 'back to subscription settings' %}</a>
+        <div class="alert alert-sm">
+         {% trans 'Your' %} {% include "subscriptions/components/info_with_status.html" %}{% trans '.It will be activated as soon as the outstanding amount is paid' %}
+        </div>
+
+        <div class="payment-header">
+          <h2 class="payment-header-title">{% trans 'Paying for Order #'%}{{ order.display_number }}</h2>
+          <div class="d-flex justify-content-between">
+            <p class="mb-0 small">{% trans 'billed on' %} {{ order.created_at|date }}</p>
+            <p class="small mb-0">{{ order.price.with_currency_symbol }}</p>
+          </div>
+        </div>
+
+        <form class="checkout-form" id="payment-form" method="post"
+          data-looper-payment-form="true"
+          data-braintree-client-token="{{ client_token }}">{% csrf_token %}
+          <div class="payment-content">
+            <div class="payment-content-inner">
+              <section class="checkout-form-fields mb-n2">
+                {% with form|add_form_classes as form %}
+                  <a class="text-muted float-end small" href="{% url 'subscriptions:billing-address' %}"><i class="fa fa-angle-left pe-3"></i>{% trans 'change billing details'%}</a>
+                  <fieldset class="checkout-form-billing-address-readonly mb-2">
+                    {% include "subscriptions/components/billing_address_form_readonly.html" %}
+                  </fieldset>
+                  <fieldset class="payment-form-payment-method">
+                    {% include "subscriptions/components/payment_form.html" %}
+                  </fieldset>
+                {% endwith %}
+              </section>
+            </div>
+
+            {# will be enabled when payment gateways are initialized successfully #}
+            <div class="m-2">
+              <button id="submit-button" class="btn btn-block btn-lg btn-payment-confirm btn-success" type="submit"
+                aria-disabled="true"
+                disabled>{% trans 'Pay'%} {{ order.price.with_currency_symbol }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+  {% javascript "subscriptions" %}
+  {% include "looper/scripts.html" %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% load i18n %}
+{% if user.is_staff and user_can_edit_production_log %}
+    <a data-bs-toggle="dropdown" class="btn list-group-item">
+      <i class="material-icons btn-material-icons">more_horiz</i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end">
+      <a href="{% url 'admin:films_productionlog_add' %}?film={{ film.id }}" class="dropdown-item">{% trans 'Add Production Log' %}</a>
+      <a href="{% url 'admin:films_productionlog_changelist' %}?film__id__exact={{ film.id }}"
+      class="dropdown-item">{% trans 'Manage Production Logs' %}</a>
+    </div>
+{% endif %}

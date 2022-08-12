@@ -1,0 +1,33 @@
+{% load subscriptions %}
+{% load i18n %}
+<table class="table table-receipts">
+  <tbody>
+    {# Owned subscriptions #}
+    {% for subscription in user.subscription_set.all %}
+      <tr>
+        <td class="fw-bold">{% if subscription.team %}Team {% endif %}Subscription #{{ subscription.pk }}</td>
+        <td>{% include "subscriptions/components/pretty_status.html" %}</td>
+        <td><a href="{% url 'subscriptions:manage' subscription_id=subscription.pk %}">{% trans 'Manage' %】</a></td>
+      </tr>
+    {% endfor %}
+
+    {# Team subscriptions this user is a member of #}
+    {% for team in user.teams.all %}
+      {% with subscription=team.subscription %}
+        <tr>
+          <td class="font-weight-bold">{% trans 'Team subscription #' %}{{ subscription.pk }}</td>
+          <td>{{ team.name }}</td>
+          <td>{% include "subscriptions/components/pretty_status.html" %}</td>
+        </tr>
+      {% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if user|can_subscribe %}
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary btn-block" href="{% url 'subscriptions:join' %}">{% trans 'Subscribe' %}</a>
+    </div>
+  </div>
+{% endif %}

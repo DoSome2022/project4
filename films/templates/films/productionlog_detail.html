@@ -1,0 +1,24 @@
+{% extends 'films/base_films.html' %}
+{% load static %}
+{% load i18n %}
+{% block title_prepend %}{{ production_log.name }} - {{ film.title }} - {% endblock title_prepend %}
+
+{% block meta %}
+  {% with title=film.title|add:' '|add:production_log.name description=_('Check out the latest progress in our weekly production log.') image_url=production_log.thumbnail_m_url %}
+    {% include 'common/components/meta.html'  %}
+  {% endwith %}
+{% endblock %}
+
+{% block bodyclasses %}{% trans 'spacer has-secondary-nav' %}{% endblock bodyclasses %}
+
+{% block content %}
+  <div class="container-xxl pt-4">
+    <section class="mb-5">
+      <div class="production-logs">
+        {% include 'films/components/production_log_entry.html' %}
+      </div>
+
+      {% include 'films/components/production_log_pagination.html' %}
+    </section>
+  </div>
+{% endblock content %}

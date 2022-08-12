@@ -1,0 +1,136 @@
+{% extends 'training/base_with_navigation.html' %}
+{% load static %}
+{% load pipeline %}
+{% load i18n %}
+{% load common_extras %}
+
+{% block title_prepend %}{{ training.name }} - {% endblock title_prepend %}
+
+{% block scripts %}
+  {{ block.super }}
+  {% javascript 'training' %}
+{% endblock scripts %}
+
+
+
+{% block nexted_content %}
+  <section>
+    {% if training.picture_header_url %}
+    <img src="{{ training.picture_header_url }}" class="img-fluid img-width-100 rounded mb-3" alt="{{ training.name }}">
+    {% endif %}
+    <div class="row">
+      <div class="col">
+
+        <div class="row align-items-start mb-2">
+          <div class="col-12 col-md">
+            <p class="subtitle">
+              {{ training.type.label }}
+            </p>
+            <h1 class="mb-0">{{ training.name }}</h1>
+          </div>
+          <div class="col-12 col-md-auto align-self-end">
+            <div class="button-toolbar-container">
+
+              <div class="pills button-toolbar-pills ms-3">
+                {% if training.is_free %}
+                  {% include "common/components/cards/pill.html" with label=_('Free') %}
+                {% endif %}
+                {% for tag in training.tags_list %}
+                  {% include 'common/components/cards/pill.html' with label=tag %}
+                {% endfor %}
+              </div>
+
+              <div class="button-toolbar">
+                {% if request.user.is_authenticated %}
+                  <a class="btn btn-sm save-button {% if not training.favorited %}btn-dark{% else %}btn-primary{% endif %}"
+                    data-favorite-url="{{ training.favorite_url }}" {% if training.favorited %}data-checked="checked"
+                    {% endif %} data-bs-toggle="tooltip" {% if training.favorited %}title="Save for later"
+                    {% else %}title=" Remove from saved for later" {% endif %}>
+                    <i class="material-icons">{% if not training.favorited %}{% trans 'add'%}{% else %}{% trans 'check' %}{% endif %}</i>
+                    <span>{% if not training.favorited %}{% trans 'Save' %}{% else %}{% trans 'Saved' %}{% endif %}</span>
+                  </a>
+                {% endif %}
+
+                {% if user.is_staff %}
+                  <a href="{{ training.admin_url }}" class="btn btn-sm btn-icon btn-dark">
+                    <i class="material-icons btn-material-icons">create</i>
+                  </a>
+                {% endif %}
+
+                <button data-bs-toggle="dropdown" class="btn btn-sm btn-icon btn-dark">
+                  <i class="material-icons btn-material-icons">more_horiz</i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <a href="https://developer.blender.org/maniphest/task/edit/form/15/" target="_blank"
+                    class="dropdown-item">
+                    <i class="material-icons">flag</i>
+                    <span>{% trans 'Report Problem' %}</span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="mb-3 markdown-text">{% with_shortcodes training.summary_rendered %}</section>
+      </div>
+
+
+    </div>
+    {% comment %}
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="mb-3">{% trans 'About this' %} {{ training.type.label }}</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row mb-2">
+                    <div class="col-auto pe-0">
+                      <img src="{% static 'common/images/blank-profile-pic.jpg' %}" class="profile">
+                    </div>
+                    <div class="col-auto">
+                      <h4 class="comment-name mb-0">{% trans 'Mike Newbon'%}</h4>
+                      <p class="subtitle x-small">{% trans 'Author'%}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p class="mb-0">{% trans 'Blender Artist. Co-Founder of blendFX. Shading, Pipeline, Tracking, Python Scripting.'%}
+                        {% trans 'Also: Knitting.'%}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <table class="table table-sm mb-0">
+                    <tbody>
+                      <tr>
+                        <td class="fw-bold">{% trans 'Difficulty' %}</td>
+                        <td class="text-end">
+                          <div class="badge badge-difficulty badge-{{ training.difficulty.value }}">
+                            <i class="material-icons btn-material-icons">extension</i>
+                            {{ training.difficulty.label }}
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">{% trans 'Last updated' %}</td>
+                        <td class="text-end">{{ training.date_updated|date:"jS F Y" }}</td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">{% trans 'Estimated duration' %}</td>
+                        <td class="text-end">{% trans '4h 32m'%}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endcomment %}
+  </section>
+{% endblock nexted_content %}

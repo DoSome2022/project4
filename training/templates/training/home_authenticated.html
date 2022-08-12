@@ -1,0 +1,126 @@
+{% extends 'training/base_training.html' %}
+{% load i18n %}
+{% load static %}
+{% load pipeline %}
+{% load common_extras %}
+
+{% block title_prepend %}Training - {% endblock title_prepend %}
+
+{% block meta %}
+  {% static 'training/images/placeholders/opengraph.jpg' as image_path %}
+  {% absolute_url image_path as image_url %}
+  {% with title="Training" description="Learn by example. Courses, workshops and production lessons with .blend files included." %}
+    {% include 'common/components/meta.html' %}
+  {% endwith %}
+{% endblock %}
+
+{% block jumbotron %}
+  <!-- z-index is due to negative bottom margin causing second section not to be clickable -->
+  <div class="jumbotron jumbotron-fluid jumbotron-overlay header spacer-n mb-n5" style="z-index:-1;">
+    <div class="jumbotron-bg-wrapper">
+      <img class="jumbotron-bg" src="{% static 'training/images/header.jpg' %}">
+    </div>
+    <div class="container-xxl pb-5">
+      <div class="row">
+        <div class="col-lg-5 col-xl-4">
+          <div class="jumbotron-body">
+            <div class="spacer"></div>
+            <h1>{% trans 'Training' %}</h1>
+            <p class="mb-0">
+              {% trans 'Learn by example. Courses, workshops and production lessons with .blend files included.'%}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock jumbotron %}
+
+{% block content %}
+  <div class="container-xxl pt-2 pt-md-3">
+
+    <!-- Recently watched -->
+    {% if recently_watched_sections %}
+      {% include 'common/components/cards/card_carousel.html' with title=_("Continue training") subtitle=_("Recently watched videos appear here! Continue watching where you left off.") slides=4 card_set=recently_watched_sections media_type="section" id="continueTraining" %}
+    {% endif %}
+
+    {% if favorited_trainings %}
+      {% include 'common/components/cards/card_carousel.html' with title=_("Your Saved Training") subtitle=_("You can add and remove items from this list by clicking the plus or the tick.") slides=3 card_set=favorited_trainings media_type="training" id="savedTraining" %}
+    {% else %}
+      <section class="mb-4">
+        <div class="row justify-content-center mb-2">
+          <div class="col">
+            <h2 class="mb-0">{% trans 'Your Saved Training' %}</h2>
+            <p class="mb-0">{% trans 'You can add and remove items from this list by clicking the plus or the tick.'%}</p>
+          </div>
+          <div class="col-md-auto d-none d-md-block carousel-card-toolbar">
+            <a class="btn btn-lg btn-transparent btn-icon onlyOne"
+              href="#{{ id }}" role="button" data-slide="prev">
+              <i class="material-icons">arrow_back</i>
+            </a>
+            <a class="btn btn-lg btn-transparent btn-icon onlyOne"
+              href="#{{ id }}" role="button" data-slide="next">
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center empty-saved-training">
+            <div class="bg-secondary py-4 rounded">
+              <h3 class="mb-0">{% trans 'No saved training' %}</h3>
+              <p class="mb-0">{% trans 'You can favorite a few below!' %}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    <!-- SEARCH -->
+
+    <section>
+
+      <div class="row">
+
+        <div class="col mb-3">
+          <h2 class="mb-0">{% trans 'All Training' %}</h2>
+        </div>
+
+        <div class="col-auto mb-3">
+          <div class="input-group input-group-sm" id="sorting">
+            <label class="input-group-text" for="searchLicence">{% trans 'Sort by:'%}</label>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search" class="row">
+
+        <div class="col-md-6 mb-3">
+          <div id="search_input" class="input-group">
+            <span class="input-group-text">
+              <i class="material-icons">search</i>
+            </span>
+          </div>
+        </div>
+
+        <div id="search_type" class="col-md-3 col-6 mb-3"></div>
+
+        <div id="search_difficulty" class="col-md-3 col-6 mb-3"></div>
+
+      </div>
+
+      <div class="row" id="hits"></div>
+
+    </section>
+  </div>
+
+{% endblock content %}
+
+{% block scripts %}
+  {% javascript 'vendor_instantsearch' %}
+  {{ favorited_training_ids|json_script:"training-favorited-ids" }}
+  {{ search_client_config|json_script:"training-search-client-config" }}
+  {% javascript 'training' %}
+  {% javascript 'training_search' %}
+
+{% endblock scripts %}

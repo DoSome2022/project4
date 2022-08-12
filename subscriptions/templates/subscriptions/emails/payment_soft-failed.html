@@ -1,0 +1,14 @@
+{% extends "subscriptions/emails/base.html" %}
+{% load i18n %}
+{% block content %}
+  <p>
+   {% trans 'Automatic payment for your Blender Studio subscription failed.Don't worry, we will' %} <strong>{% trans 'automatically try again' %}</strong> {% trans 'soon.'%}
+   {% trans 'This was collection attempt' %} {{ order.collection_attempts }}{% trans 'of' %} {{ maximum_collection_attemps }}.
+   {% trans 'If payment still fails after that, we'll send you another email.' %}
+  </p>
+  <p>{% trans 'The error we received from the payment provider was:' %} {{ failure_message }}.</p>
+  <p>
+   {% trans 'For now you can either wait for another automatic try,'%}
+   {% trans 'or visit' %} <a href="{{ pay_url }}">{{ pay_url }}</a>{% trans 'to pay manually.'%}
+  </p>
+{% endblock content %}

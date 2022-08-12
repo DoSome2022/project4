@@ -1,0 +1,356 @@
+/* eslint-disable no-undef */
+/* global ajax:false bootstrap:false */
+/* eslint-disable prefer-destructuring */
+// eslint-disable-next-line no-unused-vars
+function epochToDate(epoch) {
+  let epochValue = epoch;
+  if (epochValue < 10000000000) {
+    epochValue *= 1000; // convert to milliseconds (Epoch is usually expressed in seconds, but Javascript uses Milliseconds)
+  }
+  epochValue += new Date().getTimezoneOffset() * -1; // for timeZone
+  return new Date(epochValue);
+}
+
+// eslint-disable-next-line no-unused-vars
+function timeDifference(datetime) {
+  const now = new Date();
+
+  const msPerMinute = 60 * 1000;
+  const msPerHour = msPerMinute * 60;
+  const msPerDay = msPerHour * 24;
+  const msPerMonth = msPerDay * 30;
+  const msPerYear = msPerDay * 365;
+
+  const elapsed = now - datetime;
+
+  if (elapsed < msPerMinute) {
+    const value = Math.round(elapsed / 1000);
+    return `${value}\xa0sec`;
+  } else if (elapsed < msPerHour) {
+    const value = Math.round(elapsed / msPerMinute);
+    return `${value}\xa0min`;
+  } else if (elapsed < msPerDay) {
+    const value = Math.round(elapsed / msPerHour);
+    return `${value}\xa0h`;
+  } else if (elapsed < msPerMonth) {
+    const value = Math.round(elapsed / msPerDay);
+    return `${value}\xa0d`;
+  } else if (elapsed < msPerYear) {
+    const value = Math.round(elapsed / msPerMonth);
+    return `${value}\xa0mo`;
+  } else {
+    const value = Math.round(elapsed / msPerYear);
+    return `${value}\xa0yr`;
+  }
+}
+
+// eslint-disable-next-line no-unused-vars
+function titleCase(str) {
+  if (str == null) {
+    return null;
+  } else {
+    const splitStr = str.toLowerCase().split(' ');
+    for (let i = 0; i < splitStr.length; i += 1) {
+      // You do not need to check if i is larger than splitStr length, as your for does that for you
+      // Assign it back to the array
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    // Directly return the joined string
+    return splitStr.join(' ');
+  }
+}
+
+// eslint-disable-next-line no-unused-vars
+function authCheck() {
+  if (document.querySelector('body[data-authenticated="true"]')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function cardCarousel(element) {
+  function nextElement(item) {
+    if (item.nextElementSibling === null) {
+      return item.parentElement.firstElementChild;
+    } else {
+      return item.nextElementSibling;
+    }
+  }
+
+  const totalCards = element.parentElement.childElementCount;
+  let next = nextElement(element);
+
+  const append = next.firstElementChild.cloneNode(true);
+
+  element.insertAdjacentElement('beforeend', append);
+
+  for (let i = 2; i < totalCards; i += 1) {
+    next = nextElement(next);
+
+    const appendy = next.firstElementChild.cloneNode(true);
+    element.insertAdjacentElement('beforeend', appendy);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.carousel-card .carousel-item').forEach((item) => {
+    cardCarousel(item);
+  });
+});
+
+let currentUser = null;
+document.addEventListener('DOMContentLoaded', () => {
+  // eslint-disable-next-line no-unused-vars
+  currentUser = JSON.parse(document.getElementById('current-user').textContent);
+});
+
+// Adds tooltips if text overflows.
+document.querySelectorAll('[data-bs-tooltip="tooltip-overflow"').forEach((i) => {
+  const tooltip = new bootstrap.Tooltip(i);
+  tooltip.disable();
+  const text = i.querySelector('.overflow-text');
+  this.addEventListener('mouseover', () => {
+    if (text.scrollWidth > text.clientWidth) {
+      tooltip.enable();
+    }
+  });
+});
+
+function spoilerSetup(element) {
+  element.querySelectorAll('.spoiler-alert').forEach((i) => {
+    i.addEventListener('click', () => {
+      i.classList.add('revealed');
+      element.querySelectorAll('.spoiler').forEach((i) => {
+        i.classList.remove('spoiler');
+      });
+    });
+  });
+}
+
+function likeButtonSetup(element) {
+  element.querySelectorAll('[data-like-url]').forEach((i) => {
+    i.addEventListener('click', (e) => {
+      const likeButton = e.target;
+      const likeUrl = likeButton.dataset.likeUrl;
+      const liked = likeButton.dataset.checked;
+
+      ajax
+        .jsonRequest('POST', likeUrl, {
+          like: !liked,
+        })
+        .then((data) => {
+          document.querySelectorAll(`[data-like-url="${likeUrl}"]`).forEach((i) => {
+            const item = i;
+            if (data.like) {
+              item.dataset.checked = 'checked';
+            } else {
+              delete item.dataset.checked;
+            }
+            if (i.querySelector('.likes-count')) {
+              // eslint-disable-next-line no-param-reassign
+              i.querySelector('.likes-count').innerText = data.number_of_likes;
+            } else {
+              const likeCountHTML = `<span class="likes-count">${data.number_of_likes}</span>`;
+              i.insertAdjacentHTML('beforeend', likeCountHTML);
+            }
+          });
+        });
+    });
+  });
+}
+
+// Generic like button
+document.addEventListener('DOMContentLoaded', () => {
+  likeButtonSetup(document);
+  spoilerSetup(document);
+});
+
+// Notification highlighting
+function getAnchor() {
+  const currentUrl = document.URL;
+  const urlParts = currentUrl.split('#');
+
+  return urlParts.length > 1 ? urlParts[1] : null;
+}
+
+function hightlightAnchor(element) {
+  const id = getAnchor();
+  if (id == null) return;
+  const anchor = element.querySelector(`#${id}`);
+
+  if (id != null && anchor != null) {
+    anchor.classList.add('highlight');
+    anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  hightlightAnchor(document);
+});
+
+// Make Masonry Grid
+
+// eslint-disable-next-line no-unused-vars
+function makeGrid() {
+  const elm = document.querySelector('.grid');
+  const masonry = new Masonry(elm, {
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition: true,
+    horizontalOrder: true,
+  });
+
+  imagesLoaded(elm).on('progress', () => {
+    masonry.layout();
+  });
+}
+
+// eslint-disable-next-line no-unused-vars
+function initVideo(container) {
+  const players = Array.from(
+    container.querySelectorAll('.video-player video, .video-player-embed')
+  ).map((p) => new Plyr(p));
+
+  const loopButton = `
+    <button class="plyr__controls__item plyr__control" type="button" data-plyr="loop">
+      <svg class="icon--pressed" aria-hidden="true" focusable="false">
+        <use xlink:href="#plyr-restart"></use>
+      </svg>
+      <svg class="icon--not-pressed" aria-hidden="true" focusable="false">
+        <svg id="plyr-restart" viewBox="0 0 18 18"><path d="M9.7 1.2l.7 6.4 2.1-2.1c1.9 1.9 1.9 5.1 0 7-.9 1-2.2 1.5-3.5 1.5-1.3 0-2.6-.5-3.5-1.5-1.9-1.9-1.9-5.1 0-7 .6-.6 1.4-1.1 2.3-1.3l-.6-1.9C6 2.6 4.9 3.2 4 4.1 1.3 6.8 1.3 11.2 4 14c1.3 1.3 3.1 2 4.9 2 1.9 0 3.6-.7 4.9-2 2.7-2.7 2.7-7.1 0-9.9L16 1.9l-6.3-.7z" fill-opacity=".5"></path></svg>
+      </svg>
+      <span class="label--pressed plyr__sr-only">Disable looping</span>
+      <span class="label--not-pressed plyr__sr-only">Enable looping</span>
+    </button>
+    `;
+
+  players.forEach((element) =>
+    element.elements.container.addEventListener('ready', () => {
+      const dataElement = element.elements.container.parentElement;
+      const startPosition = Number(dataElement.dataset.startPosition);
+      const progressPostMinWait = 2000;
+      const progressUrl = dataElement.dataset.progressUrl;
+      let _postingProgress = 0;
+      let _lastPostProgress = null;
+
+      if (dataElement.querySelector('video')) {
+        element.elements.controls
+          .querySelector('.plyr__menu')
+          .insertAdjacentHTML('afterend', loopButton);
+
+        if (dataElement.querySelector('video').hasAttribute('loop')) {
+          element.elements.controls
+            .querySelector('[data-plyr="loop"]')
+            .classList.add('plyr__control--pressed');
+        }
+
+        element.elements.controls
+          .querySelector('[data-plyr="loop"]')
+          .addEventListener('click', (event) => {
+            event.target.classList.toggle('plyr__control--pressed');
+            // eslint-disable-next-line no-param-reassign
+            element.media.loop = !element.media.loop;
+          });
+      }
+
+      function postProgress() {
+        _lastPostProgress = Date.now();
+        _postingProgress += 1;
+        // eslint-disable-next-line no-undef
+        ajax
+          .jsonRequest('POST', progressUrl, {
+            position: element.currentTime,
+          })
+          .finally(() => {
+            _postingProgress -= 1;
+          });
+      }
+
+      if (progressUrl) {
+        element.on('loadeddata', () => {
+          // Setting a start position doesn't appear to work on "ready", only on "loaddata"
+          // See https://github.com/sampotts/plyr/issues/208#issuecomment-400539990
+          if (startPosition <= element.duration) {
+            // eslint-disable-next-line no-param-reassign
+            element.currentTime = startPosition;
+          }
+        });
+
+        element.on('timeupdate', () => {
+          if (
+            _postingProgress === 0 &&
+            (_lastPostProgress == null || Date.now() - _lastPostProgress >= progressPostMinWait)
+          ) {
+            postProgress();
+          }
+        });
+      }
+    })
+  );
+}
+
+// Lightbox in blogs
+document.addEventListener('DOMContentLoaded', () => {
+  const imageZoomModalID = '#image-zoom-modal';
+  const imageZoomModal = document.querySelector(imageZoomModalID);
+  const imageWrapper = imageZoomModal.querySelector('.modal-body');
+
+  document.querySelectorAll('.image-zoom').forEach((element) => {
+    const imageURL = element.dataset.image;
+    const imageHTML = `<img src="${imageURL}">`;
+
+    element.addEventListener('click', () => {
+      imageWrapper.innerHTML = imageHTML;
+      // eslint-disable-next-line no-undef
+      const modalEl = document.querySelector(imageZoomModalID);
+      const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      modal.show(modalEl);
+    });
+  });
+});
+
+// Readmore link
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.read-more-link').forEach((element) => {
+    const id = element.hash;
+    element.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector(`${id} .read-more-elip`).classList.toggle('d-none');
+      document.querySelector(`${id} .read-more-text`).classList.toggle('d-none');
+      if (element.querySelector('.read-more-less').innerText === 'more') {
+        // eslint-disable-next-line no-param-reassign
+        element.querySelector('.read-more-less').innerText = 'less';
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        element.querySelector('.read-more-less').innerText = 'more';
+      }
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.navbar');
+  const secondaryNav = document.querySelector('.navbar-secondary');
+  const nestedNav = document.querySelector('.nav-drawer-nested');
+  const navDrawer = document.querySelector('.nav-drawer');
+
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      if (nav) nav.classList.add('scroll');
+      if (secondaryNav) secondaryNav.classList.add('scroll');
+      if (nestedNav) nestedNav.classList.add('scroll');
+    } else {
+      if (nav) nav.classList.remove('scroll');
+      if (secondaryNav) secondaryNav.classList.remove('scroll');
+      if (nestedNav) nestedNav.classList.remove('scroll');
+    }
+    prevScrollpos = currentScrollPos;
+
+    if (window.pageYOffset > 40) {
+      if (navDrawer) navDrawer.classList.add('scroll');
+    } else if (navDrawer) navDrawer.classList.remove('scroll');
+  };
+});

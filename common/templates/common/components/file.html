@@ -1,0 +1,75 @@
+{% load static %}
+{% load thumbnail %}
+{% load common_extras %}
+{% load i18n %}
+
+<div class="file grid-item {{ aspect_ratio }} {{ card_sizes|default:'col-12 col-sm-6 col-md-6 col-lg-4' }} {% if aspect_ratio == '16:9' %}widescreen{% elif aspect_ratio == '4:3' %}fourbythree{% elif aspect_ratio == '1:1' %}square{% endif %} {% if asset.is_spoiler or not user_can_view_asset and not asset.is_free  %}locked{% endif %}">
+  <div class="file-header">
+    <a href="?asset={{ asset.id }}" class="file-modal-link" data-asset-id="{{ asset.id }}" data-url="{% url 'api-asset' asset.id %}?site_context={{ site_context }}">
+
+      {% if asset.static_asset.thumbnail %}
+        {% if user_can_view_asset or asset.is_free %}
+          {% if asset.is_spoiler %}
+            {# Spoiler alert #}
+            <div class="file-lock-text">
+              <h4 class="mb-0">
+                <i class="material-icons icon-inline small text-danger">warning</i>
+               {% trans 'Spoiler' %}
+              </h4>
+            </div>
+            {% include "common/components/helpers/image_resize.html" with alt=asset.name classes="file-image locked" img_source=asset.static_asset.thumbnail width="200" %}
+          {% else %}
+            {% if image_size %}
+              {% include "common/components/helpers/image_resize.html" with alt=asset.name classes="file-image" img_source=asset.static_asset.thumbnail width=image_size %}
+            {% else %}
+              {% include "common/components/helpers/image_resize.html" with alt=asset.name classes="file-image" img_source=asset.static_asset.thumbnail width="350" %}
+            {% endif %}
+          {% endif %}
+        {% else %}
+          <div class="file-lock-text">
+            <p class="mb-0 h4">
+              <i class="material-icons icon-inline small">lock</i>
+             {% trans 'Subscribe to view' %}
+            </p>
+          </div>
+          {% include "common/components/helpers/image_resize.html" with alt=asset.name classes="file-image locked" img_source=asset.static_asset.thumbnail width="200" %}
+        {% endif %}
+        {% if asset.contains_blend_file %}
+          <img class="file-icon" src="{% static "common/images/icons/blend.svg" %}" alt="asset preview">
+        {% elif asset.static_asset.source_type == "file" %}
+          <img class="file-icon" src="{% static "common/images/icons/file.svg" %}" alt="asset preview">
+        {% elif asset.static_asset.source_type == "video" %}
+          <div class="badge badge-video-duration bg-darkhighlight-xstrong">
+            {{ asset.static_asset.video.duration_label }}
+          </div>
+        {% endif %}
+      {% else %}
+        {% if asset.contains_blend_file %}
+          <img class="file-icon" src="{% static "common/images/icons/blend.svg" %}" alt="asset preview">
+        {% elif asset.static_asset.source_type == "video" %}
+          <img class="file-icon" src="{% static "common/images/icons/video.svg" %}" alt="asset preview">
+          <div class="badge badge-video-duration bg-darkhighlight-xstrong">
+            {{ asset.static_asset.video.duration }}
+          </div>
+        {% else %}
+          <img class="file-icon" src="{% static "common/images/icons/file.svg" %}" alt="asset preview">
+        {% endif %}
+      {% endif %}
+    </a>
+    {% if user_can_edit_asset %}
+      <a href="{{ asset.admin_url }}" target="_blank" class="btn btn-secondary btn-xs btn-icon btn-float">
+        <i class="material-icons btn-material-icons">create</i>
+      </a>
+    {% endif %}
+  </div>
+  <a class="file-body file-modal-link" href="?asset={{ asset.id }}" data-asset-id="{{ asset.id }}" data-url="{% url 'api-asset' asset.id %}?site_context={{ site_context }}">
+
+    {% if asset.is_free %}
+      {% include "common/components/cards/pill.html" with label=_('Free') %}
+    {% endif %}
+    <span data-bs-tooltip="tooltip-overflow" data-placement="top" title="{{ asset.name }}" class="overflow-text">
+      <p class="overflow-text h4">{{ asset.name }}</p>
+    </span>
+
+  </a>
+</div>

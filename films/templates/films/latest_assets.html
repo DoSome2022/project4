@@ -1,0 +1,53 @@
+{% extends 'films/gallery.html' %}
+{% load static %}
+{% load film_extras %}
+{% load common_extras %}
+{% load pipeline %}
+{% load i18n %}
+
+{% block title_prepend %}{{ film.title }} - {% endblock title_prepend %}
+
+{% block meta %}
+  {# TODO(anna,mike): update meta #}
+  {% firstof title film.title as title %}
+  {% include 'common/components/meta.html' %}
+{% endblock %}
+
+{% block toolbar %}
+  <div class="row">
+    <div class="col search-bar-wrapper">
+      <div class="input-group input-group-sm" id="search-container">
+        <span class="input-group-text pe-0">
+          <i class="material-icons">search</i>
+        </span>
+        {% comment %} INPUT (Js) {% endcomment %}
+        {% comment %} X (Js) {% endcomment %}
+      </div>
+    </div>
+
+    <div class="col-auto mb-3 d-none d-md-block">
+      <div class="input-group input-group-sm" id="sorting">
+        <label class="input-group-text pe-0" for="searchLicence">{% trans 'Sort by:' %}</label>
+        {% comment %} INPUT (Js) {% endcomment %}
+      </div>
+    </div>
+  </div>
+{% endblock toolbar %}
+
+{% block gallery_files %}
+  <div class="files row grid" id="hits"></div>
+{% endblock gallery_files %}
+
+{% block scripts %}
+  {% javascript 'vendor_instantsearch' %}
+  <script>
+    const fileIconURL = '{% static "common/images/icons/file.svg" %}'
+  </script>
+  {{ search_client_config|json_script:"search-client-config" }}
+  <script type="applicatio/json" id="film-title">
+    {
+      {% trans ' "film": ' %} "{{ film.title }}"
+    }
+  </script>
+  {% javascript 'film_search' %}
+{% endblock scripts %}

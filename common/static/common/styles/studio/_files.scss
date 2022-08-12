@@ -1,0 +1,327 @@
+.file {
+  @extend .card;
+
+  height: auto;
+  margin-bottom: 0;
+  transition: none;
+  background: none;
+  border: 0;
+
+  &:hover {
+    .file-body {
+      color: $white;
+      text-decoration: none;
+
+      h4,
+      .h4 {
+        color: white;
+      }
+    }
+
+    .subtitle {
+      color: $primary;
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .file-icon {
+      opacity: 1;
+    }
+  }
+
+  .subtitle {
+    color: $highlight-white-xstrong;
+    font-size: $x-small-font-size;
+    transition: $transition-base;
+  }
+
+  h4,
+  .h4 {
+    color: $highlight-white-xstrong;
+    transition: $transition-base;
+  }
+
+  &-icon {
+    height: 100%;
+    width: 50%;
+  }
+
+  &.folder {
+    .file-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 100%;
+      }
+
+      img+img {
+        height: auto;
+      }
+    }
+  }
+
+  &.locked {
+    .file-image {
+      filter: blur(10px);
+      position: relative;
+      transform: scale(1.1);
+    }
+  }
+
+  &.square,
+  &.widescreen,
+  &.fourbythree {
+    .file-image {
+      position: absolute;
+      object-fit: cover;
+      object-position: center;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+
+      &+.file-icon {
+
+        top: $spacer / 2;
+      }
+    }
+
+    .file-icon {
+      position: absolute;
+      top: 0;
+    }
+
+    .file-modal-link {
+      &.file-body {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &.square {
+
+    .file-modal-link,
+    .file-folder-link {
+      padding-bottom: 100%;
+    }
+  }
+
+  &.widescreen {
+
+    .file-modal-link,
+    .file-folder-link {
+      padding-bottom: 56.25%;
+    }
+  }
+
+  &.fourbythree {
+
+    .file-modal-link,
+    .file-folder-link {
+      padding-bottom: 75%;
+    }
+  }
+}
+
+.file-header {
+  @include button-float;
+
+  border-radius: $border-radius;
+  background: $navigation-gray;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .file-modal-link,
+  .file-folder-link {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .badge-video-duration {
+    bottom: $spacer / 4;
+    color: $white;
+    position: absolute;
+    right: $spacer / 4;
+  }
+
+  &.aspect-16by9 {
+    &:before {
+      content: "";
+      width: 1px;
+      margin-left: -1px;
+      float: left;
+      height: 0;
+      padding-top: 591.44px / 1127.34px * 100%;
+    }
+
+    &:after {
+      /* to clear float */
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.file-body {
+  align-items: center;
+  color: $highlight-white-xstrong;
+  display: flex;
+  padding: $spacer / 2 $spacer / 4 0;
+  position: relative;
+  transition: $transition-base;
+
+  i {
+    line-height: 1;
+  }
+
+  h4,
+  .h4 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 0;
+  }
+
+  >* {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .badge {
+    margin-right: $spacer / 4;
+  }
+}
+
+.file-footer {
+  padding: 0 $spacer / 4 0;
+}
+
+.file-image {
+  width: 100%;
+
+  +.file-icon {
+    background-color: $highlight-black-strong;
+    border-radius: 50%;
+    box-shadow: $box-shadow-sm;
+    height: $spacer * 1.5;
+    left: $spacer / 2;
+    padding: $spacer / 4;
+    position: absolute;
+    top: $spacer / 2;
+    width: $spacer * 1.5;
+    opacity: 1;
+  }
+}
+
+.file-icon {
+  padding: $spacer;
+  opacity: .5;
+  transition: $transition-base;
+}
+
+// Gallery Loading overlay
+
+.gallery-load-overlay {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: $highlight-black-xstrong;
+  bottom: 0;
+  display: flex;
+  height: calc(100% - #{$navbar-height});
+  justify-content: center;
+  left: 0;
+  margin-left: $nav-drawer-width;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  transition: $transition-fade;
+  width: calc(100% - #{$nav-drawer-width});
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.has-secondary-nav {
+  .gallery-load-overlay {
+    height: calc(100% - #{$navbar-height + 43px});
+  }
+}
+
+//Modal Toolbar
+
+.button-toolbar {
+  @extend .button-toolbar;
+
+  .btn+.btn,
+  .dropdown-menu+.btn {
+    margin-left: $spacer / 2;
+  }
+}
+
+
+.file-lock-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $highlight-white-xstrong;
+
+  >* {
+    z-index: 1;
+  }
+
+  i {
+    // font-size: 48px;
+    // margin-bottom: $spacer / 2;
+    line-height: 1.25;
+    margin-right: $spacer / 4;
+  }
+
+  &::before {
+    content: close-quote;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $highlight-black-xstrong;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+  }
+}
+
+.grid-item {
+  margin-bottom: $spacer;
+}
+
+// different style for the grid view and carousel views
+.files {
+  &.grid {
+    margin-bottom: $spacer / 2;
+  }
+}

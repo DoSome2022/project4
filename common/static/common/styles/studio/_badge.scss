@@ -1,0 +1,51 @@
+.badge {
+  @at-root a#{&} {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.badge-pill {
+  background: $highlight-white;
+  color: $white;
+}
+
+.card {
+
+  .badge-pill {
+    background: $highlight-white;
+    color: $highlight-white-xstrong;
+  }
+
+}
+
+.pills {
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -$spacer / 4;
+  margin-left: -$spacer / 4;
+
+  // dont use the + method as on the next line it's offset.
+  .badge-pill {
+    margin-bottom: $spacer / 4;
+    margin-left: $spacer / 4;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  .badge {
+    vertical-align: middle;
+  }
+}
+
+.badge-highlight {
+  color: $white;
+}

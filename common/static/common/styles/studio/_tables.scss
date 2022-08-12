@@ -1,0 +1,46 @@
+.table {
+  tr:first-of-type {
+    td {
+      border-top: 0;
+    }
+  }
+}
+
+.table-sm {
+  font-size: $small-font-size;
+}
+
+.markdown-text {
+  table {
+    @extend .table;
+  }
+}
+
+
+.table-receipts {
+  background: $secondary;
+  border-radius: $border-radius;
+
+  th {
+    border-top-width: 0;
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+
+  td {
+    padding: $spacer 0;
+  }
+
+  tr {
+
+    th:first-child,
+    td:first-child {
+      padding-left: $spacer;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: $spacer;
+    }
+  }
+}

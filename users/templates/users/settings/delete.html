@@ -1,0 +1,28 @@
+{% extends 'users/settings/base.html' %}
+{% load i18n %}
+{% block settings %}
+  {% with can_be_deleted=user.can_be_deleted %}
+
+    <p class="subtitle">{% trans 'Settings' %}</p>
+    <h1 class="mb-3">{% trans 'Delete account'%}</h1>
+    <div class="settings-form">
+      <div class="row">
+        <div class="col">
+          <!--h2 class="mb-0">Delete my account and all data linked to it</h2-->
+          <div>
+            <p>
+              {% trans 'You can request deletion of your account in' %} <a href="{{ BLENDER_ID.BASE_URL }}">{% trans 'Blender ID'%}</a>.
+            </p>
+            {% if not can_be_deleted %}
+              <div class="alert alert-danger" role="alert">
+                <i class="material-icons align-middle me-1">info</i>
+                <span>{% trans 'Note that your account has publicly visible content, such as blog posts or assets, that cannot be deleted from Blender Studio.'%}</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endwith %}
+{% endblock settings %}

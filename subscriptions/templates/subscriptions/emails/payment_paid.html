@@ -1,0 +1,9 @@
+{% extends "subscriptions/emails/base.html" %}
+{% load subscriptions %}
+{% load i18n %}
+{% block content  %}
+  <p>
+   {% trans 'Automatic' %}{{ subscription|renewal_period }}{% trans 'payment for your Blender Studio subscription'%}({{ order.price.with_currency_symbol }}){% trans 'was successful. Thank you for subscribing to Blender Studio!' %}
+  </p>
+  <p>{% trans 'You will find the online invoice at '%} <a href="{{ receipt_url }}">{{ receipt_url }}</a></p>
+{% endblock content %}

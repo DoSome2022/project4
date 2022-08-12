@@ -1,0 +1,34 @@
+{% extends 'users/settings/base.html' %}
+{% load common_extras %}
+{% load i18n %}
+{% load looper %}
+
+{% block settings %}
+  <p class="subtitle">{% trans 'Settings' %}</p>
+  <h1 class="mb-0">{% trans 'Subscription' %}{% if user.subscription_set.count > 1 %}{% trans 's'%}{% endif %}</h1>
+  <p class="mb-2 subtitle">{% trans 'If you have any problems with billing, contact the team directly on'%} <a href="mailto:studiosupport@blender.org">{% trans 'studiosupport@blender.org' %}</a>.</p>
+
+  <div class="settings-billing">
+
+    {% if user|has_group:"demo" %}
+
+      <div class="row mb-3">
+        <div class="col">
+          <h2 class="mb-0">{% trans 'Manage Subscription' %}</h2>
+          <p>
+           {% trans 'You have full access to the Blender Studio, provided by the Blender Institute. This account is meant for free evaluation of the service. Get in touch with '%}
+            <a href="mailto:{{ ADMIN_MAIL }}">{{ ADMIN_MAIL}}</a>{% trans 'if you have any questions.'%}
+          </p>
+        </div>
+      </div>
+
+    {% else %}{# for everyone except demo #}
+      <div class="row">
+        <div class="col">
+          {% include "subscriptions/components/list.html" %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+{% endblock settings %}

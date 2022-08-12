@@ -1,0 +1,5 @@
+{% load i18n %}
+{% extends 'common/errors/base.html' %} {% block page_title %}{% trans 'Page Not Found' %}{% endblock %} {% block errorbody %}
+  <h1>{% trans 'Page Not Found' %}</h1>
+  <p>{% trans 'The page you tried to reach does not exist.' %}</p>
+  <p>{% trans 'Try' %} <a href="{% url 'home' %}">{% trans 'the homepage' %}</a> {% trans 'instead.'%}</p>{% endblock %}

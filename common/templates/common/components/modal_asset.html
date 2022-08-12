@@ -1,0 +1,191 @@
+{% load static %}
+{% load common_extras %}
+{% load pipeline %}
+{% load i18n %}
+
+{% if next_asset %}
+  <button class="modal-navigation next btn btn-lg btn-icon"
+    data-url="{% url 'api-asset' next_asset.id %}?site_context={{ site_context }}" data-asset-id="{{ next_asset.id }}">
+    <i class="material-icons btn-material-icons">navigate_next</i>
+  </button>
+{% endif %}
+{% if previous_asset %}
+  <button class="modal-navigation previous btn btn-lg btn-icon"
+    data-url="{% url 'api-asset' previous_asset.id %}?site_context={{ site_context }}"
+    data-asset-id="{{ previous_asset.id }}">
+    <i class="material-icons btn-material-icons">navigate_before</i>
+  </button>
+{% endif %}
+<button class="modal-navigation modal-close btn btn-lg btn-icon d-none d-md-block" data-bs-dismiss="modal">
+  <i class="material-icons btn-material-icons">close</i>
+</button>
+
+{% with user_has_active_subscription=request.user|has_active_subscription %}
+  <div id="asset-{{ asset.id }}" data-asset-id="{{ asset.id }}" class="modal-inner-wrapper{% if asset.is_spoiler %} spoiler{% endif %}">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content bg-dark">
+        {# show spoiler alert to subscribers, or if this a free spoiler #}
+        {% if not asset.is_spoiler or not asset.is_free and not user_has_active_subscription %}
+        {% else %}{# this "else" inverts the following clause: #}
+          {# if asset.is_spoiler and (asset.is_free or user_has_active_subscription) #}
+          {% include 'common/components/spoiler_alert.html' %}
+        {% endif %}
+
+        <div class="modal-header p-0 bg-secondary">
+
+          <div class="modal-mobile-header d-md-none bg-dark">
+            <div class="modal-mobile-header-text d-block d-md-none">
+              <p class="subtitle x-small">{{ asset.static_asset.get_source_type_display }}</p>
+              <h3 class="mb-0">{{ asset.name }}</h3>
+            </div>
+            <button class="modal-navigation modal-close btn btn-lg btn-icon" data-bs-dismiss="modal">
+              <i class="material-icons btn-material-icons">close</i>
+            </button>
+          </div>
+          {% if asset.is_free or user_has_active_subscription %}
+            {% if asset.static_asset.source_type == "video" %}
+              {# **N.B.**: video thumbnail might be missing if video processing hadn't caught up yet #}
+              {% get_video_progress_seconds asset.static_asset.video as start_position %}
+              {% if user.is_anonymous %}
+                {% include 'common/components/video_player.html' with url=asset.static_asset.video.source.url poster=asset.static_asset.thumbnail_m_url tracks=asset.static_asset.video.tracks.all loop=asset.static_asset.video.loop %}
+              {% else %}
+                {% include 'common/components/video_player.html' with url=asset.static_asset.video.source.url progress_url=asset.static_asset.video.progress_url start_position=start_position poster=asset.static_asset.thumbnail_m_url tracks=asset.static_asset.video.tracks.all loop=asset.static_asset.video.loop %}
+              {% endif %}
+            {% elif asset.static_asset.thumbnail %}
+              <a class="modal-asset-image-wrapper zoom-modal-link"
+                data-url="{% url 'api-asset-zoom' asset.id %}">
+                {% include "common/components/helpers/image_resize.html" with alt=asset.name classes="img-fluid" img_source=asset.static_asset.thumbnail width="780" %}
+              </a>
+            {% else %}
+              <img class="file-icon h1" src="{% static "common/images/icons/file.svg" %}" alt="File Icon">
+            {% endif %}
+
+          {% else %}
+            {% include 'common/components/content_locked.html' with background=asset.static_asset.thumbnail_s_url %}
+          {% endif %}
+        </div>
+        <div class="modal-body">
+
+          <div class="row align-items-start">
+            <div class="col-12 col-md mb-2 mb-md-3">
+              <div class="d-none d-md-block">
+                <p class="subtitle small">{{ asset.static_asset.get_source_type_display }}</p>
+                <h2 class="">{{ asset.name }}</h2>
+              </div>
+              <div class="text-muted x-small">
+                <p class="d-inline me-2">{{ asset.date_published|date:"jS F Y" }}</p>
+                {% if asset.static_asset.license %}
+                  <a href="{{ asset.static_asset.license.url }}" target="_blank" class="d-inline me-2 text-muted"
+                    data-bs-toggle="tooltip" data-placement="bottom" title="{{ asset.static_asset.license.description }}">
+                    <i class="material-icons icon-inline x-small">info</i>
+                    {{ asset.static_asset.license }}
+                  </a>
+                {% endif %}
+                {% if asset.static_asset.copyright %}
+                  <p class="d-inline me-2">
+                    <i class="material-icons icon-inline x-small">copyright</i>
+                    {{ asset.static_asset.copyright }}
+                  </p>
+                {% endif %}
+                {% if asset.is_free %}
+                  {% include "common/components/cards/pill.html" with label=_('Free') %}
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-12 col-md-auto mb-2 mb-md-0 mt-0 mt-md-3">
+              {% include "common/components/navigation/buttons_toolbar.html" with item=asset %}
+            </div>
+          </div>
+
+          <div class="row align-items-center">
+            <div class="col-auto d-flex mb-2">
+              <div class="row">
+                <div class="col-auto pe-0">
+                  {% if asset.static_asset.author_image_url %}
+                    <img src="{{ asset.static_asset.author_image_url }}" class="profile">
+                  {% else %}
+                    <img src="{% static 'common/images/blank-profile-pic.png' %}" class="profile">
+                  {% endif %}
+                </div>
+                <div class="col-auto">
+                  {% include 'common/components/published_by.html' with static_asset=asset.static_asset %}
+                </div>
+              </div>
+            </div>
+
+            {# Exclude the author in case author is mistakenly included into contributors as well #}
+            {% with asset_author=asset.static_asset.author|default:asset.static_asset.user contributors=asset.static_asset.contributors %}
+              {% if contributors.count > 1 or contributors.count == 1 and contributors.first.pk != asset_author.pk %}
+                <div class="col-auto mb-2">
+                  <div class="contributors d-flex align-items-center">
+
+                    <div class="me-2">
+                      <p class="subtitle text-white-50 x-small">{% trans 'Contributors' %}</p>
+                      {% comment %} <h4 class="comment-name mb-0">{{ asset.static_asset.contributors.all|length}} {% trans 'Other' %} {% if asset.static_asset.contributors.all|length > 1 %}s{% endif %}:</h4> {% endcomment %}
+                      <div class="d-flex">
+                        {% for contributor in contributors.all %}
+                          {% if contributor.pk != asset_author.pk %}
+                            <img src="{{ contributor.image_url }}" alt="{{ contributor.full_name }}" class="profile rounded-circle">
+                          {% endif %}
+                        {% endfor %}
+                        <button class="btn btn-xs btn-icon btn-dark ms-2" data-bs-toggle="dropdown" href="">
+                          <i class="material-icons">arrow_drop_down</i>
+                        </button>
+                        <div class="dropdown-menu mt-2 dropdown-menu-end px-2 pt-2 pb-0">
+                          <h3 class="mb-2">{% trans 'Other Contributors' %}</h3>
+                          {% for contributor in contributors.all %}
+                            {% if contributor.pk != asset_author.pk %}
+                              <div class="d-flex mb-2">
+                                <div style="background-image:url('{{ contributor.image_url }}');" class="profile"></div>
+                                <div class="col-auto">
+                                  <h4 class="comment-name mb-0">{{ contributor.full_name }}</h4>
+
+                                  {% for crew in contributor.film_crew.all %}
+                                    {% if crew.film.id == asset.film.id %}
+                                      <p class="subtitle text-white-50 x-small">{{ crew.role }}</p>
+                                    {% endif %}
+                                  {% endfor %}
+                                </div>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
+                  </div>
+                </div>
+              {% endif %}
+            {% endwith %}
+
+          </div>
+
+
+
+
+          <div class="markdown-text">
+            {% if asset.is_spoiler and not asset.is_free and not user_has_active_subscription %}
+              {# do not show description to non-subscribers, if this is a subscription-only spoiler #}
+              <p class="mb-0">You need to subscribe to view this content.</p>
+            {% else %}
+              {% with_shortcodes asset.description|markdown_unsafe %}
+            {% endif %}
+          </div>
+
+          {% if asset.is_spoiler and not asset.is_free and not user_has_active_subscription %}
+            {# do not show comments to non-subscribers, if this is a subscription-only spoiler #}
+          {% else %}
+            <section>{% include 'comments/components/comment_section.html' %}</section>
+          {% endif %}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endwith %}

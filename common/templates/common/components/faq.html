@@ -1,0 +1,136 @@
+{% load i18n %}
+<section class="{{ classes }}">
+  <div class="row justify-content-center mb-3">
+    <div class="col-md-6 text-center">
+      <h2 class="mb-1">{% trans 'Frequently Asked Questions' %}</h2>
+      <p class="mb-0">{% trans 'If you have questions about the Studio, please contact one of the team on' %}
+        <a href="https://blender.chat/channel/blender-cloud">{% trans 'Blender Chat' %}</a>{% trans 'by logging in with your Blender ID.' %}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="text-center">{% trans 'General' %}</h3>
+
+      <div class="accordion mb-3" id="faqGeneral">
+
+        <div class="accordion-item">
+          <h5 class="accordion-header" id="faqHeadingWhatIsBlenderStudio">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseWhatIsBlenderStudio" aria-expanded="false"
+              aria-controls="faqCollapseWhatIsBlenderStudio">
+              <span>{% trans 'What is Blender Studio?' %}</span>
+            </button>
+          </h5>
+          <div id="faqCollapseWhatIsBlenderStudio" class="accordion-collapse collapse" aria-labelledby="faqHeadingWhatIsBlenderStudio"
+            data-parent="#faqGeneral">
+            <div class="accordion-body small">
+              {% trans 'Blender Studio is a Film and Training publishing platform for everything produced by the Studio team.'%}
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h5 class="accordion-header" id="faqHeadingHowIsMyMoneySpent">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseHowIsMyMoneySpent" aria-expanded="false"
+              aria-controls="faqCollapseHowIsMyMoneySpent">
+              <span>{% trans 'How is my money spent?' %}</span>
+            </button>
+          </h5>
+          <div id="faqCollapseHowIsMyMoneySpent" class="accordion-collapse collapse" aria-labelledby="faqHeadingHowIsMyMoneySpent"
+            data-parent="#faqGeneral">
+            <div class="accordion-body small">
+              {% trans 'The money Blender Studio makes through subscriptions is used to keep our services running, and to make open source and open content productions possible. Throughout the production cycle our team produce training, rigs and assets for publishing to Blender Studio subscribers.'%}
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h5 class="accordion-header" id="faqHeadingHowSupportBlender">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseHowSupportBlender" aria-expanded="false"
+              aria-controls="faqCollapseHowSupportBlender">
+              <span>{% trans 'How does Blender Studio support Blender?' %}</span>
+            </button>
+          </h5>
+          <div id="faqCollapseHowSupportBlender" class="accordion-collapse collapse" aria-labelledby="faqHeadingHowSupportBlender"
+            data-parent="#faqGeneral">
+            <div class="accordion-body small">
+             {% trans 'The Blender Studio funds the Blender Studio team, who rigorously tests and use Blender in the Open Movie productions. The team works with core Blender developers at the Blender Institute to plan, design and test core Blender features.'%}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="text-center">{% trans 'Payment & Billing' %}</h3>
+
+      <div class="accordion mb-3" id="faqPayment">
+        <div class="accordion-item">
+          <h5 class="accordion-header" id="faqHeadingPaymentMethod">
+
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapsePaymentMethod" aria-expanded="false"
+              aria-controls="faqCollapsePaymentMethod">
+              <span>{% trans 'What payment methods do you accept?' %}</span>
+            </button>
+
+          </h5>
+          <div id="faqCollapsePaymentMethod" class="accordion-collapse collapse" aria-labelledby="faqHeadingPaymentMethod"
+            data-parent="#faqPayment">
+            <div class="accordion-body small">
+              {% trans 'Blender Studio offers payment through major credit cards, PayPal or direct bank transfer.' %}
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h5 class="accordion-header" id="faqHeadingCancelSubscription">
+
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseCancelSubscription" aria-expanded="false"
+              aria-controls="faqCollapseCancelSubscription">
+              <span>{% trans 'How easy is it to cancel my subscription?' %}</span>
+            </button>
+
+          </h5>
+          <div id="faqCollapseCancelSubscription" class="accordion-collapse collapse" aria-labelledby="faqHeadingCancelSubscription"
+            data-parent="#faqPayment">
+            <div class="accordion-body small">
+              {% trans 'You may cancel your subscription at any time via your personal account page, or by contacting us at' %}
+              <a href="mailto:{{ ADMIN_MAIL }}">{{ ADMIN_MAIL }}</a>.<br><br>
+
+             {% trans 'In case of suspected fraud or abuse of the service after registration and membership payment, the account owner will be contacted and asked for clarification. Failure to alleviate charges of fraud may result in the termination of the member’s account.' %}<br><br>
+
+              {% trans 'Upon termination, all licenses granted by the Blender Studio will terminate. In the event of account deletion for any reason, content that you submitted may no longer be available. The Blender Studio shall not be responsible for the loss of such content.'%}
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h5 class="accordion-header" id="faqHeadingRefund">
+            <p class="mb-0 h5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseRefund" aria-expanded="false" aria-controls="faqCollapseRefund">
+                <span>{% trans 'Can I get a refund?' %}</span>
+              </button>
+            </p>
+          </h5>
+          <div id="faqCollapseRefund" class="accordion-collapse collapse" aria-labelledby="faqHeadingRefund" data-parent="#faqPayment">
+            <div class="accordion-body small">
+             {% trans 'Membership fees and supporter contributions are non-refundable. That money keeps our services running, and is used to make open source and open content productions possible.'%}<br><br>
+
+             {% trans 'We really care about our members and supporters though — in case you are really not happy with our Blender Studio we will kindly respond to your comments and try to settle a dispute with you in harmony.'%}<br><br>
+
+             {% trans 'Refunds will happen without delay when we get a report of fraud, abuse or non-authorised usage of funds.'%}<br><br>
+
+             {% trans 'Contact' %}: <a href="mailto:{{ ADMIN_MAIL }}">{{ ADMIN_MAIL }}</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

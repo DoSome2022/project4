@@ -1,0 +1,66 @@
+{% extends "settings/base.html" %}
+{% load common_extras %}
+{% load i18n %}
+{% load pipeline %}
+
+{% block settings %}
+  <p class="subtitle">{% trans 'Settings: Subscription #'%}{{ subscription.pk }}</p>
+  <h1 class="mb-3">{% trans 'Change Payment Method' %}</h1>
+
+  <div class="settings-billing">
+    <div>
+      <div class="alert alert-{% if subscription.status == 'active' %}primary{% else %}warning{% endif %}" role="alert">
+        <span>
+          {% trans 'Your'%} {{ subscription.plan.name }} {% trans 'subscription is currently' %}
+          <span class="fw-bolder">{{ subscription.get_status_display|lower }}</span>.
+        </span>
+      </div>
+
+      {% if current_payment_method %}
+        <p>
+          <strong>{{ current_payment_method.recognisable_name }}</strong>{% trans 'is used as payment method. Feel free to change it below.'%}
+        </p>
+      {% else %}
+        <div class="alert alert-danger" role="alert">
+          <i class="material-icons icon-inline">warning_amber</i>
+         {% trans 'You subscription is using an unsupported payment method, please use the form below to change it.'%}
+        </div>
+      {% endif %}
+    </div>
+
+    <form id="payment-form" class="checkout-form" method="post"
+      data-looper-payment-form="true"
+      data-braintree-client-token="{{ client_token }}">{% csrf_token %}
+      {% with form|add_form_classes as form %}
+        <section class="checkout-form-fields">
+          <a class="text-muted float-end" href="{% url 'subscriptions:billing-address' %}"><i class="fa fa-angle-left pe-3"></i>{% trans 'change billing details'%}</a>
+          <fieldset class="checkout-form-billing-address-readonly">
+            {% include "subscriptions/components/billing_address_form_readonly.html" %}
+          </fieldset>
+          <fieldset class="payment-form-payment-method">
+            {% include "subscriptions/components/payment_form.html" %}
+          </fieldset>
+        </section>
+
+        <div class="row mt-3">
+          <div class="col">
+            <a class="btn btn-dark" href="{% url 'subscriptions:manage' subscription_id=subscription.pk %}"><i class="material-icons">arrow_back</i>{% trans 'Cancel'%}</a>
+          </div>
+          <div class="col-auto">
+            <button id="submit-button" class="btn btn-success form-submit" type="submit" aria-disabled="true" disabled>
+              <i class="fa fa-check"></i>
+             {% trans 'Switch Payment method'%}
+            </button>
+          </div>
+        </div>
+      {% endwith %}
+    </form>
+
+  </div>
+{% endblock settings %}
+
+{% block scripts %}
+  {{ block.super }}
+  {% javascript "subscriptions" %}
+  {% include "looper/scripts.html" %}
+{% endblock scripts %}

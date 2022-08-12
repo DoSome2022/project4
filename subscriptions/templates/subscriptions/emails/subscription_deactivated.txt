@@ -1,0 +1,4 @@
+{% extends "subscriptions/emails/base.txt" %}
+{% block content %}
+Your Blender Studio subscription has been deactivated.
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% load common_extras %}
+{% load i18n %}
+<div class="drawer-nav-dropdown-wrapper fw-bold">
+  <a class="drawer-nav-dropdown" href="{% url 'user-settings'%}">
+    <i class="material-icons me-2">person</i>
+    <span>{% trans 'Profile' %}</span>
+  </a>
+</div>
+
+<div class="drawer-nav-dropdown-wrapper fw-bold">
+  <a class="drawer-nav-dropdown" href="{% url 'user-settings-emails' %}">
+    <i class="material-icons me-2">email</i>
+    <span>{% trans 'Emails' %}</span>
+  </a>
+</div>
+
+{% if  request.user.production_credits.all %}
+  <div class="drawer-nav-dropdown-wrapper fw-bold">
+    <a class="drawer-nav-dropdown" href="{% url 'user-settings-production-credits' %}">
+      <i class="material-icons me-2">recent_actors</i>
+      <span>{% trans 'Production Credits' %}</span>
+    </a>
+  </div>
+{% endif %}
+
+<div class="drawer-nav-dropdown-wrapper fw-bold">
+  <a class="drawer-nav-dropdown" href="{% url 'user-settings-billing' %}">
+    <i class="material-icons me-2">credit_card</i>
+    <span>{% trans 'Subscription' %}</span>
+  </a>
+  <a class="drawer-nav-dropdown icon" data-bs-toggle="collapse" data-bs-target="#subscription-collapse">
+    <i class="material-icons">keyboard_arrow_down</i>
+  </a>
+</div>
+
+
+<div class="drawer-nav-list-wrapper collapse show" id="subscription-collapse">
+  <ol class="drawer-nav-list">
+
+    <li class="drawer-nav-section">
+      <a href="{% url 'subscriptions:billing-address' %}" class="drawer-nav-section-link " data-bs-tooltip="tooltip-overflow" data-placement="top" title="" data-original-title="">
+        <p class="overflow-text h4">{% trans 'Billing addresss' %}</p>
+      </a>
+    </li>
+
+    <li class="drawer-nav-section">
+      <a href="{% url 'subscriptions:receipts' %}" class="drawer-nav-section-link " data-bs-tooltip="tooltip-overflow" data-placement="top" title="" data-original-title="">
+        <p class="overflow-text h4">{% trans 'Invoices' %}</p>
+      </a>
+    </li>
+
+    <li class="drawer-nav-section">
+      <a href="{% url 'looper:payment_methods' %}" class="drawer-nav-section-link " data-bs-tooltip="tooltip-overflow" data-placement="top" title="" data-original-title="">
+        <p class="overflow-text h4">{% trans 'Payment methods' %}</p>
+      </a>
+    </li>
+  </ol>
+</div>
+
+<div class="drawer-nav-dropdown-wrapper fw-bold">
+  <a class="drawer-nav-dropdown" href="{% url 'user-settings-delete' %}">
+    <i class="material-icons me-2">delete</i>
+    <span>{% trans 'Delete account' %}</span>
+  </a>
+</div>

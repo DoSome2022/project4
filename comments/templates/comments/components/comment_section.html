@@ -1,0 +1,26 @@
+{% load common_extras %}
+{% load i18n %}
+
+<div class="comment-section" data-comment-url="{{ comments.comment_url }}">
+  <h3>{{ comments.number_of_comments }} Comments</h3>
+  {% if user|has_active_subscription %}
+    {% include 'comments/components/comment_input.html' with div_class='comment-main-input' %}
+  {% else %}
+    <div class="comment-input row" onkeydown="event.stopPropagation()">
+      <div class="col">
+        <div class="comment-input-div disabled form-control" contenteditable="false">
+          <p class="mb-0"><a href="{% url 'subscriptions:join' %}">{% trans 'Join'%}</a>{% trans 'to comment publicly.'%}</p>
+        </div>
+      </div>
+      <div class="comment-send col-auto ps-0">
+        <button disabled class="btn-input btn-sm btn btn-sm btn-icon disabled">
+          <i class="material-icons">send</i>
+        </button>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="comments">
+    {% include 'comments/components/comment_tree.html' with comment_trees=comments.comment_trees %}
+  </div>
+</div>

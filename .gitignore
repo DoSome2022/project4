@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*~
+
+.cache
+.coverage
+.pytest_cache
+.mypy_cache/
+
+.DS_Store
+.idea/
+
+# Distribution / packaging
+node_modules/
+
+/studio/settings.py
+/public/
+/yarn-error.log
+.venv/
+venv/
+.python-version
+studio/blender-cloud-credentials.json
+data.ms/
+.vscode
+**/*.pem
+
+venv

@@ -1,0 +1,23 @@
+{% extends "admin/change_form.html" %}
+{% load pipeline %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'common/styles/admin/markdown_preview.css' %}">
+{% endblock %}
+
+{% block field_sets %}
+<div class="container">
+  <section class="editor-fieldset">
+    {% for fieldset in adminform %}
+    {% include "admin/includes/fieldset.html" %}
+    {% endfor %}
+  </section>
+  <section id="markdown-preview-container">
+  </section>
+</div>
+
+{% javascript 'ajax' %}
+<script src="{% static 'common/scripts/admin/markdown_preview.js' %}"></script>
+{% endblock %}

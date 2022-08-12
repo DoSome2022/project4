@@ -1,0 +1,179 @@
+.btn {
+  .material-icons {
+    font-size: 1.5em;
+    line-height: 1;
+    margin: calc(-.25em * .667);
+    vertical-align: top;
+    pointer-events: none;
+  }
+
+  &.btn-icon {
+    padding: $btn-padding-y;
+  }
+
+  &:not(.btn-icon) {
+    .material-icons {
+      margin-right: 0;
+    }
+  }
+}
+
+.btn-transparent {
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+//This button has special text colours
+.btn-nav {
+  color: $highlight-white-xstrong;
+  font-weight: $font-weight-normal;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background: $highlight-white;
+  }
+
+  &.active {
+    background: $transparent !important;
+    background-color: $transparent !important;
+
+    &:hover,
+    &:focus {
+      background: $highlight-white !important;
+    }
+  }
+
+  +.btn-nav {
+    margin-left: $spacer / 2;
+  }
+}
+
+.btn-profile {
+  padding: $profile-nav-padding;
+}
+
+//
+// Button Sizes
+//
+
+.btn-xs {
+  @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-border-radius-xs);
+
+  &.btn-icon {
+    padding: $btn-padding-y-xs;
+  }
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+
+  &.btn-icon {
+    padding: $btn-padding-y-sm;
+  }
+}
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+
+  &.btn-icon {
+    padding: $btn-padding-y-lg;
+  }
+}
+
+.btn-sprites {
+  background: linear-gradient(90deg, #F8805C 0%, #F01853 100%);
+  position: relative;
+  overflow: hidden;
+  color: $white;
+
+  &::after {
+    content: close-quote;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $highlight-white;
+    opacity: 0;
+    transition: $transition-base;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.btn-float {
+  position: absolute;
+  right: $spacer / 2;
+  top: $spacer / 2;
+  transition: $transition-base;
+  z-index: 1;
+  width: auto;
+}
+
+.likes-count {
+  margin-left: .25em;
+}
+
+.btn-highlight {
+  color: $white;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $highlight-white-strong;
+  }
+}
+
+.btn-dark {
+  &:hover,
+  &:focus {
+    background-color: $highlight-white;
+  }
+}
+
+.btn-input {
+  &:hover,
+  &:focus {
+    background-color: $highlight-white-strong;
+  }
+}
+
+.checkbox-like {
+
+  span {
+    color: $highlight-white-xstrong;
+    pointer-events: none;
+  }
+
+  i {
+    pointer-events: none;
+  }
+
+  .checkbox-like-icon-unchecked {
+    display: inline-block;
+  }
+
+  .checkbox-like-icon-checked {
+    display: none;
+  }
+
+  &[data-checked] {
+    .checkbox-like-icon-unchecked {
+      display: none;
+    }
+
+    .checkbox-like-icon-checked {
+      display: inline-block;
+    }
+
+  }
+}

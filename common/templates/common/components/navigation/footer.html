@@ -1,0 +1,109 @@
+{% load static %}
+{% load common_extras %}
+{% load i18n%}
+
+{% get_featured as featured %}
+<footer class="pb-3 container-nav">
+  <div class="navdrawer-offset">
+    <div class="footer-inner">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-4 mb-4 mb-md-0 justify-content-center align-items-center d-flex flex-column text-center">
+
+          <a href="/" class="text-white">
+            <h1 class="mb-0 h2 text-uppercase">{% trans 'Blender Studio' %}</h1>
+          </a>
+
+          <p class="text-muted x-small">{% trans 'The Creators Who Share.' %}</p>
+
+          <div class="footer-social-media">
+            <a href="https://www.facebook.com/BlenderStudioOfficial/" target="_blank" class="me-3">
+              <img alt="Facebook Logo" src="{% static 'common/images/icons/facebook.svg' %}">
+            </a>
+            <a href="https://twitter.com/Blender_Cloud" target="_blank" class="me-3">
+              <img alt="Twitter Logo" src="{% static 'common/images/icons/twitter.svg' %}">
+            </a>
+            <a href="https://www.youtube.com/channel/UCz75RVbH8q2jdBJ4SnwuZZQ" target="_blank">
+              <img alt="YouTube Logo" src="{% static 'common/images/icons/youtube.svg' %}">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="col-md-8 offset-lg-1">
+          <div class="row text-white">
+
+            <div class="col-md-3 col-6">
+              <ul class="subtitle">
+                <li class="mb-2">
+                  <a href="{% url 'film-list' %}" class="h3 text-white">{% trans 'Films' %}</a>
+                </li>
+                <li class="mb-2">
+                  <a href="{% url 'post-list' %}" class="h3 text-white">{% trans 'Blog' %}</a>
+                </li>
+                <li class="mb-2">
+                  <a href="{% url 'training-home' %}" class="h3 text-white">{% trans 'Training'%} </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-6">
+              <a href="/training/pipeline-and-tools/" class="h3 text-white">{% trans 'Pipeline and Tools' %}</a>
+              <ul class="mb-0">
+                <li>
+                  <a href="https://gitlab.com/blender/CloudRig" class="small subtitle" rel="nofollow" target="_blank">{% trans 'Cloud Rig' %}</a>
+                </li>
+                <li>
+                  <a href="/blog/kitsu-addon-for-blender/" class="small subtitle" rel="nofollow" target="_blank">{% trans 'Blender Kitsu' %}</a>
+                </li>
+                <li>
+                  <a href="/blog/contact-sheet-addon/" class="small subtitle" rel="nofollow" target="_blank">{% trans 'Contact Sheet Add-on' %}</a>
+                </li>
+                <li>
+                  <a href="https://developer.blender.org/diffusion/BSTS/browse/master/blender-purge/" class="small subtitle" rel="nofollow" target="_blank">{% trans 'Blender Purge' %}</a>
+                </li>
+                <li>
+                  <a href="https://cloud.blender.org/services" class="small subtitle" rel="nofollow" target="_blank">{% trans 'Blender Cloud Services' %}</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-6">
+              <a href="{% url 'character-list' %}" class="h3 text-white">{% trans 'Characters' %}</a>
+              <ul>
+                {% for character in featured.characters|slice:":4" %}
+                  <li>
+                    <a href="{% url 'character-detail' slug=character.slug %}" class="small subtitle">{{ character.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-6">
+              <a href="/" class="h3 text-white">{% trans 'Studio' %} </a>
+              <ul class="mb-0">
+                <li>
+                  <a href="/terms-and-conditions" class="small subtitle">{% trans 'Terms' %} &amp; {% trans 'Conditions' %}</a>
+                </li>
+                <li>
+                  <a href="/privacy" class="small subtitle">{% trans 'Privacy Policy' %}</a>
+                </li>
+                <li>
+                  <a href="/contact" class="small subtitle">{% trans 'Contact' %}</a>
+                </li>
+                <li>
+                  <a href="/remixing/" class="small subtitle">{% trans 'Remixing Music'%}</a>
+                </li>
+                <li>
+                  <a href="https://www.blender.org/" target="_blank" class="small subtitle">{% trans 'Blender.org' %}</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,137 @@
+{% extends 'common/base.html' %}
+{% load pipeline %}
+{% load static %}
+{% load i18n %}
+{% block title_append %} -{% trans 'Search' %}{% endblock title_append %}
+
+{% block bodyclasses %}{% trans 'search spacer' %}{% endblock bodyclasses %}
+
+{% block content %}
+
+  <div class="container-xxl">
+
+    <section>
+
+      <div class="row">
+        <div class="col search-bar-wrapper">
+          <div class="input-group" id="search-container">
+            <span class="input-group-text">
+              <i class="material-icons">search</i>
+            </span>
+
+            {% comment %} Search Bar (from JS) {% endcomment %}
+
+            {% comment %} X Button (from JS) {% endcomment %}
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row search-filters mb-3 d-md-none">
+
+        <div class="col-auto">
+          <a class="btn btn-sm btn-dark" data-bs-toggle="collapse" href="#filters" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            <i class="material-icons">filter_list</i>
+           {% trans 'Filters' %}
+          </a>
+        </div>
+
+        <div class="col-auto ms-auto">
+          <div class="input-group input-group-sm" id="sorting-mobile">
+
+            <label class="input-group-text" for="searchLicence">{% trans 'Sort by:' %}</label>
+
+            {% comment %}
+              <select class="form-select" >
+                <option selected>{% trans 'Relevance' %}</option>
+                <option value="1">{% trans 'Date (New first)'%}</option>
+                <option value="2">{% trans 'Date (Old first)'%}</option>
+              </select>
+            {% endcomment %}
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row search-filters collapse" id="filters">
+
+        <div class="col-md-auto mb-3">
+          <div class="input-group input-group-sm" id="searchType">
+
+            <label class="input-group-text">{% trans 'Type:'%}</label>
+
+
+          </div>
+        </div>
+
+        <div class="col-md-auto mb-3">
+          <div class="input-group input-group-sm" id="searchMedia">
+
+            <label class="input-group-text">{% trans 'Media:' %}</label>
+
+
+          </div>
+        </div>
+
+        <div class="col-md-auto mb-3">
+          <div class="input-group input-group-sm" id="searchFilm">
+            <label class="input-group-text">{% trans 'Film:' %}</label>
+          </div>
+        </div>
+
+        {% comment %}
+          <div class="col-md-auto mb-3">
+            <div class="input-group input-group-sm" id="searchFree">
+              <div class="input-group-prepend">
+                <label class="input-group-text">{% trans 'Is Free:'%}</label>
+              </div>
+
+            </div>
+          </div>
+        {% endcomment %}
+
+        {% comment %} <div class="col-md-auto mb-3">
+          <div class="input-group input-group-sm" id="searchLicence">
+            <div class="input-group-prepend">
+              <label class="input-group-text">{% trans 'License:' %}</label>
+            </div>
+
+          </div>
+        </div> {% endcomment %}
+
+        <div class="col-auto ms-auto mb-3 d-none d-md-block">
+          <div class="input-group input-group-sm" id="sorting">
+
+            <label class="input-group-text" for="searchLicence">{% trans 'Sort by:' %}</label>
+
+            {% comment %}
+              <select class="form-select">
+                <option selected>{% trans 'Relevance' %}</option>
+                <option value="1">{% trans 'Date (New first)' %}</option>
+                <option value="2">{% trans 'Date (Old first)' %}</option>
+              </select>
+            {% endcomment %}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="row" id="hits"></div>
+
+  </div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+
+  {% javascript 'vendor_instantsearch' %}
+  <script>
+    const fileIconURL = '{% static "common/images/icons/file.svg" %}'
+  </script>
+  {{ search_client_config|json_script:"search-client-config" }}
+  {% javascript 'search' %}
+
+{% endblock scripts %}

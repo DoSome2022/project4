@@ -1,0 +1,36 @@
+{% extends 'films/base_films.html' %}
+{% load common_extras %}
+{% load i18n %}
+{% block title_prepend %}{{ flatpage.title }} - {{ film.title }} - {% endblock title_prepend %}
+
+{% block bodyclasses %}{% trans 'spacer has-secondary-nav' %}{% endblock bodyclasses %}
+
+{% block meta %}
+  {% capture title %}{{ film.title }}: {{ flatpage.title }}{% endcapture %}
+  {% firstof title flatpage.title film.title as title %}
+  {% with description=film.description %}
+    {% include 'common/components/meta.html' %}
+  {% endwith %}
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid pt-4">
+    <section class="flat-page-content">
+      {% if user_can_edit_flatpage %}
+        <div class="btn-admin">
+          <a href="{{ flatpage.admin_url }}" class="btn btn-sm btn-secondary btn-icon btn-float">
+            <i class="material-icons">create</i>
+          </a>
+        </div>
+      {% endif %}
+      <div class="text-center mb-3">
+        <p class="subtitle">{{ film.title }}</p>
+        <h1 class="mb-0">{{ flatpage.title }}</h1>
+      </div>
+    </section>
+    <section class="flat-page-content editorial-text-area mb-4">
+      <div>{% with_shortcodes flatpage.content_html %}</div>
+    </section>
+  </div>
+
+{% endblock content %}

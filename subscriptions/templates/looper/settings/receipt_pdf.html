@@ -1,0 +1,146 @@
+{% extends "pdf_layout.html" %}
+{% load subscriptions %}
+{% load i18n %}
+{% block title %}{% trans 'Blender Studio Invoice' %} #{{ order.id }}{% endblock %}
+{% block main_content %}
+  <table style="margin-bottom: 6em">
+    <tr>
+      <td colspan=2>
+        <p><strong>{% trans 'Billing Address' %}</strong></p>
+       {% trans 'E-mail:' %} {{ order.email }}
+        <p>
+          {{ order.billing_address|linebreaksbr }}
+        </p>
+        {% if order.vat_number %}
+          <p>
+            <b>{% trans 'VATIN' %}</b>: {{ order.vat_number }}
+          </p>
+        {% endif %}
+        {% if order.external_reference %}
+          <p>
+            <b>{% trans 'Invoice ref.'%}</b>: {{ order.external_reference }}
+          </p>
+        {% endif %}
+      </td>
+
+      <td>
+        <table>
+          <tr>
+            <td>
+              {% trans 'Invoice Number:'%}
+            </td>
+            <td>
+              {{ order.display_number }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {% trans 'Invoice Date:' %}
+            </td>
+            <td>
+              {{ order.paid_at|default:order.created_at|date:"N j, Y" }}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {% trans 'Payment method:'%}
+            </td>
+            <td>
+              {% if order.payment_method.method_type == 'ba' %}
+                {{ order.payment_method.recognisable_name }}
+              {% else %}
+                {{ order.payment_method.get_method_type_display }}
+              {% endif %}
+            </td>
+          </tr>
+          {% if order.payment_method.method_type == 'ba' %}
+            <tr><td colspan=2></td></tr>
+            <tr>
+              <td colspan=2>
+                <pre>{% include "subscriptions/components/bank_transfer_details.txt" %}</pre>
+              </td>
+            </tr>
+          {% endif %}
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  {% with taxable=order.taxable subscription=order.subscription team=order.subscription.team %}
+    <table>
+      <thead>
+        <tr>
+          <th colspan=2 class="outline-left">{% trans 'Product' %}</th>
+          <th class="outline-y">{% trans 'Quantity' %}</th>
+          <th class="outline-right">{% trans 'Price' %}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="first underline">
+          <td colspan=2 style="padding-left: 3px">
+            {{ subscription.plan.product.name }}
+            <div style="font-size: small; padding-left: 7px;">
+              <div>
+                <b>{% if team %}{% trans 'Team' %}{% endif %}{% trans 'Subscription #:' %}</b> {{ order.subscription_id }}
+              </div>
+              <div>
+                <b>{% trans 'Renewal type:' %}</b> {{ subscription.collection_method|capfirst }}
+              </div>
+              <div>
+                <b>{% trans 'Renewal period:' %}</b> {{ order.subscription|renewal_period|capfirst }}
+              </div>
+              {% if team %}
+                <div>
+                  <b>{% trans 'Seats:' %}</b> {% if team.seats %}{{ team.seats }}{% else %}{% trans 'unlimited' %}{% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            {% if taxable.tax_is_charged %}
+              {{ taxable.price_without_tax.with_currency_symbol_nonocents }}
+            {% else %}
+              {{ order.price.with_currency_symbol_nonocents }}
+            {% endif %}
+          </td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan=2>
+            {% if taxable.tax_type.value == 'VATRC' %}
+              <small>
+               {% trans 'Under the regulations of the EU we do not charge VAT on services provided to VAT-registered businesses in other member countries. According to the reverse-charge regulations on tax liability transfers to the recipient of services.' %} 
+              </small>
+            {%  endif %}
+          </td>
+          <td class="underline-muted"><b>{% trans 'Subtotal' %}</b></td>
+          <td class="underline-muted">
+            {% if taxable.tax_is_charged %}
+              {{ taxable.price_without_tax.with_currency_symbol_nonocents }}
+            {% else %}
+              {{ order.price.with_currency_symbol_nonocents }}
+            {% endif %}{% if taxable.tax_type.value %} (ex. VAT){% endif %}
+          </td>
+        </tr>
+        {% if taxable.tax_is_charged %}
+          <tr>
+            <td colspan=2></td>
+            <td class="underline"><b>{% trans 'VAT' %}</b> ({{ taxable.tax_rate }}%)</td>
+            <td class="underline">{{ taxable.tax.with_currency_symbol_nonocents }}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <td colspan=2></td>
+          <td class="underline"><b>{% trans 'Total' %}</b></td>
+          <td class="underline"><b>{{ order.price.with_currency_symbol_nonocents }}</b></td>
+        </tr>
+      </tfoot>
+    </table>
+  {% endwith %}
+{% endblock %}

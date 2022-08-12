@@ -1,0 +1,110 @@
+@import "forms/labels";
+@import "forms/form-text";
+@import "forms/form-control";
+@import "forms/form-select";
+@import "forms/form-check";
+@import "forms/form-range";
+@import "forms/floating-labels";
+@import "forms/input-group";
+@import "forms/validation";
+
+// Slider (switch)
+
+/* The switch - the box around the slider */
+.form-switch {
+  display: inline-block;
+  height: 22px;
+  position: relative;
+  width: 39px;
+
+  input {
+    height: 0;
+    opacity: 0;
+    width: 0;
+  }
+}
+
+/* Hide default HTML checkbox */
+/* The slider */
+.slider {
+  -webkit-transition: .4s;
+  background-color: $input-gray;
+  border-radius: 20px;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+
+  &::before {
+    -webkit-transition: .4s;
+    background-color: $white;
+    border-radius: 20px;
+    bottom: 0;
+    content: close-quote;
+    height: 22px;
+    left: 0;
+    position: absolute;
+    transition: .4s;
+    width: 22px;
+  }
+}
+
+input:checked+.slider {
+  background-color: $primary;
+
+  &::before {
+    -ms-transform: translateX(17px);
+    -webkit-transform: translateX(17px);
+    transform: translateX(17px);
+  }
+}
+
+.settings-form {
+  .form-check-label {
+    line-height: 2.1rem !important;
+
+    input {
+      vertical-align: middle !important;
+      margin-right: 4px;
+    }
+  }
+}
+
+.form-control {
+
+  &:disabled,
+  &[readonly] {
+
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: $spacer * 2;
+  }
+
+  &:disabled {
+    opacity: .5;
+  }
+
+  &[readonly] {
+    opacity: .75;
+  }
+}
+
+.form-control {
+
+  &.is-valid,
+  &.is-invalid {
+    border-width: 2px;
+
+  }
+}
+
+.invalid-feedback {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}

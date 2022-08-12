@@ -1,0 +1,176 @@
+{% load static %}
+{% load common_extras %}
+{% load i18n %}
+
+<div class="production-log-week">
+
+  <div class="production-log-week-header">
+
+    {% if user_can_edit_production_log %}
+
+      <a href="{{ production_log.admin_url }}"
+        class="btn btn-ctrl-sm btn-sm btn-icon btn-secondary btn-float btn-admin top-0 right-0">
+        <i class="material-icons">create</i>
+      </a>
+
+    {% endif %}
+
+    <div class="row production-log-header-summary">
+
+
+      <div class="col-md-8 production-log-header-summary-text">
+        <div class="row">
+          <div class="col-md-12">
+            <a href="{{ production_log.url }}" class="h2">{{ production_log.name }}</a>
+            {% if production_log.start_date %}
+              <p class="subtitle small mb-2"><i class="material-icons icon-inline small">{% trans 'calendar_today' %}</i>
+                {{ production_log.start_date|date:'M jS Y' }}</p>
+            {% endif %}
+
+            {% if production_log.summary %}
+              <div class="production-log-header-summary-text-inner-wrapper mb-0">
+                <span class="fw-bold">This week on {{ film.title }}:</span>
+                {% with_shortcodes production_log.summary|markdown %}
+              </div>
+              {% if production_log.youtube_link != "" %}
+                <a href="{{ production_log.youtube_link }}" class="video-modal-link btn btn-primary mt-3" data-bs-toggle="modal"
+                  data-bs-target="#videoModal" data-video="{{ production_log.youtube_link }}">{% trans 'Watch Video' %}</a>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if production_log.thumbnail %}
+      <div class="col-md-4 production-log-header-summary-image">
+
+        <div style="margin-left: 17.5%" class="d-none d-sm-block">
+        {% if production_log.youtube_link != "" %}
+          <a class="video-modal-link video-preview" data-bs-toggle="modal" data-bs-target="#videoModal"
+            data-video="{{ production_log.youtube_link }}">
+            <img src="{{ production_log.thumbnail_m_url }}" alt="Video Preview">
+          </a>
+        {% elif production_log.thumbnail %}
+          <img src="{{ production_log.thumbnail_m_url }}" alt="production log preview">
+        {% endif %}
+        </div>
+
+      </div>
+      {% endif %}
+
+
+    </div>
+
+  </div>
+
+  <div class="production-log-individual-wrapper">
+    {% for entry in production_log.log_entries.all %}
+      <div class="row production-log-individual">
+        <div class="col-md-2 production-log-individual-summary">
+
+          <div class="production-log-individual-summary-profile row">
+            <img src="{{ entry.author_image_url }}" class="profile-image profile ms-2" alt="{{ entry.author_name }}">
+
+            <div class="col-auto flex-shrink-1">
+              <p class="profile-name"><strong>{{ entry.author_name }}</strong></p>
+              <p class="profile-title subtitle text-white-50 x-small">{{ entry.author_role }}</p>
+            </div>
+          </div>
+          {% with entry_author=entry.author|default:entry.user contributors=entry.contributors first_contributor=entry.contributors|first %}
+            {% if contributors|length > 1 or contributors|length == 1 and first_contributor.pk != entry_author.pk %}
+              <p class="mb-1 x-small subtitle">{% trans 'Other Contributors:' %}</p>
+
+              <div class="contributors d-flex align-items-center mb-1">
+
+                <div class="d-flex">
+                  {% for contributor in contributors %}
+                    {% if contributor.pk != entry_author.pk %}
+                      <img src="{{ contributor.image_url }}" alt="{{ contributor.full_name }}" class="profile rounded-circle">
+                    {% endif %}
+                  {% endfor %}
+                </div>
+
+                <button class="btn btn-xs btn-icon btn-dark ms-2" data-bs-toggle="dropdown" href="">
+                  <i class="material-icons">arrow_drop_down</i>
+                </button>
+
+                <div class="dropdown-menu mt-2 px-2 pt-2 pb-0">
+                  <h3 class="mb-2">{% trans 'Other Contributors' %}</h3>
+                  {% for contributor in contributors %}
+                    {% if contributor.pk != entry_author.pk %}
+                      <div class="d-flex mb-2 row mx-0">
+                        <div style="background-image:url('{{ contributor.image_url }}');" class="profile"></div>
+                        <div class="col-auto">
+                          <h4 class="comment-name mb-0">{{ contributor.full_name }}</h4>
+
+                          {% for crew in contributor.film_crew.all %}
+                            {% if crew.film.id == film.id %}
+                              <p class="subtitle text-white-50 x-small">{{ crew.role }}</p>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+
+              </div>
+            {% endif %}
+          {% endwith %}
+        </div>
+        <div class="col-md-10 production-log-individual-files">
+          <div class="row">
+            <div class="col-md-8 pb-3">
+              <p>{{ entry.description }}</p>
+            </div>
+            {% if user_can_edit_production_log_entry %}
+              <div class="btn-admin btn-float">
+                <a href="{{ entry.admin_url }}" class="btn btn-xs btn-icon btn-secondary">
+                  <i class="material-icons">create</i>
+                </a>
+              </div>
+            {% endif %}
+          </div>
+          <div class="files">
+            <div class="row row-cols-1 row-cols-md-3  row-cols-2">
+              {% for asset in entry.assets.all|slice:':3' %}
+                {% if asset.is_published %}
+                  {% include "common/components/file_production_log.html" with card_sizes="col-6 col-sm-6 col-md-6 col-lg-4" aspect_ratio="widescreen" asset=asset site_context="production_logs" %}
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            {% if entry.assets.count > 3 %}
+              <div class="collapse" id="entry-{{ entry.id }}">
+                <div class="row row-cols-1 row-cols-md-3 row-cols-2">
+                  {% for asset in entry.assets.all|slice:'3:' %}
+                    {% if asset.is_published %}
+                      {% include "common/components/file_production_log.html" with card_sizes="col-6 col-sm-6 col-md-6 col-lg-4" aspect_ratio="widescreen" asset=asset site_context="production_logs" %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="row production-log-individual-files-show-more">
+                <div class="col text-center">
+                  <a data-bs-toggle="collapse" data-objects-type="files" href="#entry-{{ entry.id }}" role="button"
+                    aria-expanded="false" aria-controls="entry-{{ entry.id }}"
+                    class="btn btn-sm btn-dark collapsed show-more-less">{% trans 'Show' %} </a>
+                </div>
+              </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+  </div>
+
+  {% if user_can_edit_production_log %}
+    <div class="add-entry text-center">
+      <a href="{% url 'admin:films_productionlogentry_add' %}?production_log={{ production_log.pk }}"
+        class="btn btn-sm btn-darkhighlight-strong">{% trans 'Add Entry' %}</a>
+    </div>
+  {% endif %}
+
+</div>

@@ -1,0 +1,13 @@
+{% load i18n %}
+{% extends 'common/errors/base.html' %} {% block page_title %}{% trans 'Forbidden' %} {% endblock %}
+
+{% block errorbody %}
+  <h1>{% trans 'Nope.' %}</h1>
+  <p>{% trans 'For some reason you are not allowed to do this.'%}</p>
+  {% if user.is_authenticated %}
+    <p>{% trans 'Try'%} <a href="{% url 'home' %}">{% trans 'exploring your homepage' %}</a>{% trans 'instead.'%} </p>
+  {% else %}
+    <p>{% trans 'Maybe you'd be allowed after logging in?' %}</p>
+    <p><a class="btn btn-primary" href="{% url 'oauth:login' %}">{% trans 'Sign in' %}</a></p>
+  {% endif %}
+{% endblock %}

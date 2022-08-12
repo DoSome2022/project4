@@ -1,0 +1,86 @@
+{% extends 'checkout/checkout_base.html' %}
+{% load common_extras %}
+{% load looper %}
+{% load pipeline %}
+{% load i18n %}
+{% block content %}
+
+  <div class="payment-header">
+    <h2 class="payment-header-title">{% trans 'Payment'%}</h2>
+    <div class="d-flex justify-content-between">
+      <p class="mb-0  small">{% trans 'Step 3: Select a payment method.'%}</p>
+      <p class="small  mb-0">{% trans '3 of 3'%}</p>
+    </div>
+
+  </div>
+
+  <form id="payment-form" class="checkout-form" method="post" action="{% url 'subscriptions:join-confirm-and-pay' plan_variation_id=current_plan_variation.pk %}"
+    data-looper-payment-form="true" data-braintree-client-token="{{ client_token }}">
+    {% csrf_token %}
+
+    {% url 'subscriptions:join-billing-details' plan_variation_id=current_plan_variation.pk as billing_url %}
+    {% url "subscriptions:join" current_plan_variation.pk as plan_url %}
+
+    {% with form|add_form_classes as form %}
+
+      <div class="payment-content">
+        <div class="payment-content-inner">
+          <fieldset class="payment-form-payment-method">
+            {% include "subscriptions/components/payment_form.html" %}
+          </fieldset>
+
+
+          {% if GOOGLE_RECAPTCHA_SITE_KEY %}
+            <div id="recaptcha" class="g-recaptcha" data-sitekey="{{ GOOGLE_RECAPTCHA_SITE_KEY }}" data-size="invisible">
+            </div>
+          {% endif %}
+
+        </div>
+
+        <div class="payment-tabs-footer border-bottom border-1">
+          <div class="row">
+            {% if messages %}
+              {% for message in messages %}
+                <p {% if message.tags %} class="alert alert-sm alert-success alert-{{ message.tags }}" {% endif %}>
+                  {{ message }}
+                </p>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          <div class="row">
+            <div class="col-auto">
+              <p class="subtitle small fw-bold mb-0">{% trans 'Plan:' %}</p>
+            </div>
+
+            <div class="col text-end">
+              <p class="subtitle small mb-0">{{ current_plan_variation.collection_method|capfirst }} (<a href="{{ plan_url }}" class="subtitle underline" >{% trans 'Change' %}</a>)</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-auto">
+              <p class="subtitle small fw-bold mb-0">{% trans 'Billing:' %}</p>
+            </div>
+
+            <div class="col text-end">
+              <fieldset class="checkout-form-billing-address-readonly">
+                {% include "subscriptions/components/billing_address_form_readonly.html"%}
+              </fieldset>
+              <p class="subtitle small mb-0">(<a href="{{ billing_url }}" class="subtitle underline" >{% trans 'Change'%}</a>)</p>
+            </div>
+          </div>
+        </div>
+
+        {% include 'subscriptions/components/total.html' with button_text=_("Confirm and Pay") %}
+
+      </div>
+    {% endwith %}
+  </form>
+{% endblock content %}
+
+{% block scripts %}
+  {% javascript "subscriptions" %}
+
+  {% include "looper/scripts.html" with with_recaptcha=True %}
+{% endblock scripts %}

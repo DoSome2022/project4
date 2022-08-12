@@ -1,0 +1,476 @@
+body {
+  &.spacer {
+    @include media-breakpoint-up(md) {
+      margin-top: $spacer;
+    }
+
+    // @include media-breakpoint-down(sm) {
+    //   margin-top: #{$navbar-height + $spacer};
+    // }
+  }
+
+  &.has-secondary-nav {
+
+    .navbar {
+      border-radius: $border-radius-lg $border-radius-lg 0 0;
+      top: #{- $navbar-height};
+
+      &.scroll {
+        top: $spacer / 2;
+      }
+    }
+
+    &.spacer {
+      // margin-top: $spacer;
+
+      // @include media-breakpoint-down(sm) {
+      //   margin-top: #{$navbar-height + $spacer};
+      // }
+    }
+
+    div.spacer {
+      height: #{$navbar-height + $secondary-navbar-height + $spacer};
+    }
+
+    div.spacer-n {
+      margin-top: #{ - $navbar-height - $secondary-navbar-height - $spacer};
+    }
+  }
+}
+
+div.spacer {
+  height: #{$navbar-height + $spacer};
+}
+
+div.spacer-n {
+  margin-top: #{ - $navbar-height - $spacer};
+}
+
+
+
+.navbar {
+  position: sticky;
+  top: #{- $navbar-height };
+  left: 0;
+  right: 0;
+  align-items: stretch;
+  background: $navigation-gray;
+  border: 1px solid $input-gray;
+  border-radius: $border-radius-lg;
+  flex-wrap: nowrap; // allow us to do the line break for collapsing content
+  margin: 0 auto;
+  // max-width: calc(100% - #{$spacer * 2});
+  min-height: $navbar-height;
+  padding: $navbar-padding-y $navbar-padding-x;
+  transition: margin-left $nav-drawer-animation-duration, top $nav-drawer-animation-duration;
+  width: 100%;
+  z-index: 1040;
+
+  &.hover,
+  &.scroll {
+    top: $spacer / 2 !important;
+  }
+
+  a {
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .container-fluid {
+    padding: 0 $spacer / 2;
+  }
+
+  // Because flex properties aren't inherited, we need to redeclare these first
+  // few properties so that content nested within behave properly.
+  .profile {
+    margin-left: 0;
+  }
+
+  .navdrawertoggle {
+    display: flex;
+
+    i {
+      font-size: $x-large-font-size;
+    }
+  }
+
+  .searchbar-wrapper {
+    padding: 0 $spacer / 2;
+  }
+
+  .navbar-main-nav {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    align-items: center;
+    color: $highlight-white-xstrong;
+    display: flex;
+    flex-grow: 1;
+
+    .list-group-item {
+      &:hover, &:focus {
+        background: $highlight-white;
+        color: $white;
+        text-decoration: none;
+      }
+
+      align-items: center;
+      display: flex;
+      height: 100%;
+      transition: $transition-base;
+      white-space: nowrap;
+
+    }
+
+    span {
+      margin: 0;
+
+    }
+  }
+
+  .navdrawer-offset {
+    width: 100%;
+  }
+
+  .navbar-main-mobile {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+
+    align-items: center;
+    display: flex;
+    padding: 0 $spacer / 2;
+  }
+
+  .navbar-main-nav-toolbar {
+    @include media-breakpoint-down(md) {
+      padding: 0 $spacer / 2;
+    }
+
+    .search-button {
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+
+      display: none;
+      margin-right: $spacer / 2;
+    }
+
+    .btn-profile {
+      position: relative;
+      margin-left: 0;
+    }
+
+    align-items: center;
+    display: flex;
+    padding: 0 0 0 $spacer / 2;
+    position: relative;
+  }
+
+  @include media-breakpoint-down(sm) {
+    // top: $spacer / 2;
+    border-radius: $border-radius;
+    max-width: calc(100% - #{$spacer});
+    margin: $spacer / 2;
+
+    .container {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .navdrawertoggle {
+      display: flex;
+    }
+
+    .search-button {
+      display: none;
+    }
+
+    .searchbar-wrapper {
+      display: none;
+    }
+  }
+
+  .container-fluid {
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+  }
+
+  .container,
+  .container-fluid {
+    align-items: stretch;
+  }
+
+  +.navbar-secondary {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+.navbar-secondary {
+  @include media-breakpoint-down(sm) {
+    z-index: 1020;
+    border: 1px solid $input-gray;
+    max-width: 100%;
+    width: calc(100% - #{$spacer});
+    border-radius: 0;
+    margin: -11px $spacer / 2 0;
+    top: -1px;
+  }
+
+  background: $navigation-gray;
+  border: 1px solid $input-gray;
+  // max-width: calc(100% - #{$spacer * 2});
+  width: 100%;
+  position: sticky;
+  top: -1px;
+  z-index: 1030;
+  border-radius: $border-radius;
+  margin: -1px auto 0 auto;
+  transition: top $nav-drawer-animation-duration;
+
+  &.hover,
+  &.scroll {
+    top: #{$navbar-height + $spacer / 2 - 1} !important;
+
+    .show-on-scroll {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .show-on-scroll {
+      display: none !important;
+    }
+  }
+
+  .navbar-main-nav-toolbar {
+    align-items: center;
+    display: flex;
+    padding: 0 0 0 10px;
+    position: relative;
+    margin-left: auto;
+  }
+
+  .navdrawer-offset {
+    border-top: 0;
+    margin-top: 0;
+  }
+
+  .container,
+  .container-fluid {
+    padding: 0;
+  }
+
+  .list-group,
+  .breadcrumb {
+    @include media-breakpoint-down(sm) {
+      flex-wrap: nowrap;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      // flex-wrap: wrap;
+      overflow-x: scroll;
+      scrollbar-width: none;
+    }
+
+    padding: 0 $spacer / 8;
+  }
+
+  .list-group-horizontal>.list-group-item+.list-group-item.active {
+    margin-left: $spacer / 8;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    padding-bottom: $spacer / 2;
+    padding-top: $spacer / 2;
+    white-space: nowrap;
+
+    &:last-child {
+      padding-right: $spacer;
+    }
+  }
+
+  .list-group-item {
+    margin: 0 $spacer / 8;
+
+    &:hover, &:focus {
+      color: $white;
+      text-decoration: none;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    border-radius: $border-radius !important;
+    padding: $spacer / 2 $spacer * .75;
+    transition: $transition-base;
+    white-space: nowrap;
+
+    &.logo {
+      padding: $spacer / 2;
+      line-height: 1.25;
+    }
+
+    &.icon {
+      line-height: 1;
+      padding: 7.25px 3.5px;
+
+      // &::after {
+      //   left: $spacer / 4;
+      //   width: calc(100% - #{$spacer / 2});
+      // }
+    }
+
+    &.btn-profile {
+      padding: 8.5px 3.5px;
+      cursor: pointer;
+
+      .profile {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &::after {
+      background: $highlight-white;
+      border-radius: $border-radius-sm !important;
+      content: close-quote;
+      height: calc(100% - #{$spacer / 2});
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 5px;
+      transition: $transition-base;
+      width: 100%;
+      z-index: -1;
+    }
+
+    // +.list-group-item {
+    //   margin-left: $spacer / 4 !important;
+    // }
+
+    &.search {
+      align-items: center;
+      display: flex;
+      margin-left: auto !important;
+      padding: $spacer / 8 $spacer / 4;
+
+      i {
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  @include media-breakpoint-down(sm) {
+    flex-grow: 1;
+    justify-content: center;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  &:hover, &:focus {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  align-items: center;
+  display: flex;
+  padding-left: $spacer;
+  padding-right: $spacer;
+  margin-right: $spacer / 2;
+  position: relative;
+
+  &:before {
+    content: close-quote;
+    transition: $transition-base;
+    display: block;
+    background: $highlight-white;
+    opacity: 0;
+    width: calc(100%);
+    height: calc(100% - #{$spacer});
+    position: absolute;
+    left: 0;
+    top: $spacer / 2;
+    border-radius: $border-radius;
+  }
+
+  img {
+    @include img-fluid;
+  }
+
+}
+
+.blender-navbar-brand {
+
+  padding: $spacer / 2 0;
+  line-height: 1;
+
+  &:hover, &:focus {
+    img {
+      opacity: 1;
+    }
+  }
+
+  img {
+    opacity: .75;
+    transition: $transition-base;
+    height: 20px;
+  }
+}
+
+.navbar-login-wrapper {
+  display: flex;
+  padding: $spacer / 2;
+  white-space: nowrap;
+
+  .btn {
+    margin: 0;
+  }
+
+  .login-button {
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+
+    margin-right: $spacer / 2;
+    display: none;
+  }
+}
+
+.profile-subscription-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: white;
+  font-size: $spacer * .6 !important;
+  padding: 1px;
+}
+
+.unsubscribed {
+  background: $danger;
+}
+
+.demo {
+  background: $blue;
+}
+
+.subscriber {
+  background: $success;
+}
+
+.blender-navbar {
+  z-index: 1046;
+}

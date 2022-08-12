@@ -1,0 +1,47 @@
+{% extends 'films/base_films.html' %}
+{% load static %}
+{% load i18n %}
+{% block title_prepend %}{% trans 'Production Logs' %} - {{ film.title }} - {% endblock title_prepend %}
+
+{% block bodyclasses %}{% trans 'spacer has-secondary-nav' %}{% endblock bodyclasses %}
+
+{% block content %}
+  <div class="container-xxl pt-4">
+    <section class="mb-5">
+      <!-- Latest Updates -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <h1 class="mb-1">{% trans 'Production Logs' %}</h1>
+          <p>{% trans 'Follow the latest updates and progress on' %}{{ film.title }}{% trans 'right here.' %}</p>
+        </div>
+        <div class="col-md-6">
+          {% with previous_month=date_list.1 %}
+            {% include 'films/components/pagination_dates.html' %}
+          {% endwith %}
+        </div>
+      </div>
+
+      {% if object_list|length %}
+
+        <div class="production-logs">
+          {% for production_log in object_list %}
+            {% include 'films/components/production_log_entry.html' %}
+          {% endfor %}
+        </div>
+
+        {% include 'films/components/pagination_dates.html' %}
+
+      {% else %}
+        <div class="row">
+          <div class="col text-center">
+            <div class="bg-secondary py-4 rounded">
+              <h3 class="mb-0">{% trans 'No Weeklies to show' %}</h3>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+  </section>
+  </div>
+{% endblock content %}

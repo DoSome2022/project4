@@ -1,0 +1,42 @@
+.breadcrumb {
+
+  align-items: center;
+  padding: 0 $spacer / 2;
+
+  @include media-breakpoint-down(md) {
+    margin: 0 (-$spacer);
+    overflow-x: auto;
+    padding: 0 $spacer;
+  }
+
+  .breadcrumb-item {
+    position: relative;
+    white-space: nowrap;
+    font-weight: normal;
+
+    a {
+      color: $breadcrumb-link-color;
+    }
+
+    &+.breadcrumb-item {
+      margin-left: $spacer / 2;
+
+      &::before {
+        left: -.4rem;
+        top: calc(50% - #{$spacer / 8});
+        transform: translateY(-50%);
+        position: absolute;
+        padding-right: 0;
+      }
+    }
+
+  }
+}
+
+.side-scroll {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

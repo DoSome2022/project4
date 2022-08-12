@@ -1,0 +1,342 @@
+.card {
+  @include button-float;
+
+  margin-bottom: map-get($spacers, 4);
+  transition: $transition-base;
+
+  .card-header {
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background: $highlight-black;
+    border-radius: $border-radius;
+  }
+
+  .btn-save-media {
+    @extend .btn-secondary;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+      opacity: 1;
+    }
+
+    opacity: 0;
+    right: $spacer / 2;
+    top: $spacer / 2;
+    transition: $transition-base;
+
+    &.checked {
+      @extend .btn-primary;
+      color: $white;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $white;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .progress-bar {
+      background: $primary;
+    }
+
+    .file-icon {
+      opacity: 1;
+    }
+
+    .card-body {
+      opacity: 1;
+    }
+
+    .card-title {
+      color: $white;
+    }
+  }
+
+  // To fix body underline issue
+  .card-body {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .progress-bar {
+    border-radius: $border-radius;
+    transition: $transition-base;
+  }
+
+  &.card-poster {
+    .card-header {
+      padding: 0;
+    }
+
+    .card-body {
+      padding-bottom: 0;
+    }
+
+    .card-header-link {
+      position: static;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .card-header {
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+
+    >* {
+      position: absolute;
+    }
+
+    .progress {
+      bottom: $spacer / 2;
+      left: $spacer / 2;
+      position: absolute;
+      width: calc(100% - #{$spacer});
+      border-radius: $border-radius;
+    }
+  }
+
+  .card-body {
+    color: $highlight-white-xstrong;
+    padding: $card-spacer-y $card-spacer-x;
+  }
+
+  .card-subtitle {
+    color: $highlight-white-xstrong;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+.card-subtitle-group {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .card-subtitle {
+    overflow: visible;
+    margin-right: $spacer / 2;
+
+    // &:last-child {
+    //   margin-right: 0;
+    //   overflow: hidden !important;
+    //   text-overflow: ellipsis;
+    // }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.card-subtitle {
+  @extend .small;
+  color: $highlight-black-xstrong;
+  margin-bottom: $spacer / 2;
+  margin-top: 0;
+}
+
+.card-title {
+  color: $highlight-white-xxstrong;
+  transition: $transition-base;
+  margin-bottom: $spacer / 4;
+
+  .badge {
+    margin-top: - $spacer / 8;
+  }
+
+  .icon-inline {
+    line-height: 1.25;
+    font-size: inherit;
+  }
+}
+
+.card-header-link {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .file-icon {
+    object-fit: contain;
+  }
+}
+
+.card-grid-item {
+  display: flex;
+}
+
+.card-link {
+  &:hover {
+    text-decoration: none;
+  }
+
+  +.card-link {
+    margin-left: $card-spacer-x;
+  }
+}
+
+.film-title-date {
+  @extend .subtitle
+}
+
+.badge-production {
+  margin-left: $spacer / 4;
+}
+
+// Optional textual caps
+//
+
+.card-footer {
+  margin-top: -$spacer / 2;
+  padding: $card-spacer-x;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom,
+.card-img-top-left {
+  flex-shrink: 0; // For IE: https://github.com/twbs/bootstrap/issues/29396
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  border-radius: $border-radius;
+}
+
+.card-img-top-left {
+  border-top-left-radius: $card-inner-border-radius;
+}
+
+
+//
+// Accordion
+//
+
+
+.accordion {
+  background: $navigation-gray;
+  border-radius: $border-radius;
+  border: 1px solid $input-gray;
+
+  >.card {
+    margin-bottom: 0;
+    background: none;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $input-gray;
+    }
+
+    >.card-header {
+      position: relative;
+      padding: 0;
+
+      .btn {
+        align-items: center;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $spacer;
+        text-align: left;
+        text-decoration: none;
+        width: 100%;
+        border-radius: 0;
+
+        &:hover {
+          background: $input-gray;
+
+          i {
+            text-decoration: none;
+          }
+        }
+      }
+
+      >* {
+        position: relative;
+      }
+    }
+
+    .card-body {
+      border-radius: $border-radius;
+      margin: $spacer / 2;
+      color: $white;
+    }
+
+    &::before {
+      content: none;
+    }
+
+  }
+}
+
+//
+// Custom Scroll
+//
+
+.card-scrollbar {
+  .card-body {
+    @include media-breakpoint-up(lg) {
+      height: 100%;
+      overflow-y: scroll;
+      position: absolute;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $highlight-white;
+    }
+  }
+}
+
+.card-comment {
+  .card-body {
+    display: block;
+  }
+}
+
+
+
+#hits {
+  .file-icon {
+    padding: $spacer * 2;
+  }
+}
+
+.card-text {
+  @extend .small;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: $spacer / 4;
+}

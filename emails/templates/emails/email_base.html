@@ -1,0 +1,89 @@
+{% load i18n %}
+{% load static %}
+<html style="
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;">
+  <head>
+    <style>
+      a {color: #009eff;}
+      a:hover {color: #66c5ff}
+    </style>
+  </head>
+  <body style="
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;">
+    <div style="
+      background-color: #1F1F1F;
+      color: #C7C7C7;
+      text-align:center;
+      font-family: 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Arial', 'Verdana', sans-serif;">
+
+      <div class="header" style="
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #282828;
+        border-bottom: thin solid #353535;
+        ">
+        <div class="container" style="
+          width: 90%;
+          max-width: 800px;
+          margin-left: auto; margin-right: auto;
+          font-family: 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Arial', 'Verdana', sans-serif;
+          text-align: left;">
+          {% block header_logo %}
+            <a style="float: left; text-decoration: none; line-height: 0;" href="https://Studio.blender.org">
+              <img src="{{ site_url }}{% static 'emails/images/blender_studio_logo_email_transparent.png' %}" alt="Blender Studio" title="Blender Studio"/>
+            </a>
+          {% endblock %}
+          <div style="clear:both"></div>
+        </div>
+      </div>
+      <div class="body" style="
+        width: 80%;
+        max-width: 800px;
+        background-color: #282828;
+        margin-top: 20px; margin-bottom: 20px;
+        margin-left: auto; margin-right: auto;
+        padding-top: 10px; padding-bottom: 10px;
+        padding-left: 20px; padding-right: 20px;
+        border: 1px solid #353535;
+        border-right: 1px solid #353535;
+        border-bottom: 1px solid #353535;
+        border-radius: 8px;
+        text-align: left;">
+
+        {% block body %}{% endblock body %}
+
+      </div>
+      <div class="footer" style="
+        width: 100%;
+        color: #C7C7C7;
+        font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+        font-size: 0.7em;
+        font-weight: lighter;
+        padding-top: 20px; padding-bottom: 20px;
+        background-color: #282828;
+        border-top: 1px solid #353535;
+        ">
+        <div class="container" style="
+          width: 80%;
+          max-width: 800px;
+          margin-left: auto; margin-right: auto;
+          text-align: left;">
+
+         {% trans 'Do you want to renew or check the status of your account?'%} <a href="{{ billing_url }}">{{ billing_url }}</a><br />
+
+          <br/>
+
+          {% block footer %}{% endblock footer %}
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

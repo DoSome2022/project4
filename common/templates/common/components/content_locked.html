@@ -1,0 +1,22 @@
+{% load static %}
+{% load common_extras %}
+{% load i18n %}
+<div class="content-locked">
+
+  <img class="img-fluid"
+    src="{% if background %}{{ background }}{% else %}{% static 'training/images/placeholders/card.jpg' %}{% endif %}">
+
+  <div class="content-locked-text">
+    {% if not request.user.is_authenticated %}
+      <h3>{% trans 'You need to login to view this content' %}</h3>
+      <p class="mb-3">{% trans 'You can join Blender Studio for €9.90/month and get access to all of our training & film content instantly!' %}</p>
+      <a href="{% url 'oauth:login' %}" class="btn btn-transparent btn-nav login-button">{% trans Login %}</a>
+      <a href="{% url 'subscriptions:join' %}" class="btn btn-primary">{% trans 'Join Blender Studio' %}</a>
+    {% else %}
+      <h3>{% trans 'You need to subscribe to view this content ' %}</h3>
+      <p class="mb-3">{% trans 'You can join Blender Studio for €9.90/month and get access to all of our training & film content instantly!' %}</p>
+      <a href="{% url 'subscriptions:join' %}" class="btn btn-primary">{% trans 'Join Blender Studio' %}</a>
+    {% endif %}
+  </div>
+
+</div>

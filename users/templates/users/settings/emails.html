@@ -1,0 +1,29 @@
+{% extends 'users/settings/base.html' %}
+{% load i18n %}
+{% block settings %}
+
+  <p class="subtitle">{% trans 'Settings' %}</p>
+  <h1 class="mb-3">{% trans 'Emails' %} </h1>
+  <div class="settings-form">
+    <div class="row">
+      <div class="col">
+        <h2 class="mb-0">{% trans 'Newsletter'%}</h2>
+        <p>{% trans 'We occasionally send out emails with updates on whats new in the Blender Studio.'%}</p>
+      </div>
+    </div>
+    <form id="settings-form" method="POST" action="/settings/emails">
+      {% for field in form %}
+        <div class="form-group form-check ps-0 mb-3">
+          {% csrf_token %}
+          {{ field.errors }}
+          <label class="form-check-label">
+            {{ field }}
+           {% trans 'Keep me updated with Blender Studio news.' %}
+          </label>
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary">{% trans 'Save changes' %}</button>
+    </form>
+  </div>
+
+{% endblock settings %}

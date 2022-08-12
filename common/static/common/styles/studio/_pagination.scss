@@ -1,0 +1,40 @@
+.page-link {
+  transition: $transition-base;
+  margin: 0 $spacer / 8;
+  border-radius: $border-radius;
+}
+
+.production-logs-dates {
+  border-radius: $border-radius;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: -$spacer / 2;
+
+  .page-item {
+    // display: none;
+    margin-bottom: $spacer / 2;
+
+    &.disabled {
+      .page-link {
+        margin: 0;
+      }
+    }
+
+    &:first-of-type {
+      display: list-item;
+    }
+
+    &:last-of-type {
+      display: list-item;
+    }
+
+    &.active {
+      display: list-item;
+
+      &+.page-item {
+        display: list-item;
+      }
+    }
+  }
+}

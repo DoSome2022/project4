@@ -1,0 +1,10 @@
+{% load i18n %}
+<button class="btn btn-xs btn-icon btn-float checkbox-favorite text-white {{ class }} {% if checked %} checked btn-primary{% endif %}"
+  {% if checked %} data-checked="checked" title=" Remove from saved for later" {% else %} title="Save for later"
+  {% endif %} data-bs-toggle="tooltip" data-placement="left">
+  {% if checked %}
+    <i class="material-icons checkbox-favorite-icon-checked">{% trans 'check' %}</i>
+  {% else %}
+    <i class="material-icons checkbox-favorite-icon-unchecked">{% trans 'add' %}</i>
+  {% endif %}
+</button>

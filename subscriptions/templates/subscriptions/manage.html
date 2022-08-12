@@ -1,0 +1,246 @@
+{% extends 'users/settings/base.html' %}
+{% load common_extras %}
+{% load humanize %}
+{% load looper %}
+{% load pipeline %}
+{% load i18n %}
+{% load subscriptions %}
+
+{% block settings %}
+  <p class="subtitle">{% trans 'Settings' %}</p>
+  <h1 class="mb-0">{% if subscription.team %}{% trans 'Team' %} {% endif %}{% trans 'Subscription #'%}{{ subscription.pk }}</h1>
+
+  <div class="settings-billing">
+    <div class="row">
+      <div class="col">
+
+        <ul class="list-group list-group-flush list-group-account">
+          {% with order=subscription.latest_order %}
+
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">
+                  <p class="h4 mb-0">{% trans 'Subscription Status'%}</p>
+                </div>
+                <div class="col-auto">
+                  {% include "subscriptions/components/pretty_status.html" %}
+                </div>
+              </div>
+            </li>
+
+            {% if subscription.status == 'on-hold' %}
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col">
+                    <p class="h4 mb-0 text-danger">{% trans 'Subscription On Hold' %}</p>
+                    <p class="x-small subtitle">{% trans 'Your subscription hasn't been paid for and is currently'%} <strong>{% trans 'on-hold'%}</strong>.
+                    </p>
+                  </div>
+
+                  {% if order.status != 'paid' and order.status != 'cancelled' %}
+                    <div class="col-auto">
+                      <a class="btn btn-sm btn-danger" href="{% url 'subscriptions:pay-existing-order' order_id=order.pk %}">{% trans 'Pay subscription'%}</a>
+                    </div>
+                  {% endif %}
+                </div>
+              </li>
+            {% endif %}
+
+            {% if subscription.status %}
+              <li class="list-group-item">
+                <div class=row>
+                  {% with taxable=subscription.taxable %}
+                    <div class="col">
+                      <p class="h4 mb-0">{% trans 'Billing Period' %}</p>
+                      {% if subscription.next_payment %}
+                        {% if subscription.status == 'active' or subscription.status == 'on-hold' %}
+                          {% if subscription.next_payment_in_future %}
+                            <p class="x-small subtitle">{% trans 'Your subscription will renew' %}
+                              {{ subscription.collection_method }}{% if subscription.collection_method == 'automatic' %}{% trans 'ally'%}{% else %}{% trans 'ly'%}{% endif %}
+                             {% trans 'on' %}
+                              {{ subscription.next_payment|date }}{% trans 'for' %}{{ subscription|recurring_pricing:taxable.price }}.</p>
+                          {% else %}
+                            <p class="x-small subtitle">{% trans 'Your last' %} {{ subscription.collection_method }}{% trans 'payment is due on' %}
+                              {{ subscription.next_payment|date }}{% trans 'for' %}{{ subscription|recurring_pricing:taxable.price }}.</p>
+                          {% endif %}
+                        {% elif subscription.status == 'pending-cancellation' %}
+                          <p class="x-small subtitle">{% trans 'Your subscription is pending cancellation. It will be deactivated on'%}
+                            {{ subscription.next_payment|date }}.</p>
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                    <div class="col-auto">
+                      <p class="mb-0 small">{{ subscription|recurring_pricing:taxable.price }}</p>
+                    </div>
+
+                  {% endwith %}
+                </div>
+              </li>
+            {% endif %}
+
+            {% if subscription.collection_method != 'managed' %}
+              {% with subscription.payment_method as pay_meth %}
+                <li class="list-group-item">
+
+                  <div class=row>
+                    <div class="col">
+                      <p class="h4 mb-0">{% trans 'Payment method' %}</p>
+                    </div>
+                    <div class="col-auto small">
+                      {% if not pay_meth %}
+                       {% trans 'Unknown' %}
+                      {% elif pay_meth.is_deleted %}
+                        {% trans 'The payment method previously used for this subscription was removed.'%}
+                      {% else %}
+                        {{ pay_meth.recognisable_name }}
+                      {% endif %}
+                    </div>
+
+                    {% if not subscription.is_cancelled %}
+                      <div class="col-auto">
+                        <a class="small"
+                          href="{% url 'subscriptions:payment-method-change' subscription_id=subscription.id %}">
+                          Change
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                </li>
+                {# Display bank details so that it was possible to make the bank transfer without #}
+                {# having to find the first subscription email from Studio, or to contact support. #}
+                {% if pay_meth.method_type == 'ba' and not subscription.is_cancelled and not subscription.is_active and order %}
+                  <li class="list-group-item">
+                    <div class=row>
+                      <div class="col">
+                        <p class="h4 mb-0 text-muted">{% trans 'Bank details' %}</p>
+                      </div>
+                      <div class="col-auto small">
+                        <pre>{% include "subscriptions/components/bank_transfer_details.txt" %}</pre>
+                      </div>
+                    </div>
+                    <div class=row>
+                      <div class="col small">
+                        <p>{% trans 'Use the following payment reference:' %}</p>
+                      </div>
+                      <div class="col-auto small">
+                        <pre>{% include "subscriptions/components/bank_transfer_reference.txt" %}</pre>
+                      </div>
+                    </div>
+                  </li>
+                {% endif %}
+              {% endwith %}
+            {% endif %}
+
+            {% include "subscriptions/components/manage_team.html" %}
+
+            {% comment %}
+              {% if subscription and subscription.collection_method == 'automatic' and 'cancel' not in subscription.status %}
+                <li class="list-group-item">
+                  <h3>{% trans 'Automatic Payment' %}</h3>
+                  {% if order %}
+                    {% if order.status == 'created' %}
+                    {% elif order.status == 'soft-failed' %}
+                      <p>
+                        {% trans 'Automatic payment failed on '} {{ transaction.recorded_at }},{% trans 'but we will automatically try again soon.'%}
+                       {% trans 'We have made'%} {{ order.collection_attempts }}{% trans 'of a maximum of' %}{{ settings.LOOPER_CLOCK_MAX_AUTO_ATTEMPTS }}
+                        {% trans 'collection attemps.'%}
+                        {% trans 'In the mean time, your subscription will remain active.'%}
+                      </p>
+                      <p>
+                        {% trans 'The last error we received was:'%} <span class="transaction-error">{{ transaction.failure_message }}</span>
+                      </p>
+                    {% elif order.status == 'failed' %}
+                      <p>
+                        {% trans 'Automatic payment failed multiple times, even after trying'%} {{ order.collection_attempts }}{% 'times.'%}
+                        {% trans 'As a result, your subscription has been deactivated. '%}
+                      </p>
+                      <p>
+                        {% trans 'The error we received was:' %} <span class="transaction-error">{{ transaction.failure_message }}</span>
+                      </p>
+                    {% elif order.status == 'paid' or order.status == 'fulfilled' %}
+                      {% with transaction=order.latest_transaction %}
+                        <p>
+                          {% trans'Payment was successful'%} <abbr title="{{ transaction.created_at }}">{{ transaction.created_at | naturaltime }}</abbr>.
+                        </p>
+                      {% endwith %}
+                    {% elif order.status == 'cancelled' %}
+                      <p>{% trans 'Automatic payment cancelled and will not be retried.'%} </p>
+                    {% endif %}
+                  {% endif %}
+                  {% if subscription.next_payment %}
+                    <p>{% trans 'The next automatic payment is scheduled for'%} {{ subscription.next_payment }}.</p>
+                  {% else %}
+                    <p>
+                      {% trans 'There is no next automatic payment scheduled. Please contact '%} 
+                      <a href="mailto:{{ ADMIN_MAIL }}?subject=No next payment for subscription {{ subscription.id }}">{{ ADMIN_MAIL }}</a>
+                     {% trans 'about this.' %}
+                    </p>
+                  {% endif %}
+                </li>
+              {% endif %}
+            {% endcomment %}
+
+            {% comment %}
+              {# FIXME(anna): implement Extend your subscription or remove this block #}
+              {% if may_be_charged %}
+                <hr />
+                <div class="row">
+                  <h3>{% trans 'Extend your Subscription' %}</h3>
+                  <p>{% trans 'You can arbitrarily extend your subscription by paying any amount.'%}
+                    <a href="{% url 'subscriptions:extend' subscription_id=subscription.id %}">{% trans 'Extend my subscription now!' %}</a>
+                  </p>
+                </div>
+              {% endif %}
+            {% endcomment %}
+
+            <li class="list-group-item">
+              <div class="row">
+                {% if subscription and subscription.status == 'cancelled' %}
+                  <div class="col">
+                    <p class="h4 mb-0">{% trans 'Subscription Cancelled' %}</p>
+                    <p class="x-small subtitle">{% trans 'This subscription has been cancelled. :( '%}</p>
+                  </div>
+                {% elif subscription and subscription.status == 'expired' %}
+                  <div class="col">
+                    <p class="h4 mb-0">{% trans 'Subscription Cancelled '%}</p>
+                    <p class="x-small subtitle">{% trans 'This subscription has expired.'%}</p>
+                  </div>
+                {% elif subscription.status == 'pending-cancellation' %}
+                  <div class="col">
+                    <p class="h4 text-warning mb-0">{% trans 'Pending Cancellation' %}</p>
+                    <p class="x-small subtitle">{% trans 'You will still have the remainder of the billing period to access content.'%}</p>
+                  </div>
+                  <div class="col-auto">
+                    <div class="d-flex justify-content-center">
+                      <p class="mb-0 small">{% trans 'Subscription expires on'%} {{ subscription.next_payment|date }}.</p>
+                    </div>
+                  </div>
+                {% else %}
+                  <div class="col">
+                    <p class="h4 mb-0">{% trans 'Cancel Subscription' %}</p>
+                    <p class="x-small subtitle">{% trans 'You will still have the remainder of the billing period to access content.'%}</p>
+                  </div>
+                  <div class="col-auto">
+                    <div class="d-flex justify-content-center">
+                      <a class="ms-auto small text-danger" href="{% url 'subscriptions:cancel' subscription.id %}">
+                        <span>{% trans 'Cancel subscription'%}</span>
+                      </a>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </li>
+          {% endwith %}
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <a class="btn btn-dark btn-sm" href="{% url 'user-settings-billing' %}"><i class="material-icons">arrow_back</i>{% trans 'Back to Overview' %}</a>
+      </div>
+    </div>
+
+  </div>
+{% endblock settings %}

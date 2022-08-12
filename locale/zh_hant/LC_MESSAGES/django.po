@@ -1,0 +1,2751 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-20 14:14+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\blog\templates\blog\blog_toolbar.html:67
+#: .\common\templates\common\components\modal_asset_zoom.html:22
+#: .\common\templates\common\components\navigation\buttons_toolbar.html:65
+#: .\films\templates\films\components\breadcrumbs.html:65
+#: .\training\templates\training\chapter.html:61
+#: .\training\templates\training\flatpage.html:52
+#: .\training\templates\training\training.html:67
+msgid "Report Problem"
+msgstr "報告問題"
+
+#: .\blog\templates\blog\post_detail.html:11
+#: .\blog\templates\blog\post_list.html:3
+#: .\blog\templates\blog\post_list.html:16
+#: .\common\templates\common\base.html:187
+#: .\common\templates\common\base.html:409
+#: .\common\templates\common\components\navigation\footer.html:42
+msgid "Blog"
+msgstr "部落格"
+
+#: .\blog\templates\blog\post_list.html:5
+#: .\characters\templates\characters\character_list.html:9
+#: .\films\templates\films\films.html:3
+#: .\users\templates\users\settings\base.html:7
+msgid "spacer"
+msgstr "間隔"
+
+#: .\blog\templates\blog\post_list.html:16
+msgid "Follow the latest updates from the Blender Studio."
+msgstr "關注Blender Studio的最新更新。"
+
+#: .\blog\templates\blog\subscribe_jumbotron.html:11
+#: .\common\templates\common\welcome.html:151
+msgid "Subscribe to Blender Studio today"
+msgstr "立即訂閱Blender Studio"
+
+#: .\characters\templates\characters\character_list.html:7
+#: .\characters\templates\characters\character_list.html:12
+#: .\common\templates\common\base.html:200
+#: .\common\templates\common\base.html:209
+#: .\common\templates\common\base.html:417
+#: .\common\templates\common\components\navigation\footer.html:72
+msgid "Characters"
+msgstr "動畫角色"
+
+#: .\characters\templates\characters\character_list.html:12
+msgid "Follow the latest updates from the Blender Cloud."
+msgstr "關注Blender Cloud的最新更新。"
+
+#: .\characters\templates\characters\character_list.html:27
+msgid "Character Library"
+msgstr "動畫角色庫"
+
+#: .\characters\templates\characters\character_list.html:28
+msgid "Characters from Blender Studio Open Movies."
+msgstr "Blender Studio Open Movies中的角色"
+
+#: .\characters\templates\characters\character_list.html:42
+msgid "All Characters"
+msgstr "所有動畫角色庫"
+
+#: .\characters\templates\characters\charactershowcase_detail.html:6
+#: .\characters\templates\characters\charactershowcase_detail.html:45
+msgid "Character Showcase"
+msgstr "角色展示"
+
+#: .\characters\templates\characters\charactershowcase_detail.html:70
+#: .\characters\templates\characters\components\card_character.html:42
+#: .\characters\templates\characters\components\card_character_showcase.html:42
+#: .\common\templates\common\components\cards\card_training.html:37
+#: .\common\templates\common\components\file.html:68
+#: .\common\templates\common\components\file_production_log.html:74
+#: .\common\templates\common\components\file_section.html:27
+#: .\common\templates\common\components\modal_asset.html:93
+#: .\common\templates\common\components\navigation\nav_drawer_section_file.html:10
+#: .\common\templates\common\components\navigation\nav_drawer_section_progress.html:22
+#: .\training\templates\training\components\card_production_log.html:17
+#: .\training\templates\training\components\card_training.html:49
+#: .\training\templates\training\section.html:71
+#: .\training\templates\training\training.html:36
+msgid "Free"
+msgstr "免費"
+
+#: .\characters\templates\characters\charactershowcase_detail.html:73
+#: .\characters\templates\characters\characterversion_detail.html:89
+msgid "Blender Version:"
+msgstr "Blender版本："
+
+#: .\characters\templates\characters\charactershowcase_detail.html:95
+#: .\characters\templates\characters\characterversion_detail.html:112
+#: .\common\templates\common\components\published_by.html:6
+#: .\common\templates\common\components\published_by.html:9
+msgid "Published by"
+msgstr "發文者"
+
+#: .\characters\templates\characters\characterversion_detail.html:6
+#: .\characters\templates\characters\characterversion_detail.html:44
+msgid "Character Rig"
+msgstr "角色裝備"
+
+#: .\characters\templates\characters\characterversion_detail.html:59
+msgid "visibility_off"
+msgstr "visibility_off"
+
+#: .\characters\templates\characters\characterversion_detail.html:123
+msgid "Showcases"
+msgstr "展示"
+
+#: .\characters\templates\characters\components\card_character.html:19
+#: .\characters\templates\characters\components\card_character_showcase.html:19
+#: .\common\templates\common\components\cards\card_blog.html:16
+msgid "New"
+msgstr "新規"
+
+#: .\characters\templates\characters\components\card_character.html:30
+#: .\characters\templates\characters\components\card_character_showcase.html:30
+#: .\common\templates\common\components\cards\card_blog.html:32
+msgid "Unpublished"
+msgstr "未發佈"
+
+#: .\comments\templates\comments\components\comment.html:31
+msgid "Archived"
+msgstr "已封存"
+
+#: .\comments\templates\comments\components\comment.html:35
+msgid "Show comment"
+msgstr "顯示評論"
+
+#: .\comments\templates\comments\components\comment.html:62
+msgid "Reply"
+msgstr "回覆"
+
+#: .\comments\templates\comments\components\comment.html:74
+msgid "Edit"
+msgstr "編輯"
+
+#: .\comments\templates\comments\components\comment.html:81
+#: .\films\templates\films\components\breadcrumbs.html:53
+msgid "Delete"
+msgstr "刪除"
+
+#: .\comments\templates\comments\components\comment.html:96
+msgid "Delete Tree"
+msgstr "刪除樹"
+
+#: .\comments\templates\comments\components\comment.html:103
+msgid "Hard Delete Tree"
+msgstr "硬刪除樹"
+
+#: .\comments\templates\comments\components\comment.html:112
+msgid "Un-archive comment"
+msgstr "取消存檔註釋"
+
+#: .\comments\templates\comments\components\comment.html:115
+msgid "Archive comment"
+msgstr "存檔評論"
+
+#: .\comments\templates\comments\components\comment.html:151
+msgid "Show more replies"
+msgstr "顯示更多回復"
+
+#: .\comments\templates\comments\components\comment_section.html:12
+#: .\common\templates\common\base.html:353
+#: .\common\templates\common\base.html:431
+#: .\films\templates\films\base_films.html:191
+msgid "Join"
+msgstr "加入"
+
+#: .\comments\templates\comments\components\comment_section.html:12
+msgid "to comment publicly."
+msgstr "公開發表評論。"
+
+#: .\common\templates\admin\change_form_object_tools.html:5
+msgid "History"
+msgstr "歷史"
+
+#: .\common\templates\admin\change_form_object_tools.html:8
+#: .\common\templates\admin\edit_inline\stacked.html:15
+#: .\common\templates\admin\edit_inline\tabular.html:37
+msgid "View on site"
+msgstr "現場查看"
+
+#: .\common\templates\admin\edit_inline\stacked.html:12
+#: .\common\templates\admin\edit_inline\tabular.html:34
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:53
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:57
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:70
+msgid "Change"
+msgstr "更改"
+
+#: .\common\templates\admin\edit_inline\stacked.html:12
+#: .\common\templates\admin\edit_inline\tabular.html:34
+#: .\subscriptions\templates\looper\settings\receipts.html:26
+msgid "View"
+msgstr "查看"
+
+#: .\common\templates\admin\edit_inline\tabular.html:20
+msgid "Delete?"
+msgstr "刪除？"
+
+#: .\common\templates\common\base.html:12
+#: .\common\templates\common\base.html:86
+#: .\common\templates\common\base.html:175
+#: .\common\templates\common\base.html:354
+#: .\common\templates\common\components\navigation\footer.html:14
+#: .\common\templates\rest_framework\api.html:27
+#: .\films\templates\films\base_films.html:192
+#: .\subscriptions\templates\checkout\checkout_base.html:37
+msgid "Blender Studio"
+msgstr "Blender Studio"
+
+#: .\common\templates\common\base.html:76
+msgid "Development Fund"
+msgstr "發展基金"
+
+#: .\common\templates\common\base.html:77
+msgid "Support Blender Core Development with a monthly contribution."
+msgstr "通過每月貢獻支援Blender核心開發。"
+
+#: .\common\templates\common\base.html:87
+msgid ""
+"The creators who share. Access production content and knowledge from the "
+"Open Movies."
+msgstr "分享的創作者。訪問開放電影中的製作內容和知識。"
+
+#: .\common\templates\common\base.html:96
+msgid "Blender Developer Blog"
+msgstr "Blender開發者博客"
+
+#: .\common\templates\common\base.html:97
+msgid "Latest news and updates on Blender development."
+msgstr "有關Blender開發的最新消息和更新。"
+
+#: .\common\templates\common\base.html:106
+msgid "Get Involved"
+msgstr "參與其中"
+
+#: .\common\templates\common\base.html:116
+msgid "Open Data"
+msgstr "開放數據"
+
+#: .\common\templates\common\base.html:117
+msgid "A platform to collect and display the Blender Benchmark results."
+msgstr "一個收集和顯示Blender基準測試結果的平臺。"
+
+#: .\common\templates\common\base.html:126
+msgid "Blender Docs"
+msgstr "Blender文檔"
+
+#: .\common\templates\common\base.html:127
+msgid "Documentation on Blender`s features, tools and API."
+msgstr "有關Blender的功能，工具和API的文檔。"
+
+#: .\common\templates\common\base.html:143
+msgid "Blender Conference"
+msgstr "Blender會議"
+
+#: .\common\templates\common\base.html:144
+msgid ""
+"The yearly event that brings together the Blender community in one place."
+msgstr "一年一度的活動，將Blender社區聚集在一個地方。"
+
+#: .\common\templates\common\base.html:154
+msgid "Get Blender"
+msgstr "獲取Blender"
+
+#: .\common\templates\common\base.html:155
+msgid "Download the latest Blender version, or try the beta!"
+msgstr "下載最新的Blender版本，或嘗試測試版！"
+
+#: .\common\templates\common\base.html:180
+#: .\common\templates\common\base.html:398
+#: .\common\templates\common\components\navigation\footer.html:39
+#: .\films\templates\films\films.html:8 .\films\templates\films\films.html:16
+msgid "Films"
+msgstr "電影"
+
+#: .\common\templates\common\base.html:183
+#: .\common\templates\common\base.html:404
+#: .\common\templates\common\components\navigation\footer.html:45
+#: .\training\templates\training\home_authenticated.html:28
+#: .\training\templates\training\home_not_authenticated.html:7
+#: .\training\templates\training\home_not_authenticated.html:12
+#: .\training\templates\training\home_not_authenticated.html:27
+msgid "Training"
+msgstr "訓練"
+
+#: .\common\templates\common\base.html:196
+#: .\common\templates\common\base.html:206
+#: .\common\templates\common\base.html:413
+#: .\common\templates\common\components\navigation\footer.html:51
+msgid "Pipeline and Tools"
+msgstr "管道和工具"
+
+#: .\common\templates\common\base.html:233
+#: .\common\templates\common\base.html:437
+#: .\films\templates\films\base_films.html:78
+#: .\users\templates\users\activity.html:11
+#: .\users\templates\users\notifications.html:7
+msgid "Notifications"
+msgstr "通知"
+
+#: .\common\templates\common\base.html:251
+#: .\films\templates\films\base_films.html:96
+#: .\users\templates\users\notifications.html:58
+msgid "No notifications yet"
+msgstr "尚無通知"
+
+#: .\common\templates\common\base.html:258
+#: .\films\templates\films\base_films.html:103
+msgid "See all notifications"
+msgstr "查看所有通知"
+
+#: .\common\templates\common\base.html:284
+#: .\films\templates\films\base_films.html:122
+msgid "My Profile"
+msgstr "我的個人資料"
+
+#: .\common\templates\common\base.html:292
+#: .\films\templates\films\base_films.html:135
+msgid "Free Account"
+msgstr "免費帳戶"
+
+#: .\common\templates\common\base.html:297
+#: .\films\templates\films\base_films.html:140
+msgid "Subscription Active"
+msgstr "訂閱有效"
+
+#: .\common\templates\common\base.html:302
+#: .\films\templates\films\base_films.html:145
+msgid "Subscription Inactive"
+msgstr "訂閱處於非活動狀態"
+
+#: .\common\templates\common\base.html:309
+#: .\films\templates\films\base_films.html:152
+#: .\subscriptions\templates\subscriptions\manage.html:10
+#: .\users\templates\users\settings\base.html:17
+#: .\users\templates\users\settings\billing.html:7
+#: .\users\templates\users\settings\delete.html:6
+#: .\users\templates\users\settings\emails.html:5
+#: .\users\templates\users\settings\production_credits.html:5
+#: .\users\templates\users\settings\profile.html:7
+msgid "Settings"
+msgstr "設定"
+
+#: .\common\templates\common\base.html:314
+#: .\films\templates\films\base_films.html:157
+#: .\users\templates\users\settings\billing.html:8
+#: .\users\templates\users\settings\tabs.html:29
+msgid "Subscription"
+msgstr "訂閱"
+
+#: .\common\templates\common\base.html:320
+#: .\films\templates\films\base_films.html:127
+msgid "My Activity"
+msgstr "我的動態"
+
+#: .\common\templates\common\base.html:326
+#: .\films\templates\films\base_films.html:164
+msgid "Admin"
+msgstr "管理員"
+
+#: .\common\templates\common\base.html:332
+#: .\films\templates\films\base_films.html:170
+msgid "Sign Out"
+msgstr "登出"
+
+#: .\common\templates\common\base.html:339
+#: .\films\templates\films\base_films.html:177
+msgid "Switch back"
+msgstr "切換復歸"
+
+#: .\common\templates\common\base.html:352
+#: .\common\templates\common\base.html:427
+#: .\films\templates\films\base_films.html:190
+msgid "Login"
+msgstr "登入"
+
+#: .\common\templates\common\base.html:477
+#: .\films\templates\films\gallery.html:240
+msgid "Loading..."
+msgstr "讀取中..."
+
+#: .\common\templates\common\components\content_locked.html:11
+msgid "You need to login to view this content"
+msgstr "您需要登錄才能查看此內容"
+
+#: .\common\templates\common\components\content_locked.html:12
+#: .\common\templates\common\components\content_locked.html:17
+msgid ""
+"You can join Blender Studio for €9.90/month and get access to all of our "
+"training & film content instantly!"
+msgstr ""
+"您可以以每月9.90歐元的價格加入Blender Studio，並立即訪問我們所有的培訓和電影"
+"內容！"
+
+#: .\common\templates\common\components\content_locked.html:14
+#: .\common\templates\common\components\content_locked.html:18
+msgid "Join Blender Studio"
+msgstr "加入Blender工作室"
+
+#: .\common\templates\common\components\content_locked.html:16
+msgid "You need to subscribe to view this content "
+msgstr "您需要訂閱才能查看此內容"
+
+#: .\common\templates\common\components\faq.html:5
+msgid "Frequently Asked Questions"
+msgstr "常見問題"
+
+#: .\common\templates\common\components\faq.html:6
+msgid ""
+"If you have questions about the Studio, please contact one of the team on"
+msgstr "如果您對工作室有任何疑問，請聯繫其中一個團隊"
+
+#: .\common\templates\common\components\faq.html:7
+msgid "Blender Chat"
+msgstr "Blender聊天"
+
+#: .\common\templates\common\components\faq.html:7
+msgid "by logging in with your Blender ID."
+msgstr "使用您的Blender ID登錄。"
+
+#: .\common\templates\common\components\faq.html:12
+msgid "General"
+msgstr "一般"
+
+#: .\common\templates\common\components\faq.html:21
+msgid "What is Blender Studio?"
+msgstr "什麼是Blender Studio？"
+
+#: .\common\templates\common\components\faq.html:27
+msgid ""
+"Blender Studio is a Film and Training publishing platform for everything "
+"produced by the Studio team."
+msgstr "Blender Studio是一個電影和培訓出版平臺，用於工作室團隊製作的所有內容。"
+
+#: .\common\templates\common\components\faq.html:37
+msgid "How is my money spent?"
+msgstr "我的錢是怎麼花的？"
+
+#: .\common\templates\common\components\faq.html:43
+msgid ""
+"The money Blender Studio makes through subscriptions is used to keep our "
+"services running, and to make open source and open content productions "
+"possible. Throughout the production cycle our team produce training, rigs "
+"and assets for publishing to Blender Studio subscribers."
+msgstr ""
+"Blender Studio通過訂閱賺到的錢用於保持我們的服務運行，並使開源和開放內容製作"
+"成為可能。在整個製作週期中，我們的團隊製作培訓，裝備和資產，以發佈給Blender "
+"Studio訂閱者。"
+
+#: .\common\templates\common\components\faq.html:53
+msgid "How does Blender Studio support Blender?"
+msgstr "Blender Studio如何支援Blender？"
+
+#: .\common\templates\common\components\faq.html:59
+msgid ""
+"The Blender Studio funds the Blender Studio team, who rigorously tests and "
+"use Blender in the Open Movie productions. The team works with core Blender "
+"developers at the Blender Institute to plan, design and test core Blender "
+"features."
+msgstr ""
+"Blender Studio為Blender Studio團隊提供資金，該團隊在Open Movie製作中嚴格測試"
+"和使用Blender。該團隊與Blender Institute的核心Blender開發人員合作，規劃，設計"
+"和測試Blender的核心功能。"
+
+#: .\common\templates\common\components\faq.html:69
+msgid "Payment & Billing"
+msgstr "付款和帳單"
+
+#: .\common\templates\common\components\faq.html:78
+msgid "What payment methods do you accept?"
+msgstr "你們接受哪些付款方式？"
+
+#: .\common\templates\common\components\faq.html:85
+msgid ""
+"Blender Studio offers payment through major credit cards, PayPal or direct "
+"bank transfer."
+msgstr "Blender Studio提供通過主要信用卡，PayPal或直接銀行轉帳付款。"
+
+#: .\common\templates\common\components\faq.html:95
+msgid "How easy is it to cancel my subscription?"
+msgstr "取消訂閱有多容易？"
+
+#: .\common\templates\common\components\faq.html:102
+msgid ""
+"You may cancel your subscription at any time via your personal account page, "
+"or by contacting us at"
+msgstr "您可以隨時通過您的個人帳戶頁面取消訂閱，或通過以下方式與我們聯繫"
+
+#: .\common\templates\common\components\faq.html:105
+msgid ""
+"In case of suspected fraud or abuse of the service after registration and "
+"membership payment, the account owner will be contacted and asked for "
+"clarification. Failure to alleviate charges of fraud may result in the "
+"termination of the member’s account."
+msgstr ""
+"如果在註冊和會員付款后涉嫌欺詐或濫用服務，將聯繫帳戶擁有者並要求澄清。未能減"
+"輕欺詐指控可能導致會員的帳戶被終止。"
+
+#: .\common\templates\common\components\faq.html:107
+msgid ""
+"Upon termination, all licenses granted by the Blender Studio will terminate. "
+"In the event of account deletion for any reason, content that you submitted "
+"may no longer be available. The Blender Studio shall not be responsible for "
+"the loss of such content."
+msgstr ""
+"終止后，Blender Studio授予的所有許可證都將終止。如果由於任何原因刪除帳戶，您"
+"提交的內容可能不再可用。Blender Studio對此類內容的丟失概不負責。"
+
+#: .\common\templates\common\components\faq.html:116
+msgid "Can I get a refund?"
+msgstr "我可以退款嗎？"
+
+#: .\common\templates\common\components\faq.html:122
+msgid ""
+"Membership fees and supporter contributions are non-refundable. That money "
+"keeps our services running, and is used to make open source and open content "
+"productions possible."
+msgstr ""
+"會員費和支援者捐款不予退還。這筆錢使我們的服務保持運行，並用於使開源和開放內"
+"容製作成為可能。"
+
+#: .\common\templates\common\components\faq.html:124
+msgid ""
+"We really care about our members and supporters though — in case you are "
+"really not happy with our Blender Studio we will kindly respond to your "
+"comments and try to settle a dispute with you in harmony."
+msgstr ""
+"我們真的很關心我們的會員和支援者 - 如果您真的對我們的Blender Studio不滿意，我"
+"們將善意地回復您的評論，並嘗試與您和諧地解決爭議。"
+
+#: .\common\templates\common\components\faq.html:126
+msgid ""
+"Refunds will happen without delay when we get a report of fraud, abuse or "
+"non-authorised usage of funds."
+msgstr "當我們收到欺詐，濫用或未經授權使用資金的報告時，退款將立即發生。"
+
+#: .\common\templates\common\components\faq.html:128
+#: .\common\templates\common\components\navigation\footer.html:92
+msgid "Contact"
+msgstr "聯絡"
+
+#: .\common\templates\common\components\file.html:17
+#: .\common\templates\common\components\file_production_log.html:15
+msgid "Spoiler"
+msgstr "偏流器"
+
+#: .\common\templates\common\components\file.html:32
+#: .\common\templates\common\components\file_production_log.html:35
+msgid "Subscribe to view"
+msgstr "訂閱查看"
+
+#: .\common\templates\common\components\home_headers\film_release_centered.html:15
+msgid "New Open Movie Out Now!"
+msgstr "新開電影現在出來！"
+
+#: .\common\templates\common\components\home_headers\film_release_centered.html:17
+msgid "Watch Sprite Fright"
+msgstr "觀看精靈驚嚇"
+
+#: .\common\templates\common\components\home_headers\film_release_centered.html:18
+msgid "See the project"
+msgstr "查看專案"
+
+#: .\common\templates\common\components\home_headers\livestream.html:16
+msgid "Live"
+msgstr "線上"
+
+#: .\common\templates\common\components\home_headers\livestream.html:17
+msgid "Artist Livestream"
+msgstr "藝術家直播"
+
+#: .\common\templates\common\components\home_headers\livestream.html:20
+msgid ""
+"In this series, Julien Kaspar will guide you through the creation of \"Snow"
+"\", the next character in the lineup of creative commons rigs on the Blender "
+"Studio."
+msgstr ""
+"在本系列中，Julien Kaspar將指導您完成“Snow”的創作，這是Blender Studio上知識共"
+"用裝備陣容中的下一個角色。"
+
+#: .\common\templates\common\components\home_headers\livestream.html:21
+msgid ""
+"Join in the chat on YouTube while Julien answers questions from the "
+"community."
+msgstr "加入YouTube上的聊天，而Julien回答來自社區的問題。"
+
+#: .\common\templates\common\components\home_headers\livestream.html:24
+msgid "Watch on YouTube"
+msgstr "在YouTube上觀看"
+
+#: .\common\templates\common\components\modal_asset.html:125
+msgid "Contributors"
+msgstr "協作者"
+
+#: .\common\templates\common\components\modal_asset.html:138
+#: .\films\templates\films\components\production_log_entry.html:98
+msgid "Other Contributors"
+msgstr "其他貢獻者"
+
+#: .\common\templates\common\components\modal_asset_zoom.html:14
+#: .\common\templates\common\components\navigation\download_button.html:8
+#: .\common\templates\common\components\navigation\download_subtitles.html:7
+#: .\subscriptions\templates\looper\settings\receipts.html:28
+msgid "Download"
+msgstr "下載"
+
+#: .\common\templates\common\components\navigation\download_subtitles.html:7
+msgid "Subtitles"
+msgstr "字幕"
+
+#: .\common\templates\common\components\navigation\footer.html:17
+msgid "The Creators Who Share."
+msgstr "分享的創造者。"
+
+#: .\common\templates\common\components\navigation\footer.html:54
+msgid "Cloud Rig"
+msgstr "雲鑽機"
+
+#: .\common\templates\common\components\navigation\footer.html:57
+msgid "Blender Kitsu"
+msgstr "攪拌機基蘇"
+
+#: .\common\templates\common\components\navigation\footer.html:60
+msgid "Contact Sheet Add-on"
+msgstr "聯繫表附加元件"
+
+#: .\common\templates\common\components\navigation\footer.html:63
+msgid "Blender Purge"
+msgstr "攪拌機吹掃"
+
+#: .\common\templates\common\components\navigation\footer.html:66
+msgid "Blender Cloud Services"
+msgstr "Blender Cloud Services"
+
+#: .\common\templates\common\components\navigation\footer.html:83
+msgid "Studio"
+msgstr "工作室"
+
+#: .\common\templates\common\components\navigation\footer.html:86
+#: .\common\templates\common\components\navigation\footer_simple.html:8
+#: .\subscriptions\templates\subscriptions\components\footer.html:9
+msgid "Terms"
+msgstr "條款"
+
+#: .\common\templates\common\components\navigation\footer.html:86
+#: .\common\templates\common\components\navigation\footer_simple.html:8
+#: .\subscriptions\templates\subscriptions\components\footer.html:9
+msgid "Conditions"
+msgstr "條件"
+
+#: .\common\templates\common\components\navigation\footer.html:89
+#: .\common\templates\common\components\navigation\footer_simple.html:11
+#: .\subscriptions\templates\subscriptions\components\footer.html:12
+msgid "Privacy Policy"
+msgstr "隱私權政策"
+
+#: .\common\templates\common\components\navigation\footer.html:95
+msgid "Remixing Music"
+msgstr "混音音樂"
+
+#: .\common\templates\common\components\navigation\footer.html:98
+#: .\common\templates\common\components\navigation\footer_simple.html:14
+#: .\subscriptions\templates\subscriptions\components\footer.html:15
+msgid "Blender.org"
+msgstr "Blender.org"
+
+#: .\common\templates\common\components\navigation\pagination.html:12
+#: .\films\templates\films\components\production_log_pagination.html:8
+msgid "Previous"
+msgstr "上一頁"
+
+#: .\common\templates\common\components\navigation\pagination.html:33
+#: .\films\templates\films\components\pagination_dates.html:12
+msgid "Prev"
+msgstr "上一頁"
+
+#: .\common\templates\common\components\navigation\pagination.html:57
+#: .\common\templates\common\components\navigation\pagination.html:67
+#: .\films\templates\films\components\pagination_dates.html:53
+#: .\films\templates\films\components\production_log_pagination.html:16
+msgid "Next"
+msgstr "下一頁"
+
+#: .\common\templates\common\components\published_by.html:3
+msgid "Author"
+msgstr "作者"
+
+#: .\common\templates\common\components\spoiler_alert.html:4
+msgid "Spoilers Ahead!"
+msgstr "前方劇透！"
+
+#: .\common\templates\common\components\spoiler_alert.html:5
+msgid "Watch out friends, you"
+msgstr "小心朋友，你"
+
+#: .\common\templates\common\components\spoiler_alert.html:8
+msgid "Reveal Spoilers"
+msgstr "揭示劇透"
+
+#: .\common\templates\common\errors\400.html:2
+#: .\common\templates\common\errors\400.html:3
+msgid "Bad Request"
+msgstr "錯誤的請求"
+
+#: .\common\templates\common\errors\400.html:4
+msgid "Your HTTP client sent a request that we did not understand."
+msgstr "您的 HTTP 用戶端發送了一個我們無法理解的請求。"
+
+#: .\common\templates\common\errors\400.html:5
+#: .\common\templates\common\errors\403.html:8
+#: .\common\templates\common\errors\404.html:5
+#: .\common\templates\common\errors\500.html:5
+msgid "Try"
+msgstr "嘗試"
+
+#: .\common\templates\common\errors\400.html:5
+#: .\common\templates\common\errors\500.html:5
+msgid "the frontpage"
+msgstr "首頁"
+
+#: .\common\templates\common\errors\400.html:5
+#: .\common\templates\common\errors\403.html:8
+#: .\common\templates\common\errors\404.html:5
+#: .\common\templates\common\errors\500.html:5
+msgid "instead."
+msgstr "取代"
+
+#: .\common\templates\common\errors\400.html:7
+#: .\common\templates\common\errors\500.html:7
+msgid "If you need assistance, you may reference this error as"
+msgstr "如果您需要説明，可以將此錯誤引用為"
+
+#: .\common\templates\common\errors\403.html:2
+msgid "Forbidden"
+msgstr "禁止"
+
+#: .\common\templates\common\errors\403.html:5
+msgid "Nope."
+msgstr "不。"
+
+#: .\common\templates\common\errors\403.html:6
+msgid "For some reason you are not allowed to do this."
+msgstr "由於某種原因，您不允許這樣做。"
+
+#: .\common\templates\common\errors\403.html:8
+msgid "exploring your homepage"
+msgstr "流覽您的主頁"
+
+#: .\common\templates\common\errors\403.html:10
+msgid "Maybe you"
+msgstr "也許你"
+
+#: .\common\templates\common\errors\403.html:11
+msgid "Sign in"
+msgstr "登入"
+
+#: .\common\templates\common\errors\403_csrf.html:2
+msgid "CSRF error"
+msgstr "CSRF 錯誤"
+
+#: .\common\templates\common\errors\403_csrf.html:3
+msgid "CSRF Protection"
+msgstr "CSRF 保護"
+
+#: .\common\templates\common\errors\403_csrf.html:4
+msgid "TL;DR: Probably the best way to fix this is to"
+msgstr "TL;DR：解決這個問題的最好方法可能是"
+
+#: .\common\templates\common\errors\403_csrf.html:5
+msgid "go back, strong refresh the page, and try again"
+msgstr "返回，強力刷新頁面，然後重試"
+
+#: .\common\templates\common\errors\403_csrf.html:7
+msgid ""
+"All forms on Blender ID are protected against Cross-Site Request Forgeries. "
+"This type of attack occurs when a malicious website contains a link, a form "
+"button or some JavaScript that is intended to perform some action on your "
+"website, using the credentials of a logged-in user who visits the malicious "
+"site in their browser. A related type of attack, ‘login CSRF’, where an "
+"attacking site tricks a user’s browser into logging into a site with someone "
+"else’s credentials, is also covered"
+msgstr ""
+"Blender ID上的所有表格都受到保護，以防止跨網站請求偽造。當惡意網站包含連結、"
+"表單按鈕或某些 JavaScript，旨在使用在瀏覽器中訪問惡意網站的登錄使用者的憑據，"
+"在您的網站上執行某些操作時，就會發生這種類型的攻擊。還涵蓋了一種相關的攻擊類"
+"型，「登錄CSRF」，其中攻擊網站誘騙用戶的瀏覽器使用其他人的憑據登錄網站"
+
+#: .\common\templates\common\errors\403_csrf.html:7
+msgid ""
+". For some reason, this protection rejected the data you just submitted."
+msgstr ".出於某種原因，此保護拒絕了您剛剛提交的數據。"
+
+#: .\common\templates\common\errors\403_csrf.html:9
+msgid "Go back and try again (and make sure you refresh the page)"
+msgstr "返回並重試（並確保刷新頁面）"
+
+#: .\common\templates\common\errors\403_csrf.html:11
+msgid "Source"
+msgstr "來源"
+
+#: .\common\templates\common\errors\403_csrf.html:11
+msgid "Django documentation"
+msgstr "Django 文件"
+
+#: .\common\templates\common\errors\404.html:2
+#: .\common\templates\common\errors\404.html:3
+msgid "Page Not Found"
+msgstr "找不到網頁"
+
+#: .\common\templates\common\errors\404.html:4
+msgid "The page you tried to reach does not exist."
+msgstr "您嘗試存取的頁面不存在。"
+
+#: .\common\templates\common\errors\404.html:5
+msgid "the homepage"
+msgstr "主頁"
+
+#: .\common\templates\common\errors\500.html:2
+#: .\common\templates\common\errors\500.html:3
+msgid "Internal Server Error"
+msgstr "服務器內部錯誤"
+
+#: .\common\templates\common\errors\500.html:4
+msgid "Oops, we made a mistake somewhere."
+msgstr "哎呀，我們在某個地方犯了一個錯誤。"
+
+#: .\common\templates\common\home.html:17
+#: .\films\templates\films\film_detail.html:33
+#: .\films\templates\films\film_landing_page.html:79
+msgid "Latest Blog Posts"
+msgstr "最新部落格文章"
+
+#: .\common\templates\common\home.html:17
+msgid "Hear the latest news about the Blender Studio right here."
+msgstr "在這裡聽到有關Blender Studio的最新消息。"
+
+#: .\common\templates\common\home.html:22
+#: .\training\templates\training\home_authenticated.html:44
+msgid "Continue training"
+msgstr "繼續培訓"
+
+#: .\common\templates\common\home.html:22
+#: .\training\templates\training\home_authenticated.html:44
+msgid ""
+"Recently watched videos appear here! Continue watching where you left off."
+msgstr "最近觀看的視頻出現在這裡！從上次離開的地方繼續觀看。"
+
+#: .\common\templates\common\home.html:26
+msgid "Latest Training"
+msgstr "最新培訓"
+
+#: .\common\templates\common\home.html:33
+#: .\subscriptions\templates\checkout\checkout_done.html:67
+msgid "Featured Open Movies"
+msgstr "精選開放電影"
+
+#: .\common\templates\common\home.html:34
+#: .\subscriptions\templates\checkout\checkout_done.html:68
+msgid "The Blender"
+msgstr "攪拌機"
+
+#: .\common\templates\common\home.html:34
+#: .\subscriptions\templates\checkout\checkout_done.html:68
+msgid "Open Movie projects"
+msgstr "打開影片專案"
+
+#: .\common\templates\common\home.html:34
+#: .\subscriptions\templates\checkout\checkout_done.html:68
+msgid "are made possible by subscriptions to the Blender Studio."
+msgstr "通過訂閱Blender Studio來實現。"
+
+#: .\common\templates\common\home.html:46
+msgid "From The Archives"
+msgstr "來自檔案館"
+
+#: .\common\templates\common\refrence\buttons.html:3
+msgid "Buttons"
+msgstr "按鈕"
+
+#: .\common\templates\common\refrence\buttons.html:6
+msgid "Regular Button"
+msgstr "常規按鈕"
+
+#: .\common\templates\common\refrence\buttons.html:7
+#: .\common\templates\common\refrence\buttons.html:20
+#: .\common\templates\common\refrence\buttons.html:23
+#: .\common\templates\common\refrence\buttons.html:33
+#: .\common\templates\common\refrence\buttons.html:36
+#: .\common\templates\common\refrence\buttons.html:46
+#: .\common\templates\common\refrence\buttons.html:49
+msgid "Button"
+msgstr "按鈕"
+
+#: .\common\templates\common\refrence\buttons.html:10
+msgid "Icon Button"
+msgstr "圖標按鈕"
+
+#: .\common\templates\common\refrence\buttons.html:19
+msgid "Large Button"
+msgstr "大按鈕"
+
+#: .\common\templates\common\refrence\buttons.html:32
+msgid "Small Button"
+msgstr "小按鈕"
+
+#: .\common\templates\common\refrence\buttons.html:45
+msgid "Extra Small Button"
+msgstr "超小按鈕"
+
+#: .\common\templates\common\welcome.html:19
+msgid "The Creators Who Share"
+msgstr "分享的創造者。"
+
+#: .\common\templates\common\welcome.html:22
+msgid ""
+"Blender Studio is the creative part of the Blender HQ. A dedicated team of "
+"artists and developers who challenge themselves with creative-technical "
+"targets to help Blender users and to drive Blender development forward. This "
+"happens in an open source production environment and by sharing everything "
+"they make in an open and free license. Want to know more? Join the studio "
+"today and help the team to create & share."
+msgstr ""
+"Blender Studio是Blender HQ的創意部分。一個由藝術家和開發人員組成的專業團隊通"
+"過創意技術目標挑戰自己，以説明Blender用戶並推動Blender開發向前發展。這發生在"
+"開源生產環境中，並通過在開放和免費許可證中共用他們所做的一切。"
+
+#: .\common\templates\common\welcome.html:28
+#, #fuzzy
+#| msgid "Join Blender Studio"
+msgid "Join the Blender Studio"
+msgstr "加入Blender工作室"
+
+#: .\common\templates\common\welcome.html:33
+msgid "Access to all training, assets\\nand films for €9.90/month"
+msgstr "訪問所有培訓、資產"
+
+#: .\common\templates\common\welcome.html:48
+msgid "Sharing Production Knowledge"
+msgstr "分享生產知識"
+
+#: .\common\templates\common\welcome.html:50
+msgid ""
+"With training and docs covering every major topic in Blender, the Blender "
+"Studio team shares real production knowledge, which can be freely adopted in "
+"a CG pipeline."
+msgstr ""
+"通過涵蓋Blender中每個主要主題的培訓和文檔，Blender Studio團隊分享了真實的製作"
+"知識，這些知識可以在CG管道中自由採用。"
+
+#: .\common\templates\common\welcome.html:61
+#: .\films\templates\films\film_detail.html:67
+msgid "Want to see more?"
+msgstr "想看更多？"
+
+#: .\common\templates\common\welcome.html:61
+msgid "Explore all Blender Studio Training ."
+msgstr "瀏覽所有 攪拌機工作室培訓 ."
+
+#: .\common\templates\common\welcome.html:75
+msgid "The Blender Studio Team"
+msgstr "攪拌機工作室團隊"
+
+#: .\common\templates\common\welcome.html:76
+msgid "Whether it’s Blender Developer Dr. Sybren teaching"
+msgstr "無論是Blender開發人員Sybren博士教學"
+
+#: .\common\templates\common\welcome.html:76
+msgid "Scripting for Artists"
+msgstr "美術師腳本"
+
+#: .\common\templates\common\welcome.html:76
+msgid "or Animation Director Hjalti teaching"
+msgstr "或動畫導演Hjalti教學"
+
+#: .\common\templates\common\welcome.html:77
+msgid "Animation Fundamentals"
+msgstr "動畫基礎知識"
+
+#: .\common\templates\common\welcome.html:77
+msgid "the Blender Studio team shares actual production knowledge."
+msgstr "Blender Studio團隊分享實際的製作知識。"
+
+#: .\common\templates\common\welcome.html:78
+msgid ""
+"Ask questions and receive replies from the author, download resources and "
+"join the discussion."
+msgstr "提出問題並接收作者的回復，下載資源並加入討論。"
+
+#: .\common\templates\common\welcome.html:80
+#: .\common\templates\common\welcome.html:103
+#: .\common\templates\common\welcome.html:154
+msgid "Subscribe for €9.90/month"
+msgstr "訂閱 €9.90/月"
+
+#: .\common\templates\common\welcome.html:81
+msgid "Explore Training"
+msgstr "探索培訓"
+
+#: .\common\templates\common\welcome.html:105
+msgid "Explore the Film"
+msgstr "探索影片"
+
+#: .\common\templates\common\welcome.html:119
+msgid "Support Blender Open Movies"
+msgstr "支援攪拌機打開電影"
+
+#: .\common\templates\common\welcome.html:120
+msgid ""
+"The Blender Open Movie projects are made possible by subscriptions to the "
+"Blender Studio."
+msgstr "Blender Open Movie專案是通過訂閱Blender Studio來實現的。"
+
+#: .\common\templates\common\welcome.html:130
+msgid "Learn more about our other"
+msgstr "瞭解更多關於我們的其他"
+
+#: .\common\templates\common\welcome.html:130
+msgid "open movies"
+msgstr "打開影片"
+
+#: .\common\templates\common\welcome.html:130
+msgid "and"
+msgstr "和"
+
+#: .\common\templates\common\welcome.html:131
+msgid "how your contribution is used"
+msgstr "如何使用您的貢獻"
+
+#: .\common\templates\common\welcome.html:137
+msgid "Access all our production assets!"
+msgstr "訪問我們所有的生產資產！"
+
+#: .\common\templates\common\welcome.html:137
+msgid ""
+"You can access all the production files from our films with a Blender Studio "
+"subscription."
+msgstr "您可以通過Blender Studio訂閱訪問我們電影中的所有製作檔。"
+
+#: .\common\templates\common\welcome.html:152
+#: .\films\templates\films\film_landing_page.html:280
+msgid ""
+"Join Blender Studio and get access to hundreds of hours of training, "
+"production assets and files from the Open Movies as well as a platform to "
+"learn at your own pace, in your own time."
+msgstr ""
+"加入Blender Studio，從Open Movies訪問數百小時的培訓，製作資源和檔，以及一個在"
+"自己的時間按照自己的節奏學習的平臺。"
+
+#: .\common\templates\flatpages\default.html:16
+msgid "Edit Page"
+msgstr "編輯頁面"
+
+#: .\common\templates\rest_framework\api.html:5
+msgid "Blender Studio - API Documentation"
+msgstr "Blender Studio - API Documentation"
+
+#: .\common\templates\rest_framework\api.html:33
+msgid "Your API token:"
+msgstr "您的 API token："
+
+#: .\emails\templates\admin\emails\subscriptionemailpreview\submit_line.html:5
+msgid "Send a test email"
+msgstr "發送測試電子郵件"
+
+#: .\emails\templates\admin\emails\subscriptionemailpreview\submit_line.html:5
+msgid "Save and view"
+msgstr "保存和查看"
+
+#: .\emails\templates\emails\email.html:8
+msgid "Don"
+msgstr "唐"
+
+#: .\emails\templates\emails\email.html:8
+msgid "Unsubscribe"
+msgstr "取消訂閱"
+
+#: .\emails\templates\emails\email_base.html:79
+msgid "Do you want to renew or check the status of your account?"
+msgstr "您想續訂或檢查帳戶的狀態嗎？"
+
+#: .\films\templates\films\base_films.html:34
+#: .\films\templates\films\gallery.html:35
+msgid "Content Gallery"
+msgstr "內容庫"
+
+#: .\films\templates\films\base_films.html:38
+#: .\films\templates\films\film_landing_page.html:137
+#: .\films\templates\films\productionlog.html:5
+#: .\films\templates\films\productionlog_month.html:4
+#: .\films\templates\films\productionlog_month.html:14
+msgid "Production Logs"
+msgstr "生產日誌"
+
+#: .\films\templates\films\base_films.html:45
+#: .\films\templates\films\production_credit.html:3
+#: .\films\templates\films\production_credit.html:10
+msgid "Production Credit"
+msgstr "生產信用"
+
+#: .\films\templates\films\base_films.html:53
+msgid "Admin Edit"
+msgstr "管理員編輯"
+
+#: .\films\templates\films\components\admin\production_log_manage.html:7
+msgid "Add Production Log"
+msgstr "添加生產日誌"
+
+#: .\films\templates\films\components\admin\production_log_manage.html:9
+msgid "Manage Production Logs"
+msgstr "管理生產日誌"
+
+#: .\films\templates\films\components\jumbotron_film.html:19
+msgid "Watch"
+msgstr "觀看"
+
+#: .\films\templates\films\components\jumbotron_film.html:21
+#: .\films\templates\films\components\jumbotron_film.html:23
+msgid "Explore Content Gallery"
+msgstr "探索內容庫"
+
+#: .\films\templates\films\components\production_log_entry.html:26
+msgid "calendar_today"
+msgstr "calendar_today"
+
+#: .\films\templates\films\components\production_log_entry.html:37
+msgid "Watch Video"
+msgstr "觀看影片"
+
+#: .\films\templates\films\components\production_log_entry.html:81
+msgid "Other Contributors:"
+msgstr "其他貢獻者："
+
+#: .\films\templates\films\components\production_log_entry.html:157
+msgid "Show"
+msgstr "顯示"
+
+#: .\films\templates\films\components\production_log_entry.html:172
+msgid "Add Entry"
+msgstr "增加紀錄"
+
+#: .\films\templates\films\film_detail.html:43
+msgid "This week in Production"
+msgstr "本周投入生產"
+
+#: .\films\templates\films\film_detail.html:44
+msgid "Check out what the teams been working on this week on "
+msgstr "看看團隊本周在{{ film.title }}上做了什麼。"
+
+#: .\films\templates\films\film_detail.html:45
+#: .\films\templates\films\film_detail.html:58
+msgid "See all production logs"
+msgstr "查看所有生產日誌"
+
+#: .\films\templates\films\film_detail.html:57
+msgid "Want to see more updates from"
+msgstr "想要查看更多更新"
+
+#: .\films\templates\films\film_detail.html:66
+msgid "Featured Content Gallery"
+msgstr "特色內容庫"
+
+#: .\films\templates\films\film_detail.html:68
+msgid "Explore the Content Gallery"
+msgstr "瀏覽內容庫"
+
+#: .\films\templates\films\film_detail.html:89
+#: .\films\templates\films\film_landing_page.html:256
+#: .\films\templates\films\gallery.html:229
+msgid "No Featured Artwork to display"
+msgstr "沒有要顯示的特色圖稿"
+
+#: .\films\templates\films\film_landing_page.html:51
+msgid ""
+"Blender Studio is the creative part of the Blender HQ. A dedicated team of "
+"artists and developers challenge themselves with creative-technical targets "
+"to help Blender users and to drive Blender development forward. This happens "
+"in an open source production environment and by sharing everything they make "
+"in an open and free license."
+msgstr ""
+"Blender Studio是Blender HQ的創意部分。一個由藝術家和開發人員組成的專業團隊通"
+"過創意技術目標挑戰自己，以説明Blender用戶並推動Blender開發向前發展。這發生在"
+"開源生產環境中，並通過在開放和免費許可證中共用他們所做的一切。"
+
+#: .\films\templates\films\film_landing_page.html:53
+msgid ""
+"Want to know more? Join the studio today and help the team to create & share."
+msgstr "想知道更多嗎？立即加入工作室，幫助團隊創建和分享。"
+
+#: .\films\templates\films\film_landing_page.html:56
+#: .\films\templates\films\film_landing_page.html:296
+msgid "Subscribe to get access!"
+msgstr "訂閱以獲取訪問許可權！"
+
+#: .\films\templates\films\film_landing_page.html:58
+#: .\films\templates\films\film_landing_page.html:298
+msgid "Access to all training, assets"
+msgstr "訪問所有培訓、資產"
+
+#: .\films\templates\films\film_landing_page.html:58
+#: .\films\templates\films\film_landing_page.html:298
+msgid "and films for €9.90/month"
+msgstr "和電影 €9.90/月"
+
+#: .\films\templates\films\film_landing_page.html:92
+msgid "The Blender Studio levels up its storytelling super-powers!"
+msgstr "攪拌機工作室升級其講故事的超能力！"
+
+#: .\films\templates\films\film_landing_page.html:93
+msgid ""
+"For this project, the Blender Studio team wanted to take a more story-"
+"focused approach to movie-making, as well as improving its 3D production "
+"pipeline. With Matthew Luhn (Pixar story artist veteran) as director, "
+"working with a team of 20+ artists and developers, this is Blender Studio’s "
+"most ambitious production to date."
+msgstr ""
+"對於這個專案，Blender Studio團隊希望採取一種更加以故事為中心的方法來製作電"
+"影，並改進其3D製作流程。馬修·盧恩（Matthew Luhn，皮克斯故事藝術家資深人士）擔"
+"任導演，與20多位藝術家和開發人員合作，這是Blender Studio迄今為止最雄心勃勃的"
+"作品。"
+
+#: .\films\templates\films\film_landing_page.html:94
+msgid ""
+"All assets, film versions and know-how are being shared as part of the "
+"process."
+msgstr "所有資產、電影版本和專有技術都作為流程的一部分進行共用。"
+
+#: .\films\templates\films\film_landing_page.html:97
+msgid "Movie Versions"
+msgstr "電影版本"
+
+#: .\films\templates\films\film_landing_page.html:101
+msgid "Pre-Production Assets"
+msgstr "預製作資產"
+
+#: .\films\templates\films\film_landing_page.html:132
+msgid "Follow the production progress, week by week"
+msgstr "每周跟蹤生產進度"
+
+#: .\films\templates\films\film_landing_page.html:133
+msgid ""
+"Check the weekly progress of the team through “Production Logs”,  where "
+"artists share breakdowns, artwork and .blend files. This allows you to deep-"
+"dive into actual production content, and learn by example."
+msgstr ""
+"通過「生產日誌」檢查團隊的每周進度，藝術家可以在其中共用細分、圖稿和 .blend "
+"檔。這使您可以深入瞭解實際的生產內容，並通過示例進行學習。"
+
+#: .\films\templates\films\film_landing_page.html:134
+msgid "As an added bonus, check out the weekly updates on "
+msgstr "作為額外的獎勵，請查看每周更新"
+
+#: .\films\templates\films\film_landing_page.html:134
+msgid "YouTube"
+msgstr "YouTube"
+
+#: .\films\templates\films\film_landing_page.html:141
+msgid "Artist Entries"
+msgstr "藝術家作品"
+
+#: .\films\templates\films\film_landing_page.html:145
+msgid "Film Assets"
+msgstr "電影資產"
+
+#: .\films\templates\films\film_landing_page.html:161
+msgid "Discover how we built our pipeline for film making!"
+msgstr "了解我們如何構建電影製作流程！"
+
+#: .\films\templates\films\film_landing_page.html:162
+msgid ""
+"One target for the team was to improve and extend the Blender Studio "
+"production pipeline, and to share those tools and insights with the "
+"community."
+msgstr ""
+"該團隊的一個目標是改進和擴展Blender Studio的製作流程，並與社區分享這些工具和"
+"見解。"
+
+#: .\films\templates\films\film_landing_page.html:206
+msgid "Sharing Production Lessons"
+msgstr "分享生產經驗"
+
+#: .\films\templates\films\film_landing_page.html:207
+msgid ""
+"During production, we regularly release short-form training to document "
+"techniques or creative processes."
+msgstr "在製作過程中，我們定期發佈簡短的培訓，以記錄技術或創作過程。"
+
+#: .\films\templates\films\film_landing_page.html:208
+msgid "For example: lead animator"
+msgstr "例如：首席動畫師"
+
+#: .\films\templates\films\film_landing_page.html:208
+msgid "Rik Schutte"
+msgstr "裡克·舒特"
+
+#: .\films\templates\films\film_landing_page.html:208
+msgid ""
+"shows how he uses Grease Pencil for animating smear frames for cartoony "
+"animation, and shading artist "
+msgstr "展示了他如何使用Grease Pencil為卡通動畫的塗抹框架和著色藝術家製作動畫"
+
+#: .\films\templates\films\film_landing_page.html:208
+msgid "Simon Thommes"
+msgstr "西蒙·湯姆斯"
+
+#: .\films\templates\films\film_landing_page.html:208
+msgid "shares several procedural surfacing workflows."
+msgstr "共用多個程式化曲面工作流。"
+
+#: .\films\templates\films\film_landing_page.html:211
+msgid "Production Lessons"
+msgstr "生產課程"
+
+#: .\films\templates\films\film_landing_page.html:215
+msgid "Hours of content"
+msgstr "內容小時數"
+
+#: .\films\templates\films\film_landing_page.html:235
+msgid "Access all the content, .blend files included!"
+msgstr "訪問所有內容，包括.blend檔！"
+
+#: .\films\templates\films\film_landing_page.html:236
+msgid "Download over"
+msgstr "下載於"
+
+#: .\films\templates\films\film_landing_page.html:236
+msgid "5000 production files"
+msgstr "5000 個生產檔"
+
+#: .\films\templates\films\film_landing_page.html:236
+msgid "directly from Blender Studio."
+msgstr "直接從Blender Studio。"
+
+#: .\films\templates\films\film_landing_page.html:279
+msgid "Subscribe & get insider access to Sprite Fright today!"
+msgstr "立即訂閱並獲得內部人士對雪碧驚嚇的訪問許可權！"
+
+#: .\films\templates\films\film_landing_page.html:284
+msgid "Follow along with movie production"
+msgstr "跟隨電影製作"
+
+#: .\films\templates\films\film_landing_page.html:287
+msgid "Download film files, rigs and assets"
+msgstr "下載影片檔、裝備和資產"
+
+#: .\films\templates\films\film_landing_page.html:290
+msgid "Learn from our production lessons"
+msgstr "從我們的生產經驗中學習"
+
+#: .\films\templates\films\films.html:5
+msgid "Films - "
+msgstr "電影 -"
+
+#: .\films\templates\films\films.html:8 .\films\templates\films\films.html:16
+msgid ""
+"The iconic Blender Open Movies. Featuring all the production files, assets, "
+"artwork, and never-seen-before content."
+msgstr "標誌性的攪拌機打開電影。包含所有製作檔、資源、圖稿和前所未見的內容。"
+
+#: .\films\templates\films\flatpage.html:6
+#: .\films\templates\films\productionlog.html:7
+#: .\films\templates\films\productionlog_detail.html:12
+#: .\films\templates\films\productionlog_month.html:6
+msgid "spacer has-secondary-nav"
+msgstr "間隔條具有輔助導航"
+
+#: .\films\templates\films\gallery.html:43
+#: .\films\templates\films\gallery.html:136
+msgid "Featured Artwork"
+msgstr "特色作品"
+
+#: .\films\templates\films\gallery.html:50
+#: .\films\templates\films\gallery.html:144
+msgid "All Artwork"
+msgstr "所有藝術品"
+
+#: .\films\templates\films\latest_assets.html:32
+#: .\search\templates\search\search.html:45
+#: .\search\templates\search\search.html:111
+#: .\training\templates\training\home_authenticated.html:90
+#: .\training\templates\training\home_not_authenticated.html:65
+msgid "Sort by:"
+msgstr "排序方式:"
+
+#: .\films\templates\films\latest_assets.html:52
+msgid " \"film\": "
+msgstr "“電影”："
+
+#: .\films\templates\films\production_credit.html:10
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:35
+#: .\subscriptions\templates\subscriptions\cancel.html:12
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:8
+#: .\subscriptions\templates\subscriptions\emails\subscription_activated.html:4
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:13
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:14
+msgid "Your"
+msgstr "你的"
+
+#: .\films\templates\films\production_credit.html:12
+#: .\films\templates\films\production_credit.html:42
+msgid "Thank you for supporting the"
+msgstr "感謝您支持"
+
+#: .\films\templates\films\production_credit.html:12
+msgid ""
+"production. Fill in the form to get your name in the end credits! If you don"
+msgstr "生產。填寫表格，在片尾字幕中獲得您的名字！如果您不"
+
+#: .\films\templates\films\production_credit.html:14
+msgid ""
+"It looks like your name is missing from your profile. Make sure you add it "
+"to your Blender ID at"
+msgstr "您的個人資料中似乎缺少您的姓名。確保將其添加到您的Blender ID中，網址為"
+
+#: .\films\templates\films\production_credit.html:15
+#: .\films\templates\films\production_credit.html:37
+msgid "id.blender.org"
+msgstr "id.blender.org"
+
+#: .\films\templates\films\production_credit.html:16
+msgid "Then come back to configure your credit."
+msgstr "然後回來配置您的信用。"
+
+#: .\films\templates\films\production_credit.html:36
+msgid "The name"
+msgstr "名字"
+
+#: .\films\templates\films\production_credit.html:36
+msgid "will be used.If you wish to change it, visit "
+msgstr "將使用。如果您想更改它，請訪問"
+
+#: .\films\templates\films\production_credit.html:38
+#: .\users\templates\users\settings\emails.html:25
+msgid "Save changes"
+msgstr "儲存變更"
+
+#: .\films\templates\films\production_credit.html:42
+msgid "production."
+msgstr "生產。"
+
+#: .\films\templates\films\production_credit.html:44
+msgid "You have a credit as"
+msgstr "您有一個信用"
+
+#: .\films\templates\films\production_credit.html:44
+msgid "in the end scroll of the film."
+msgstr "在電影的結尾捲軸中。"
+
+#: .\films\templates\films\productionlog.html:16
+#: .\films\templates\films\productionlog_month.html:15
+msgid "Follow the latest updates and progress on"
+msgstr "關注最新的更新和進度"
+
+#: .\films\templates\films\productionlog.html:40
+#: .\films\templates\films\productionlog_month.html:38
+msgid "No Weeklies to show"
+msgstr "無需顯示週刊"
+
+#: .\films\templates\films\productionlog_detail.html:7
+msgid "Check out the latest progress in our weekly production log."
+msgstr "在我們的每周生產日誌中查看最新進展。"
+
+#: .\films\templates\films\productionlog_month.html:15
+msgid "right here."
+msgstr "就在這兒。"
+
+#: .\logentry_admin\admin.py:13
+msgctxt "logentry_admin:action_type"
+msgid "Addition"
+msgstr "本期新增"
+
+#: .\logentry_admin\admin.py:14
+msgctxt "logentry_admin:action_type"
+msgid "Deletion"
+msgstr "刪除"
+
+#: .\logentry_admin\admin.py:15
+msgctxt "logentry_admin:action_type"
+msgid "Change"
+msgstr "更改"
+
+#: .\logentry_admin\admin.py:20 .\logentry_admin\admin.py:127
+msgid "action"
+msgstr "動作"
+
+#: .\logentry_admin\admin.py:44
+msgid "Metadata"
+msgstr "Meta資料"
+
+#: .\logentry_admin\admin.py:48
+msgid "Details"
+msgstr "詳細資料"
+
+#: .\logentry_admin\admin.py:96
+msgid "object"
+msgstr "物件"
+
+#: .\logentry_admin\admin.py:113
+msgid "user"
+msgstr "用戶"
+
+#: .\logentry_admin\admin.py:133
+msgid "change message"
+msgstr "更改消息"
+
+#: .\search\templates\search\search.html:5
+msgid "Search"
+msgstr "搜尋"
+
+#: .\search\templates\search\search.html:7
+msgid "search spacer"
+msgstr "搜索間隔符"
+
+#: .\search\templates\search\search.html:38
+msgid "Filters"
+msgstr "篩選"
+
+#: .\search\templates\search\search.html:65
+msgid "Type:"
+msgstr "類型:"
+
+#: .\search\templates\search\search.html:74
+msgid "Media:"
+msgstr "媒體:"
+
+#: .\search\templates\search\search.html:82
+msgid "Film:"
+msgstr "影片："
+
+#: .\stats\templates\stats\index.html:12
+msgid "Subscriber Stats"
+msgstr "訂閱者統計"
+
+#: .\stats\templates\stats\index.html:12
+msgid "The latest Blender Studio numbers."
+msgstr "最新的Blender Studio編號。"
+
+#: .\stats\templates\stats\index.html:16
+msgid "Subscribers"
+msgstr "訂閱者"
+
+#: .\subscriptions\templates\checkout\checkout_base.html:17
+msgid "Blender Studio Subscription"
+msgstr "Blender Studio Subscription"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:41
+msgid "Welcome to Blender Studio!"
+msgstr "歡迎來到Blender Studio！"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:42
+#: .\users\templates\users\components\action_summary.html:10
+msgid "You"
+msgstr "你"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:43
+msgid "films"
+msgstr "電影"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:43
+msgid "training"
+msgstr "訓練"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:43
+msgid "and assets from the Blender Studio team."
+msgstr "和來自Blender Studio團隊的資產。"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:45
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:56
+msgid "Manage subscription in"
+msgstr "管理訂閱"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:45
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:56
+msgid "your billing settings"
+msgstr "您的結算設置"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:47
+msgid "Start exploring"
+msgstr "開始探索"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:48
+msgid "Celebrate!"
+msgstr "慶祝！"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:60
+msgid "Check out our latest training!"
+msgstr "查看我們最新的培訓！"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:19
+msgid "Thanks for subscribing to Blender Studio!"
+msgstr "感謝您訂閱Blender Studio！"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:20
+msgid "Make sure to follow the instructions below to activate your account."
+msgstr "請務必按照以下說明啟動您的帳戶。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:35
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:9
+msgid ""
+"and will be activated as soon as we have received and handled your bank "
+"transfer."
+msgstr "一旦我們收到並處理您的銀行轉帳，就會立即啟動。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:44
+msgid "Instructions:"
+msgstr "說明:"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:47
+msgid ""
+"Use the adjacent bank details to pay the full amount with the following as a "
+"payment reference:"
+msgstr "使用相鄰的銀行詳細資訊支付全額，並使用以下作為付款參考："
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:50
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:20
+msgid ""
+"You may need to wait a few days until the payment clears before one of our "
+"team members activates your account."
+msgstr "您可能需要等待幾天，直到付款結算，我們的團隊成員才能啟動您的帳戶。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:51
+msgid "Once you receive an email to let you know it"
+msgstr "收到一封電子郵件后，告知您"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:54
+msgid "This information is also sent to you by email."
+msgstr "此資訊也會通過電子郵件發送給您。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:63
+msgid "Bank details:"
+msgstr "銀行詳細資訊："
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:65
+msgid "Payment reference:"
+msgstr "付款參考："
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:5
+#: .\subscriptions\templates\looper\settings\receipts.html:6
+#: .\subscriptions\templates\settings\billing_address.html:6
+msgid "Settings: Subscription"
+msgstr "設置：訂閱"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:6
+msgid "Payment Methods"
+msgstr "付款方式"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:8
+msgid ""
+"Here you can view and delete payment methods.You can change subscription"
+msgstr "您可以在此處查看和刪除付款方式。您可以更改訂閱"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:8
+msgid "subscriptions settings"
+msgstr "訂閱設置"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:8
+msgid ", or while manually paying for an order."
+msgstr "，或在手動支付訂單時。"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:14
+#: .\subscriptions\templates\looper\settings\receipt.html:178
+msgid "Payment Method"
+msgstr "付款方式"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:15
+msgid "Expiry"
+msgstr "過期"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:16
+#: .\subscriptions\templates\looper\settings\payment_methods.html:46
+#: .\subscriptions\templates\subscriptions\components\billing_address_form.html:98
+msgid "Remove"
+msgstr "移除"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:25
+msgid "Invalid or unsupported payment method."
+msgstr "無效或不受支援的付款方式。"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:26
+msgid ""
+"The payment method was either deleted at the payment service provider or is "
+"no longer supported."
+msgstr "付款方式已在支付服務提供者處刪除或不再受支援。"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:32
+msgid "Ending with"
+msgstr "結尾為"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:34
+msgid "Expires"
+msgstr "到期"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:38
+msgid "With email"
+msgstr "通過電子郵件"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:12
+msgid "Back to invoices"
+msgstr "返回發票"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:14
+#: .\subscriptions\templates\looper\settings\receipts.html:7
+#: .\users\templates\users\settings\tabs.html:48
+msgid "Invoices"
+msgstr "發票"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:15
+msgid "Invoice # "
+msgstr "發票編號"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:20
+msgid "Invoice ID"
+msgstr "發票ID"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:31
+msgid "Status"
+msgstr "狀態"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:34
+msgid "PAID"
+msgstr "支付"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:42
+msgid "Payment Received on"
+msgstr "收到付款"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:53
+#: .\subscriptions\templates\subscriptions\manage.html:11
+msgid "Subscription #"
+msgstr "訂閱#"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:61
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:33
+msgid "Renewal Type"
+msgstr "續約類型"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:72
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:49
+msgid "Renewal Period"
+msgstr "更新週期"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:83
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:9
+#: .\subscriptions\templates\settings\billing_address.html:7
+msgid "Billing Address"
+msgstr "帳單地址"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:91
+msgid "Address"
+msgstr "地址"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:103
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:16
+msgid "VATIN"
+msgstr "瓦汀"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:116
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:21
+msgid "Invoice ref."
+msgstr "發票編號"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:128
+#: .\users\templates\users\settings\profile.html:26
+msgid "Email"
+msgstr "電子郵件"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:139
+msgid "Payment Information"
+msgstr "付款資訊"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:147
+msgid "Amount Paid"
+msgstr "已支付的金額"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:165
+msgid "Amount Refunded"
+msgstr "退費金額"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:4
+msgid "Blender Studio Invoice"
+msgstr "攪拌機工作室發票"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:10
+msgid "E-mail:"
+msgstr "電子郵件："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:30
+msgid "Invoice Number:"
+msgstr "發票號碼："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:38
+msgid "Invoice Date:"
+msgstr "账单日期:"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:46
+msgid "Payment method:"
+msgstr "付款方式："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:73
+msgid "Product"
+msgstr "產品"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:74
+msgid "Quantity"
+msgstr "數量"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:75
+msgid "Price"
+msgstr "價格"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:85
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:13
+#: .\subscriptions\templates\subscriptions\manage.html:11
+msgid "Team"
+msgstr "團隊"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:85
+msgid "Subscription #:"
+msgstr "訂閱編號："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:88
+msgid "Renewal type:"
+msgstr "續訂類型："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:91
+msgid "Renewal period:"
+msgstr "續訂期限："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:95
+msgid "Seats:"
+msgstr "座位："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:95
+#: .\subscriptions\templates\subscriptions\components\total.html:20
+msgid "unlimited"
+msgstr "無制限"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:118
+msgid ""
+"Under the regulations of the EU we do not charge VAT on services provided to "
+"VAT-registered businesses in other member countries. According to the "
+"reverse-charge regulations on tax liability transfers to the recipient of "
+"services."
+msgstr ""
+"根據歐盟法規，我們不對向其他成員國/地區的增值稅註冊企業提供的服務收取加值稅。"
+"根據《逆向收費條例》將納稅義務轉移給服務接受者。"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:122
+msgid "Subtotal"
+msgstr "小計"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:134
+msgid "VAT"
+msgstr "附加稅 (VAT)"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:140
+#: .\subscriptions\templates\subscriptions\components\current_plan_variation.html:17
+#: .\subscriptions\templates\subscriptions\components\total.html:31
+msgid "Total"
+msgstr "總計"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:13
+msgid "Date"
+msgstr "日期"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:14
+msgid "Description"
+msgstr "描述"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:15
+#: .\subscriptions\templates\pdf_layout.html:81
+msgid "Invoice"
+msgstr "應收付憑單"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:16
+msgid "Amount"
+msgstr "金額"
+
+#: .\subscriptions\templates\pdf_layout.html:87
+msgid "Blender Studio B.V."
+msgstr "攪拌機工作室 B.V."
+
+#: .\subscriptions\templates\pdf_layout.html:88
+msgid "Buikslotermeerplein 161"
+msgstr "布克斯洛特米爾廣場 161"
+
+#: .\subscriptions\templates\pdf_layout.html:89
+msgid "1025 ET Amsterdam, the Netherlands"
+msgstr "1025 ET 阿姆斯特丹， 荷蘭"
+
+#: .\subscriptions\templates\pdf_layout.html:90
+msgid "Tax number NL861711932B01"
+msgstr "稅號 NL861711932B01"
+
+#: .\subscriptions\templates\settings\billing_address.html:14
+msgid "Save Changes"
+msgstr "儲存變更"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:6
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:7
+msgid "Settings: Subscription #"
+msgstr "設置：訂閱#"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:7
+msgid "Cancel Subscription #"
+msgstr "取消訂閱#"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:12
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:14
+msgid "subscription is currently"
+msgstr "訂閱當前是"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:18
+msgid "Are you sure you want to cancel?"
+msgstr "您確定要取消？"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:28
+msgid "Your subscription will remain active until"
+msgstr "您的訂閱將保持有效狀態，直到"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:28
+msgid "since you have paid for your subscription until then."
+msgstr "因為在此之前您已經支付了訂閱費用。"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:34
+msgid "Keep Subscription"
+msgstr "保留訂閱"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:37
+#: .\subscriptions\templates\subscriptions\manage.html:222
+msgid "Cancel Subscription"
+msgstr "取消訂閱"
+
+#: .\subscriptions\templates\subscriptions\components\billing_address_form.html:98
+msgid "Add"
+msgstr "新增"
+
+#: .\subscriptions\templates\subscriptions\components\billing_address_form.html:99
+msgid "billing and VAT details (optional)"
+msgstr "帳單和增值稅詳細資訊（可選）"
+
+#: .\subscriptions\templates\subscriptions\components\billing_address_form_readonly.html:69
+msgid "VATIN:"
+msgstr "加值稅："
+
+#: .\subscriptions\templates\subscriptions\components\current_plan_variation.html:8
+msgid "Renewal"
+msgstr "續訂"
+
+#: .\subscriptions\templates\subscriptions\components\header_jumbotron.html:11
+msgid "Subscribe to Blender Studio"
+msgstr "訂閱Blender Studio"
+
+#: .\subscriptions\templates\subscriptions\components\header_jumbotron.html:13
+msgid "Choose your plan below, you can stop or cancel at any time!"
+msgstr "在下面選擇您的計劃，您可以隨時停止或取消！"
+
+#: .\subscriptions\templates\subscriptions\components\list.html:18
+msgid "Team subscription #"
+msgstr "團隊訂閱#"
+
+#: .\subscriptions\templates\subscriptions\components\list.html:30
+msgid "Subscribe"
+msgstr "訂閱"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:22
+#: .\subscriptions\templates\subscriptions\components\total.html:13
+msgid "Seats"
+msgstr "座位"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:23
+msgid "Maximum number of team members allowed for this subscription"
+msgstr "此訂閱允許的最大團隊成員數"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:46
+#: .\training\templates\training\training.html:50
+msgid "Save"
+msgstr "儲存"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:58
+msgid "Active team members"
+msgstr "活躍的團隊成員"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:8
+msgid "Join the Studio"
+msgstr "加入工作室"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:10
+msgid "Step 1: Choose your"
+msgstr "第 1 步：選擇您的"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:10
+msgid "team"
+msgstr "團隊"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:10
+msgid "plan."
+msgstr "計劃。"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:11
+msgid "1 of 3"
+msgstr "1 頁，共 3"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:75
+msgid "Every"
+msgstr "每"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:87
+msgid "Required fields are marked with (*)."
+msgstr "必填欄位標有 （*）。"
+
+#: .\subscriptions\templates\subscriptions\components\pretty_status.html:2
+#: .\subscriptions\templates\subscriptions\manage.html:212
+msgid "Pending Cancellation"
+msgstr "待取消"
+
+#: .\subscriptions\templates\subscriptions\components\pretty_status.html:4
+msgid "Active"
+msgstr "啟用"
+
+#: .\subscriptions\templates\subscriptions\components\pretty_status.html:6
+msgid "Inactive"
+msgstr "未啟用"
+
+#: .\subscriptions\templates\subscriptions\components\total.html:53
+msgid "Sign in with Blender ID"
+msgstr "使用Blender ID登錄"
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:6
+msgid "Thank you for subscribing to Blender Studio!"
+msgstr "感謝您訂閱Blender Studio！"
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:11
+msgid "Please send your payment of"
+msgstr "請將您的付款發送給"
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:11
+msgid "to:"
+msgstr "自："
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:16
+msgid "Use the following as a payment reference:"
+msgstr "使用以下內容作為付款參考："
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:23
+msgid "Subscription information: "
+msgstr "訂閱資訊："
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:9
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:11
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:9
+msgid "Dear"
+msgstr "親愛的"
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:11
+msgid "Manage subscription in your billing settings:"
+msgstr "在結算設定中管理訂閱："
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:14
+msgid "Kind regards,"
+msgstr "親切問候"
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:15
+msgid "Blender Studio Team"
+msgstr "攪拌機工作室團隊"
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:5
+msgid "has a"
+msgstr "具有"
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:5
+msgid "that just passed its next payment date."
+msgstr "剛剛過了下一個付款日期。"
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:9
+msgid "See"
+msgstr "觀看所有結果"
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:9
+msgid "in the Blender Studio admin."
+msgstr "在Blender Studio管理員中。"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:5
+msgid ""
+"Automatic payment for your Blender Studio subscription has failed.We have "
+"tried"
+msgstr "您的Blender Studio訂閱的自動付款失敗。我們嘗試過"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:7
+msgid ""
+"times, but none of those attempts were successful.As a result, we have "
+"paused your subscription for now."
+msgstr "，但這些嘗試都沒有成功。因此，我們暫時暫停了您的訂閱。"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:9
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:9
+msgid "The error we received from the payment provider was:"
+msgstr "我們從支付服務提供者處收到的錯誤是："
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:10
+msgid "To resume your subscription, please visit"
+msgstr "要恢復訂閱，請訪問"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:6
+msgid "Automatic"
+msgstr "自動"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:6
+msgid "payment for your Blender Studio subscription"
+msgstr "支付您的Blender Studio訂閱費用"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:6
+msgid "was successful. Thank you for subscribing to Blender Studio!"
+msgstr "是成功的。感謝您訂閱Blender Studio！"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:8
+msgid "You will find the online invoice at "
+msgstr "您可以在以下位置找到在線發票"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:5
+msgid "Automatic payment for your Blender Studio subscription failed.Don"
+msgstr "您的Blender Studio訂閱的自動付款失敗。哟³"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:5
+msgid "automatically try again"
+msgstr "自動重試"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:5
+msgid "soon."
+msgstr "很快。"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:6
+msgid "This was collection attempt"
+msgstr "這是收集嘗試"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:6
+msgid "of"
+msgstr "的"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:7
+msgid "If payment still fails after that, we"
+msgstr "如果在此之後付款仍然失敗，我們"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:11
+msgid "For now you can either wait for another automatic try,"
+msgstr "現在，您可以等待另一次自動嘗試，"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:12
+msgid "or visit"
+msgstr "或訪問"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:12
+msgid "to pay manually."
+msgstr "手動支付。"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:13
+msgid "As you may have heard, Blender Studio"
+msgstr "你可能聽說過，Blender Studio"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:14
+msgid "more on that in"
+msgstr "更多關於這一點"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:14
+msgid "the blog post"
+msgstr "博客文章"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:16
+msgid ""
+"Due to this update, the old PayPal Subscriptions payment method is no longer "
+"supported."
+msgstr "由於此更新，不再支援舊的PayPal訂閱付款方式。"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_activated.html:4
+msgid ""
+"subscription has been activated. Thank you for subscribing to Blender Studio!"
+msgstr "訂閱已啟動。感謝您訂閱Blender Studio！"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_activated.html:6
+msgid "Explore all Blender Studio Training:"
+msgstr "探索所有攪拌機工作室培訓："
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_deactivated.html:4
+msgid "Your Blender Studio subscription has been deactivated."
+msgstr "您的Blender Studio訂閱已被停用。"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:10
+msgid "Your Blender Studio subscription #"
+msgstr "您的Blender Studio訂閱#"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:10
+msgid ""
+"has expired a while back. We miss you -- and you are missing some exciting "
+"content on Blender Studio as well."
+msgstr ""
+"已過期一段時間。我們想念你 - 你也錯過了Blender Studio上一些令人興奮的內容。"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:12
+msgid "Just recently, we"
+msgstr "就在最近，我們"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:23
+msgid "If you"
+msgstr "如果您"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:69
+msgid "Hope to see you again soon!"
+msgstr "希望能很快見到你！"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:73
+msgid "Until then,"
+msgstr "在此之前，"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:11
+msgid "Billing"
+msgstr "帳單"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:13
+msgid "Step 2: Input your billing details."
+msgstr "第 2 步：輸入您的帳單詳細資訊。"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:14
+msgid "2 of 3"
+msgstr "2 頁，共 3"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:49
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:53
+msgid "Plan:"
+msgstr "方案："
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:9
+msgid "Payment"
+msgstr "付款"
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:11
+msgid "Step 3: Select a payment method."
+msgstr "第 3 步：選擇付款方式。"
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:12
+msgid "3 of 3"
+msgstr "3 頁，共 3"
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:63
+msgid "Billing:"
+msgstr "結算："
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:75
+msgid "Confirm and Pay"
+msgstr "確認和付款"
+
+#: .\subscriptions\templates\subscriptions\join\select_plan_variation.html:10
+msgid "No subscription plans available."
+msgstr "沒有可用的訂閱計劃。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:23
+msgid "Subscription Status"
+msgstr "訂閱狀態"
+
+#: .\subscriptions\templates\subscriptions\manage.html:35
+msgid "Subscription On Hold"
+msgstr "暫停訂閱"
+
+#: .\subscriptions\templates\subscriptions\manage.html:36
+msgid "Your subscription hasn"
+msgstr "您的訂閱已"
+
+#: .\subscriptions\templates\subscriptions\manage.html:36
+msgid "on-hold"
+msgstr "擱置"
+
+#: .\subscriptions\templates\subscriptions\manage.html:42
+msgid "Pay subscription"
+msgstr "付費訂閱"
+
+#: .\subscriptions\templates\subscriptions\manage.html:54
+msgid "Billing Period"
+msgstr "付款週期"
+
+#: .\subscriptions\templates\subscriptions\manage.html:58
+msgid "Your subscription will renew"
+msgstr "您的訂閱將續訂"
+
+#: .\subscriptions\templates\subscriptions\manage.html:59
+msgid "ally"
+msgstr "盟友"
+
+#: .\subscriptions\templates\subscriptions\manage.html:59
+msgid "ly"
+msgstr "的"
+
+#: .\subscriptions\templates\subscriptions\manage.html:60
+msgid "on"
+msgstr "開"
+
+#: .\subscriptions\templates\subscriptions\manage.html:61
+#: .\subscriptions\templates\subscriptions\manage.html:64
+msgid "for"
+msgstr "對於"
+
+#: .\subscriptions\templates\subscriptions\manage.html:63
+msgid "Your last"
+msgstr "您的上一頁"
+
+#: .\subscriptions\templates\subscriptions\manage.html:63
+msgid "payment is due on"
+msgstr "付款應在"
+
+#: .\subscriptions\templates\subscriptions\manage.html:67
+msgid "Your subscription is pending cancellation. It will be deactivated on"
+msgstr "您的訂閱正在等待取消。它將在"
+
+#: .\subscriptions\templates\subscriptions\manage.html:87
+msgid "Payment method"
+msgstr "付款方式"
+
+#: .\subscriptions\templates\subscriptions\manage.html:91
+msgid "Unknown"
+msgstr "未知"
+
+#: .\subscriptions\templates\subscriptions\manage.html:93
+msgid "The payment method previously used for this subscription was removed."
+msgstr "以前用於此訂閱的付款方式已刪除。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:115
+msgid "Bank details"
+msgstr "銀行資訊"
+
+#: .\subscriptions\templates\subscriptions\manage.html:123
+msgid "Use the following payment reference:"
+msgstr "請使用以下付款參考號："
+
+#: .\subscriptions\templates\subscriptions\manage.html:202
+msgid "Subscription Cancelled"
+msgstr "訂閱已取消"
+
+#: .\subscriptions\templates\subscriptions\manage.html:203
+msgid "This subscription has been cancelled. :( "
+msgstr "此訂閱已被取消。:("
+
+#: .\subscriptions\templates\subscriptions\manage.html:207
+msgid "Subscription Cancelled "
+msgstr "已取消訂閱"
+
+#: .\subscriptions\templates\subscriptions\manage.html:208
+msgid "This subscription has expired."
+msgstr "此訂閱已過期。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:213
+#: .\subscriptions\templates\subscriptions\manage.html:223
+msgid ""
+"You will still have the remainder of the billing period to access content."
+msgstr "您仍將有剩餘計費週期來訪問內容。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:217
+msgid "Subscription expires on"
+msgstr "訂閱到期日"
+
+#: .\subscriptions\templates\subscriptions\manage.html:228
+msgid "Cancel subscription"
+msgstr "取消訂閱"
+
+#: .\subscriptions\templates\subscriptions\manage.html:243
+msgid "Back to Overview"
+msgstr "返回概覽"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:11
+msgid "back to subscription settings"
+msgstr "返回訂閱設置"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:13
+msgid ".It will be activated as soon as the outstanding amount is paid"
+msgstr ".一旦支付了未付款項，它將被啟動"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:17
+msgid "Paying for Order #"
+msgstr "支付訂單#"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:19
+msgid "billed on"
+msgstr "計費時間"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:31
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:36
+msgid "change billing details"
+msgstr "更改帳單詳細資訊"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:46
+msgid "Pay"
+msgstr "付款"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:8
+msgid "Change Payment Method"
+msgstr "更改付款方式"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:21
+msgid "is used as payment method. Feel free to change it below."
+msgstr "用作付款方式。請在下面隨意更改。"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:26
+msgid ""
+"You subscription is using an unsupported payment method, please use the form "
+"below to change it."
+msgstr "您的訂閱使用的是不受支援的付款方式，請使用下面的表格進行更改。"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:47
+msgid "Cancel"
+msgstr "取消"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:52
+msgid "Switch Payment method"
+msgstr "切換支付方式"
+
+#: .\subscriptions\validators.py:30
+msgid ""
+"VAT identification number must start with a valid 2-letter country code."
+msgstr "增值稅識別號必須以有效的 2 個字母的國家/地區代碼開頭。"
+
+#: .\subscriptions\validators.py:32
+#, python-format
+msgid "%(vatin)s is not a valid VAT identification number."
+msgstr "%(vatin)s不是有效的增值稅識別號。"
+
+#: .\subscriptions\validators.py:33
+#, python-format
+msgid "%(vatin)s is not a registered VAT identification number."
+msgstr "%(vatin)s不是已註冊的增值稅識別號。"
+
+#: .\subscriptions\validators.py:34
+msgid "Unable to verify VAT identification number. Please try again later."
+msgstr "無法驗證增值稅標識號。請稍後再試。"
+
+#: .\training\templates\training\base_with_navigation.html:19
+msgid "Overview"
+msgstr "總覽"
+
+#: .\training\templates\training\components\card_button_favorite.html:6
+#: .\training\templates\training\training.html:49
+msgid "check"
+msgstr "使用 PayPal 進行支付"
+
+#: .\training\templates\training\components\card_button_favorite.html:8
+#: .\training\templates\training\training.html:49
+msgid "add"
+msgstr "新增"
+
+#: .\training\templates\training\home_authenticated.html:30
+msgid ""
+"Learn by example. Courses, workshops and production lessons with .blend "
+"files included."
+msgstr "通過示例學習。課程、研討會和生產課程，包括 .blend 檔。"
+
+#: .\training\templates\training\home_authenticated.html:48
+#: .\training\templates\training\home_authenticated.html:53
+msgid "Your Saved Training"
+msgstr "您保存的培訓"
+
+#: .\training\templates\training\home_authenticated.html:48
+#: .\training\templates\training\home_authenticated.html:54
+msgid ""
+"You can add and remove items from this list by clicking the plus or the tick."
+msgstr "您可以透過按下加號或勾號來新增和刪除此清單中的專案。"
+
+#: .\training\templates\training\home_authenticated.html:70
+msgid "No saved training"
+msgstr "未保存培訓"
+
+#: .\training\templates\training\home_authenticated.html:71
+msgid "You can favorite a few below!"
+msgstr "您可以在下面收藏一些！"
+
+#: .\training\templates\training\home_authenticated.html:85
+#: .\training\templates\training\home_not_authenticated.html:59
+msgid "All Training"
+msgstr "所有培訓"
+
+#: .\training\templates\training\home_not_authenticated.html:12
+#: .\training\templates\training\home_not_authenticated.html:29
+msgid ""
+"Learn from our expert team. Courses, workshops and production lessons with ."
+"blend files included."
+msgstr "向我們的專家團隊學習。課程、研討會和生產課程，包括 .blend 檔。"
+
+#: .\training\templates\training\training.html:50
+msgid "Saved"
+msgstr "已儲存"
+
+#: .\users\admin.py:37
+msgid "subscriptions"
+msgstr "網站訂閱"
+
+#: .\users\admin.py:60
+msgid "Braintree Customer IDs"
+msgstr "布倫特裡客戶ID"
+
+#: .\users\admin.py:121
+msgid "Personal info"
+msgstr "個人信息"
+
+#: .\users\admin.py:125
+msgid "Permissions"
+msgstr "權限"
+
+#: .\users\admin.py:129
+msgid "Important dates"
+msgstr "重要日期"
+
+#: .\users\admin.py:132
+msgid "Activity"
+msgstr "動態"
+
+#: .\users\models.py:29
+msgid "email address"
+msgstr "電子郵件地址"
+
+#: .\users\templates\actstream\actor.html:9
+msgid "Viewing"
+msgstr "查看"
+
+#: .\users\templates\actstream\actor.html:9
+msgid "`s activity"
+msgstr "的活動"
+
+#: .\users\templates\admin\users\user\change_form_object_tools.html:9
+msgid "Show in Blender ID"
+msgstr "在攪拌機ID中顯示"
+
+#: .\users\templates\admin\users\user\change_form_object_tools.html:14
+msgid "Find in Blender ID"
+msgstr "在Blender ID中查找"
+
+#: .\users\templates\users\activity.html:9
+#: .\users\templates\users\components\links.html:6
+msgid "My activity"
+msgstr "我的活動"
+
+#: .\users\templates\users\activity.html:9
+msgid "All your most recent acivity in the Studio is here."
+msgstr "您在工作室中所有最新的交流都在這裡。"
+
+#: .\users\templates\users\activity.html:11
+msgid "All the latest likes and replies to your content are here."
+msgstr "所有最新的喜歡和回復您的內容都在這裡。"
+
+#: .\users\templates\users\components\action_summary.html:15
+msgid "Someone"
+msgstr "有人"
+
+#: .\users\templates\users\components\actions.html:7
+msgid "No activity yet"
+msgstr "尚未啟用"
+
+#: .\users\templates\users\components\links.html:7
+msgid "My notifications"
+msgstr "我的通知"
+
+#: .\users\templates\users\notifications.html:9
+msgid "All the latest likes, comments and replies to your content are here."
+msgstr "所有最新的喜歡，評論和回復您的內容都在這裡。"
+
+#: .\users\templates\users\notifications.html:11
+msgid "All the latest comments and replies to your content are here."
+msgstr "所有最新的評論和回復您的內容都在這裡。"
+
+#: .\users\templates\users\notifications.html:13
+msgid "All the latest comments about your content are here."
+msgstr "有關您的內容的所有最新評論都在這裡。"
+
+#: .\users\templates\users\notifications.html:15
+msgid "All the latest replies to your comments are here."
+msgstr "所有對您的評論的最新回復都在這裡。"
+
+#: .\users\templates\users\notifications.html:17
+msgid "All the latest likes of your content are here."
+msgstr "您的內容的所有最新讚都在這裡。"
+
+#: .\users\templates\users\notifications.html:29
+msgid "All"
+msgstr "全部"
+
+#: .\users\templates\users\notifications.html:30
+msgid "Comments and replies"
+msgstr "評論和回復"
+
+#: .\users\templates\users\notifications.html:31
+msgid "Likes"
+msgstr "喜歡"
+
+#: .\users\templates\users\notifications.html:41
+msgid "Mark all as read"
+msgstr "全部標記為已讀"
+
+#: .\users\templates\users\settings\billing.html:8
+msgid "s"
+msgstr "秒"
+
+#: .\users\templates\users\settings\billing.html:9
+msgid "If you have any problems with billing, contact the team directly on"
+msgstr "如果您在結算方面遇到任何問題，請直接通過以下方式與團隊聯繫"
+
+#: .\users\templates\users\settings\billing.html:9
+msgid "studiosupport@blender.org"
+msgstr "studiosupport@blender.org"
+
+#: .\users\templates\users\settings\billing.html:17
+msgid "Manage Subscription"
+msgstr "管理訂閱"
+
+#: .\users\templates\users\settings\billing.html:19
+msgid ""
+"You have full access to the Blender Studio, provided by the Blender "
+"Institute. This account is meant for free evaluation of the service. Get in "
+"touch with "
+msgstr ""
+"您可以完全訪問Blender Institute提供的Blender Studio。此帳戶旨在免費評估服務。"
+"聯繫我們"
+
+#: .\users\templates\users\settings\billing.html:20
+msgid "if you have any questions."
+msgstr "如果您有任何疑問。"
+
+#: .\users\templates\users\settings\delete.html:7
+#: .\users\templates\users\settings\tabs.html:63
+msgid "Delete account"
+msgstr "刪除帳號"
+
+#: .\users\templates\users\settings\delete.html:14
+msgid "You can request deletion of your account in"
+msgstr "您可以在"
+
+#: .\users\templates\users\settings\delete.html:14
+#: .\users\templates\users\settings\profile.html:14
+msgid "Blender ID"
+msgstr "Blender ID"
+
+#: .\users\templates\users\settings\delete.html:19
+msgid ""
+"Note that your account has publicly visible content, such as blog posts or "
+"assets, that cannot be deleted from Blender Studio."
+msgstr ""
+"請注意，您的帳戶具有公開可見的內容，例如博客文章或資產，無法從Blender Studio"
+"中刪除。"
+
+#: .\users\templates\users\settings\emails.html:6
+#: .\users\templates\users\settings\tabs.html:13
+msgid "Emails"
+msgstr "電子郵件"
+
+#: .\users\templates\users\settings\emails.html:10
+msgid "Newsletter"
+msgstr "電子報"
+
+#: .\users\templates\users\settings\emails.html:11
+msgid ""
+"We occasionally send out emails with updates on whats new in the Blender "
+"Studio."
+msgstr "我們偶爾會發送電子郵件，其中包含Blender Studio中新功能的更新。"
+
+#: .\users\templates\users\settings\emails.html:21
+msgid "Keep me updated with Blender Studio news."
+msgstr "讓我瞭解Blender Studio新聞。"
+
+#: .\users\templates\users\settings\production_credits.html:6
+#: .\users\templates\users\settings\tabs.html:21
+msgid "Production Credits"
+msgstr "製作人員名單"
+
+#: .\users\templates\users\settings\production_credits.html:8
+msgid "It looks like you have no film production credits, yet."
+msgstr "看起來你還沒有電影製作人員名單。"
+
+#: .\users\templates\users\settings\profile.html:8
+#: .\users\templates\users\settings\tabs.html:6
+msgid "Profile"
+msgstr "個人資料"
+
+#: .\users\templates\users\settings\profile.html:12
+msgid "Blender ID Profile"
+msgstr "Blender ID設定檔"
+
+#: .\users\templates\users\settings\profile.html:13
+msgid "To change the details below, visit the"
+msgstr "要更改以下詳細資訊，請訪問"
+
+#: .\users\templates\users\settings\profile.html:14
+msgid "website."
+msgstr "網站。"
+
+#: .\users\templates\users\settings\profile.html:20
+msgid "Full Name"
+msgstr "全名"
+
+#: .\users\templates\users\settings\profile.html:21
+#: .\users\templates\users\settings\profile.html:36
+#: .\users\templates\users\settings\profile.html:42
+msgid "This is displayed in comments."
+msgstr "這將顯示在註釋中。"
+
+#: .\users\templates\users\settings\profile.html:27
+msgid "This is how we contact you."
+msgstr "這就是我們與您聯繫的方式。"
+
+#: .\users\templates\users\settings\profile.html:35
+msgid "Username"
+msgstr "使用者名稱"
+
+#: .\users\templates\users\settings\profile.html:41
+msgid "Profile Picture"
+msgstr "個人資料圖片"
+
+#: .\users\templates\users\settings\profile.html:51
+msgid "Badges"
+msgstr "徽章"
+
+#: .\users\templates\users\settings\profile.html:52
+msgid "These are displayed next to your name."
+msgstr "這些顯示在您的姓名旁邊。"
+
+#: .\users\templates\users\settings\profile.html:65
+msgid "Preview"
+msgstr "預覽"
+
+#: .\users\templates\users\settings\profile.html:66
+msgid "This is how your profile is displayed."
+msgstr "這是您的個人資料的顯示方式。"
+
+#: .\users\templates\users\settings\tabs.html:42
+msgid "Billing addresss"
+msgstr "帳單位址"
+
+#: .\users\templates\users\settings\tabs.html:54
+msgid "Payment methods"
+msgstr "付款方式"

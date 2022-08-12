@@ -1,0 +1,79 @@
+{% load pipeline %}
+{% load static %}
+{% load looper %}
+{% load i18n %}
+{% load common_extras %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'common/images/favicon/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{% block title_prepend %}{% endblock title_prepend %}
+     {% trans 'Blender Studio Subscription' %}
+      {% block title_append %}{% endblock title_append %}</title>
+    <meta name="google-site-verification" content="r-8DuUEYwMyb14SRVj0I4mSUSEPmdRRMrT-zMSbFkas">
+
+    {% block meta %}
+      {% include 'common/components/meta.html' %}
+    {% endblock meta %}
+
+    {% stylesheet 'studio' %}
+  </head>
+
+  <body class="{% block bodyclasses %}{% endblock bodyclasses %} join" data-authenticated="{% if request.user.is_authenticated %}true{% else%}false{% endif %}">
+
+    <div class="join-header">
+
+      <div class="join-header-background">
+        <img src="{% static 'subscriptions/images/join-header.png' %}" alt="Cartoon dog eating tasty treats" class="join-header-background-image">
+      </div>
+
+      <a href="/" class="text-white">
+        <h1 class="text-uppercase join-header-brand">{% trans 'Blender Studio' %}</h1>
+      </a>
+
+    </div>
+
+
+    <div class="container-xxl mb-4">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 offset-lg-4 offset-md-3">
+          <section class="checkout md-5">
+            <div class="payment-tabs-container">
+              {% block content %}{% endblock content %}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+
+    {% include 'subscriptions/components/footer.html' %}
+
+    {{ user_dict|json_script:"current-user" }}
+    {% javascript 'vendor' %}
+
+
+    {% block scripts %}
+    {% endblock scripts %}
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ settings_analytics_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', '{{ settings_analytics_id }}');
+
+    </script>
+  </body>
+
+</html>

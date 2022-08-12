@@ -1,0 +1,34 @@
+{% load i18n %}
+<div class="modal-dialog" role="document">
+  <div class="modal-content bg-dark">
+    <div class="modal-header p-0">
+      <div class="button-toolbar">
+        <button data-like-url="{{ asset.like_url }}"
+          class="btn btn-dark btn-sm btn-icon comment-material-button checkbox-like {% if not user.is_authenticated %}disabled{% endif%}"
+          {% if not user.is_authenticated %}disabled{% endif%} {% if asset.liked %}data-checked="checked" {% endif %}>
+          <i class="material-icons checkbox-like-icon-checked text-primary">favorite</i>
+          <i class="material-icons checkbox-like-icon-unchecked">favorite_border</i>
+          {% if asset.likes.count != 0 %}<span class="likes-count">{{ asset.likes.count }}</span>{% endif %}
+        </button>
+        <a href="{{ asset.static_asset.download_url }}" download onclick="setTimeout(resetProgress, 100)"
+          class="btn btn-sm btn-dark">{% trans 'Download' %}{% if asset.static_asset.download_size != "" %} <span
+            class="subtitle">({{ asset.static_asset.download_size }})</span>{% endif %}</a>
+        <button data-bs-toggle="dropdown" class="btn btn-sm btn-icon btn-dark">
+          <i class="material-icons">more_horiz</i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end">
+          <a href="https://developer.blender.org/maniphest/task/edit/form/15/" target="_blank" class="dropdown-item">
+            <i class="material-icons">flag</i>
+            <span>{% trans 'Report Problem' %}</span>
+          </a>
+        </div>
+        <button data-bs-dismiss="modal" class="btn btn-sm btn-icon btn-dark">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <img alt="{{ asset.name }}" src="{{ asset.static_asset.thumbnail.url }}">
+    </div>
+  </div>
+</div>

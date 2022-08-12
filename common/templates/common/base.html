@@ -1,0 +1,564 @@
+{% load pipeline %}
+{% load static %}
+{% load common_extras %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'common/images/favicon/favicon.ico' %}">
+    <title>{% block title_prepend %}{% endblock title_prepend %}{% trans 'Blender Studio' %}{% block title_append %}{% endblock title_append %}</title>
+    <meta name="google-site-verification" content="r-8DuUEYwMyb14SRVj0I4mSUSEPmdRRMrT-zMSbFkas">
+
+    {% block meta %}
+      {% include 'common/components/meta.html' %}
+    {% endblock meta %}
+
+    {% stylesheet 'studio' %}
+
+    {% block head_style_extras %}
+    {% endblock head_style_extras %}
+
+    {% block html_templates %}
+      <template id="comment-template">
+        {% include 'comments/components/comment.html' %}
+      </template>
+
+      <template id="comment-reply-input-template">
+        {% include 'comments/components/comment_input.html' with div_class='comment-reply-input' %}
+      </template>
+
+      <template id="comment-edit-input-template">
+        {% include 'comments/components/comment_input.html' with div_class='comment-edit-input' %}
+      </template>
+      {% comment %}{% trans 'This is here to stop the comment_input causing code-editor issues' %} {% endcomment %}
+    {% endblock %}
+  </head>
+
+  <body class="spacer {% block bodyclasses %}{% endblock bodyclasses %}"
+    data-authenticated="{% if request.user.is_authenticated %}true{% else%}false{% endif %}">
+    <!-- When the body has a nav-drawer, it should have the class 'has-nav-drawer' and when it's wide, 'has-nav-drawer nav-drawer-wide' -->
+    <div class="progress global-progress">
+      <div class="progress-bar" role="progressbar" aria-label="Page loading progress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100"></div>
+    </div>
+
+    <div class="blender-navbar bg-dark mt-md-n3 mb-sm-3 border-bottom border-1 border-input">
+      <div class="container-nav">
+        <div class="row justify-content-between">
+
+          <div class="col-auto d-flex align-items-stretch">
+            <a href="https://blender.org" class="blender-navbar-brand" target="_blank">
+              <img src="{% static 'common/images/blender_logo_white.svg' %}">
+            </a>
+          </div>
+
+          <div class="col-auto d-flex align-items-center">
+
+            {% comment %} <a href="https://www.blender.org/download/" target="_blank" class="btn btn-dark btn-sm btn-nav">
+             {% trans 'Download Blender' %}
+            </a> {% endcomment %}
+
+            <button data-bs-toggle="dropdown" class="btn btn-dark btn-sm btn-nav btn-icon">
+              <i class="material-icons">apps</i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end dropdown-menu-grid bg-dark" style="z-index: 1045;">
+
+              <a href="https://fund.blender.org/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  <i class="material-icons">favorite</i>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Development Fund' %}</h4>
+                  <p>{% trans 'Support Blender Core Development with a monthly contribution.' %}</p>
+                </div>
+              </a>
+
+              <a href="https://studio.blender.org/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  <i class="material-icons">theaters</i>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Blender Studio' %}</h4>
+                  <p>{% trans 'The creators who share. Access production content and knowledge from the Open Movies.' %}</p>
+                </div>
+              </a>
+
+              <a href="https://code.blender.org/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  <i class="material-icons">code</i>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Blender Developer Blog' %}</h4>
+                  <p>{% trans 'Latest news and updates on Blender development.'%} </p>
+                </div>
+              </a>
+
+              <a href="https://www.blender.org/get-involved/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  <i class="material-icons">people</i>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Get Involved' %}</h4>
+                  <p>{% trans 'Join the community and help with design, development, docs and more.'}</p>
+                </div>
+              </a>
+
+              <a href="https://opendata.blender.org/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  <i class="material-icons">bar_chart</i>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Open Data' %}</h4>
+                  <p>{% trans 'A platform to collect and display the Blender Benchmark results.'%}</p>
+                </div>
+              </a>
+
+              <a href="https://docs.blender.org/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  <i class="material-icons">menu_book</i>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Blender Docs'%}</h4>
+                  <p>{% trans 'Documentation on Blender`s features, tools and API.'%}</p>
+                </div>
+              </a>
+
+              <a href="https://conference.blender.org/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  {% comment %} <i class="material-icons">menu_book</i> {% endcomment %}
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                      <path d="M13.6303 1.5C8.28429 1.5 3.8711 5.61792 3.31955 10.8856C3.71692 10.7717 4.1366 10.7094 4.57217 10.7094C7.11951 10.7094 9.15738 12.7859 9.15738 15.365C9.15738 17.2571 8.05893 18.8612 6.46905 19.5835C8.33238 21.3879 10.8545 22.5 13.6303 22.5C19.3481 22.5 24 17.7898 24 12.0002C24 6.21037 19.3481 1.5 13.6303 1.5Z"/>
+                      <path d="M1.91375 11.5696C0.751498 12.4118 0 13.7946 0 15.365C0 17.9442 2.02487 19.9947 4.57221 19.9947C4.70001 19.9947 4.82607 19.988 4.95096 19.9776C3.05796 17.868 1.90289 15.0681 1.90289 12C1.90289 11.8557 1.90871 11.7127 1.91375 11.5696Z"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Blender Conference' %}</h4>
+                  <p>{% trans 'The yearly event that brings together the Blender community in one place.'%}</p>
+                </div>
+              </a>
+
+
+              <a href="https://www.blender.org/download/" class="dropdown-item" rel="nofollow" target="_blank">
+                <div class="dropdown-item-icon">
+                  <i class="material-icons">download</i>
+                </div>
+                <div class="dropdown-item-text">
+                  <h4>{% trans 'Get Blender' %}</h4>
+                  <p>{% trans 'Download the latest Blender version, or try the beta!'%}</p>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar container-nav flex-nowrap d-flex align-center scroll">
+
+      <div class="navbar-main-mobile">
+        <button class="btn btn-secondary btn-nav btn-icon navdrawertoggle">
+          <i class="material-icons">menu</i>
+        </button>
+      </div>
+
+      <a href="/" class="navbar-brand">
+        <h1 style="transform: translateY(1px);" class="h3 mb-0 text-uppercase">{% trans 'Blender Studio' %}</h1>
+      </a>
+
+      <div class="navbar-main-nav">
+        <a href="{% url 'film-list' %}" class="btn btn-secondary btn-nav">
+          <span>{% trans 'Films' %}</span>
+        </a>
+        <a href="{% url 'training-home' %}" class="btn btn-secondary btn-nav">
+          <span>{% trans 'Training' %}</span>
+        </a>
+
+        <a href="{% url 'post-list' %}" class="btn btn-secondary btn-nav">
+          <span>{% trans 'Blog' %}</span>
+        </a>
+
+        <div class="mx-2 position-relative d-none d-md-block d-lg-none">
+          <button class="btn btn-nav btn-icon btn-secondary" data-bs-toggle="dropdown" id="nav-dropdown">
+            <i class="material-icons">arrow_drop_down</i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="nav-dropdown">
+            <a href="/training/pipeline-and-tools/" class="dropdown-item">
+              <span>{% trans 'Pipeline and Tools' %}</span>
+            </a>
+
+            <a href="{% url 'character-list' %}" class="dropdown-item">
+              <span>{% trans 'Characters' %}</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="/training/pipeline-and-tools/" class="btn btn-secondary btn-nav d-none d-lg-block ms-2">
+          <span>{% trans 'Pipeline and Tools' %}</span>
+        </a>
+        <a href="{% url 'character-list' %}" class="btn btn-secondary btn-nav d-none d-lg-block ms-2">
+          <span>{% trans 'Characters' %}</span>
+        </a>
+      </div>
+      {% if request.user.is_authenticated %}
+
+        <div class="navbar-main-nav-toolbar">
+
+          <a href="{% url 'search' %}" class="btn btn-secondary btn-nav btn-icon search-button">
+            <i class="material-icons">search</i>
+          </a>
+
+          <div>
+            <button href="{% url 'user-notification' %}" data-bs-toggle="dropdown"
+              class="btn btn-secondary btn-nav btn-icon notification-button me-2">
+              <i class="material-icons">notifications</i>
+              {% if user.notifications_unread.count >= 1 %}
+                <span class="notifications-counter">{{ user.notifications_unread.count }}</span>
+              {% endif %}
+            </button>
+            <div class="dropdown-menu dropdown-menu-end notification-dropdown">
+
+              <div class="dropdown-double">
+                <a href="{% url 'user-notification' verbs='commented,replied to' %}" class="dropdown-item">
+                  <i class="material-icons">notifications</i>
+                  <span>{% trans 'Notifications' %}</span>
+                </a>
+
+                <button class="dropdown-item icon {% if user.notifications_unread.count >= 1 %}unread{% endif %}"
+                  data-bs-toggle="tooltip" data-placement="top"
+                  data-mark-all-read-url="{% url 'api-notifications-mark-read' %}" title="Mark all as read">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+              </div>
+
+              <div class="dropdown-menu-nested">
+
+                {% for notification in user.notifications.all|slice:":10" %}
+                  {% with action=notification.action %}
+                    {% include 'users/components/nav_action.html' %}
+                  {% endwith %}
+                {% empty %}
+                  <p class="px-2 py-2 subtitle text-center">
+                   {% trans 'No notifications yet' %}
+                  </p>
+                {% endfor %}
+
+              </div>
+
+              <a href="{% url 'user-notification' %}" class="dropdown-item small">
+                <span>{% trans 'See all notifications' %}</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div>
+            <button data-bs-toggle="dropdown" class="btn btn-secondary btn-nav btn-profile">
+              {% if request.user.is_authenticated and request.user.image_url %}
+                <div style="background-image:url('{{ request.user.image_url }}');" class="profile"></div>
+              {% else %}
+                <div style="background-image:url('{% static 'common/images/blank-profile-pic.png' %}');" class="profile">
+                </div>
+              {% endif %}
+              {% if request.user|has_group:"demo"  %}
+                <i class="profile-subscription-badge demo material-icons">favorite</i>
+              {% elif request.user|has_active_subscription %}
+                <i class="profile-subscription-badge subscriber material-icons">done</i>
+              {% else %}
+                <i class="profile-subscription-badge unsubscribed material-icons">priority_high</i>
+              {% endif %}
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+
+              <a href="{% url 'user-settings' %}" class="dropdown-item">
+                <i class="material-icons">home</i>
+                <span>{% trans 'My Profile' %}</span>
+              </a>
+
+              <div class="dropdown-menu-nested">
+                {% if request.user.is_authenticated %}
+                  {% if request.user|has_group:"demo" %}
+                    <a href="{% url 'user-settings-billing' %}" class="dropdown-item text-blue">
+                      <i class="material-icons">favorite</i>
+                      <span>{% trans 'Free Account' %}</span>
+                    </a>
+                  {% elif request.user|has_active_subscription %}
+                    <a href="{% url 'user-settings-billing' %}" class="dropdown-item text-green">
+                      <i class="material-icons">done</i>
+                      <span>{% trans 'Subscription Active' %}</span>
+                    </a>
+                  {% else %}
+                    <a href="{% url 'user-settings-billing' %}" class="dropdown-item text-red">
+                      <i class="material-icons">error</i>
+                      <span>{% trans 'Subscription Inactive' %}</span>
+                    </a>
+                  {% endif %}
+                {% endif %}
+
+                <a href="/settings/profile" class="dropdown-item">
+                  <i class="material-icons">settings</i>
+                  <span>{% trans 'Settings' %}</span>
+                </a>
+
+                <a href="{% url 'user-settings-billing' %}" class="dropdown-item">
+                  <i class="material-icons">credit_card</i>
+                  <span>{% trans 'Subscription' %}</span>
+                </a>
+              </div>
+
+              <a href="{% url 'user-activity' %}" class="dropdown-item">
+                <i class="material-icons">timeline </i>
+                <span>{% trans 'My Activity' %}</span>
+              </a>
+
+              {% if user.is_superuser or user.is_staff %}
+                <a href="/admin" class="dropdown-item">
+                  <i class="material-icons">security</i>
+                  <span>{% trans 'Admin' %}</span>
+                </a>
+              {% endif %}
+
+              <a href="{% url 'oauth:logout' %}" class="dropdown-item">
+                <i class="material-icons">exit_to_app</i>
+                <span>{% trans 'Sign Out' %}</span>
+              </a>
+              {# For exiing a "Login-As" switcheroo #}
+              {% if is_impersonated_session %}
+                {% with warn="(!) You are currently using login-as to impersonate someone else's session" %}
+                  <a class="dropdown-item" title="{{ warn }}" href="{% url 'loginas-logout' %}">
+                    <i class="text-warning material-icons">exit_to_app</i>
+                    <span class="text-warning">{% trans 'Switch back' %}</span>
+                  </a>
+                {% endwith %}
+              {% endif %}
+            </div>
+          </div>
+
+        </div>
+      {% else %}
+        <div class="navbar-main-nav-toolbar">
+          <a href="{% url 'search' %}" class="btn me-0 btn-secondary btn-nav btn-icon search-button">
+            <i class="material-icons">search</i>
+          </a>
+          <a href="{% url 'oauth:login' %}" class="btn btn-transparent btn-nav login-button me-2">{% trans 'Login' %}</a>
+          <a href="{% url 'subscriptions:join' %}" class="btn btn-primary ">{% trans 'Join' %}
+            <span class="d-none d-lg-inline-block">{% trans 'Blender Studio' %}</span></a>
+        </div>
+      {% endif %}
+
+      <ul class="nav navbar-nav navbar-right language menu">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <li>
+                <a href="/{{ language.code }}{{ redirect_to}}/"
+                   class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}"
+                   lang="{{ language.code }}">
+                    {{ language.name_local }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    </nav>
+
+    {% block secondary_nav %}{% endblock secondary_nav %}
+
+    {% block jumbotron %}{% endblock jumbotron %}
+
+    {% comment %}
+      <div class="navbar-secondary">
+        <div class="content-holder">
+          <div class="container-xxl">
+            <div class="list-group list-group-flush list-group-horizontal small">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endcomment %}
+
+    {% block nav_drawer %}
+
+      <nav class="nav-drawer">
+        <div class="nav-drawer-body">
+          {% comment %}
+            <div class="px-2 py-2 d-block d-md-none">
+              <div class="input-group mb-0">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">search</i></span>
+                </div><input class="form-control" type="text" placeholder="Search tags and keywords" />
+              </div>
+            </div>
+          {% endcomment %}
+          <div class="navbar-secondary d-md-none">
+            <div class="navdrawer-offset">
+              <div class="container-fluid px-2 py-1">
+                <div class="row ">
+
+                  <div class="col-6 p-0">
+                    <a class="h3 drawer-nav-dropdown" href="{% url 'film-list' %}">
+                      <span>{% trans 'Films' %}</span>
+                    </a>
+                  </div>
+
+                  <div class="col-6 p-0">
+                    <a class="h3 drawer-nav-dropdown" href="{% url 'training-home' %}">
+                      <span>{% trans 'Training' %}</span>
+                    </a>
+                  </div>
+
+                  <div class="col-6 p-0">
+                    <a class="h3 drawer-nav-dropdown" href="{% url 'post-list' %}">{% trans 'Blog' %}</a>
+                  </div>
+
+                  <div class="col-6 p-0">
+                    <a class="h3 drawer-nav-dropdown" href="/training/pipeline-and-tools/">{% trans 'Pipeline and Tools' %}</a>
+                  </div>
+
+                  <div class="col-6 p-0">
+                    <a class="h3 drawer-nav-dropdown" href="{% url 'character-list' %}">{% trans 'Characters' %}</a>
+                  </div>
+
+                  <div class="col-6 p-0">
+                    <a class="h3 drawer-nav-dropdown" href="{% url 'search' %}">{% trans 'Search'</a>
+                  </div>
+
+                  {% if not request.user.is_authenticated %}
+
+                    <div class="col-6 p-0">
+                      <a class="h3 drawer-nav-dropdown" href="{% url 'oauth:login' %}">{% trans 'Login' %}</a>
+                    </div>
+
+                    <div class="col-6 p-0">
+                      <a class="h3 drawer-nav-dropdown text-primary" href="{% url 'oauth:login' %}">{% trans 'Join' %}</a>
+                    </div>
+
+                  {% else %}
+
+                    <div class="col-6 p-0">
+                      <a class="h3 drawer-nav-dropdown" href="{% url 'user-notification' %}">{% trans 'Notifications' %}</a>
+                    </div>
+
+                  {% endif %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% block nav_drawer_inner %}
+          {% endblock nav_drawer_inner %}
+        </div>
+      </nav>
+
+    {% endblock nav_drawer %}
+
+    <div class="content-holder navdrawer-offset">
+      {% block breadcrumbs %}{% endblock breadcrumbs %}
+      {% comment %}
+        <nav class="navbar-secondary" aria-label="breadcrumbs">
+          <div class="content-holder">
+            <div class="container-xxl">
+
+            </div>
+          </div>
+        </nav>
+      {% endcomment %}
+
+      {% block content %}{% endblock content %}
+    </div>
+
+    {% block footer %}
+      {% include 'common/components/navigation/footer.html' %}
+    {% endblock footer %}
+
+    <div id="file-modal" class="modal modal-asset" tabindex="-1" role="dialog" aria-hidden="true">
+      {# This is the modal div, the contents from "modal_asset.html" are inserted here. #}
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">{% trans 'Loading...' %}</span>
+      </div>
+    </div>
+
+    <div id="file-zoom-modal" class="modal modal-asset-zoom" tabindex="-1" role="dialog" aria-hidden="true">
+      {# This is the zoom modal div, the contents from "modal_asset_zoom.html" are inserted here. #}
+    </div>
+
+    <div id="videoModal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <button class="modal-navigation modal-close btn btn-icon btn-lg" data-bs-dismiss="modal">
+        <i class="material-icons btn-material-icons">close</i>
+      </button>
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark">
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9 js-youtube-embed">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="image-zoom-modal" class="modal modal-asset-zoom" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content bg-dark">
+          <div class="modal-header p-0">
+            <div class="button-toolbar">
+              <button data-bs-dismiss="modal" class="btn btn-sm btn-icon btn-dark">
+                <i class="material-icons">close</i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {{ user_dict|json_script:"current-user" }}
+    {% javascript 'vendor' %}
+    {% javascript 'studio' %}
+
+    {% block scripts %}{% endblock scripts %}
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ settings_analytics_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', '{{ settings_analytics_id }}');
+
+    </script>
+
+    <script>
+      // Humanizes dates
+      document.querySelectorAll('.date').forEach(i => {
+        i.textContent = timeDifference(epochToDate(i.textContent));
+      });
+    </script>
+
+    <script>
+      initVideo(document);
+    </script>
+
+    <script>
+      // Init tooltips
+      const tooltipTriggerList = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')];
+      const tooltipList = tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+footer.container-nav {
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+    margin: $spacer / 2 !important;
+    width: calc(100% - #{$spacer}) !important;
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin: $spacer;
+    width: calc(100% - #{$spacer * 2});
+  }
+
+  border: 1px solid $input-gray;
+  border-radius: $border-radius-lg;
+  background: $navigation-gray;
+  padding: $spacer;
+  margin-bottom: $spacer;
+  margin-top: auto;
+  z-index: 1;
+
+  ul {
+    @include list-unstyled;
+  }
+}
+
+.footer-social-media {
+  img {
+    @include media-breakpoint-down(sm) {
+      width: 48px;
+    }
+  }
+
+  a {
+    opacity: .5;
+    transition: $transition-base;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+
+// Pushes the footer down the the bottom of the page using margin-top auto on footer
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - #{$spacer});
+  @include scroll-bar($dark, $input-gray);
+}

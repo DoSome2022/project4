@@ -1,0 +1,37 @@
+{% extends "subscriptions/emails/base.html" %}
+{% load subscriptions %}
+{% load i18n %}
+
+{% block content %}{% with taxable=subscription.taxable %}
+  <p>{% trans 'Thank you for subscribing to Blender Studio!' %}</p>
+  <p>
+    {% trans 'Your' %} {% spaceless %}{% include 'subscriptions/components/info_with_status.html' %}{% endspaceless %}
+    {% trans 'and will be activated as soon as we have received and handled your bank transfer.' %}
+  </p>
+  <p>{% trans 'Please send your payment of' %} {{ taxable.price.with_currency_symbol }} {% trans 'to:' %}</p>
+  <p>
+    <pre>{% include "subscriptions/components/bank_transfer_details.txt" %}</pre>
+  </p>
+  <p>
+   {% trans 'Use the following as a payment reference:' %}
+  </p>
+  <p><pre>{% include "subscriptions/components/bank_transfer_reference.txt" %}</pre></p>
+  <p>
+    {% trans 'You may need to wait a few days until the payment clears before one of our team members activates your account.' %}
+  </p>
+  <p>
+    <strong>{% trans 'Subscription information: '%}</strong>
+  </p>
+  <p>
+    {% Subscription #: %}{{ subscription.id }}<br />
+    {% Renewal type: %} {{ subscription.collection_method }}<br />
+    {% Renewal period: %} {{ subscription|renewal_period }}
+  </p>
+  <p>
+    {% Payment method: %} {{ subscription.payment_method }}<br />
+    {% Recurring total: %} {{ taxable.price.with_currency_symbol }}<br />
+    {% if taxable.tax_is_charged %}
+      <span style="margin-left: 8em">{{ taxable.format_tax_amount }}</span>
+    {% endif %}
+  </p>
+{% endwith %}{% endblock content %}

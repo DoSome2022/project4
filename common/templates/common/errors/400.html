@@ -1,0 +1,7 @@
+{% load i18n %}
+{% extends 'common/errors/base.html' %} {% block page_title %}{% trans 'Bad Request' %} {% endblock %} {% block errorbody %}
+  <h1>{% trans 'Bad Request' %}</h1>
+  <p>{% trans 'Your HTTP client sent a request that we did not understand.'%}</p>
+  <p>{% trans 'Try' %} <a href="{% url 'home' %}">{% trans 'the frontpage' %}</a> {% trans 'instead.' %}</p>
+  {% if request.sentry.id %}<hr/>
+    <p>{% trans 'If you need assistance, you may reference this error as' %} <strong>{{ request.sentry.id }}</strong>.</p>{% endif %} {% endblock %}

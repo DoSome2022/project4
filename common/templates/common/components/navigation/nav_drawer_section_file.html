@@ -1,0 +1,19 @@
+{% load i18n %}
+<li class="drawer-nav-section">
+  <a href="{{ href }}" class="drawer-nav-section-link {% if active %}active{% endif %}" data-bs-tooltip="tooltip-overflow"
+    data-placement="top" title="{{ title }}">
+    <i class="material-icons me-2">insert_drive_file</i>
+    <p class="overflow-text h4">{{ title }}</p>
+    {% if published %}
+      {% if free %}
+        <span class="ms-auto">
+          {% include "common/components/cards/pill.html" with label=_('Free') %}
+        </span>
+      {% endif %}
+    {% else %}
+      <span class="ms-auto">
+        <i class="material-icons icon-inline small text-danger ms-1 me-0" data-bs-toggle="tooltip" data-placement="top" title="Unpublished">visibility_off</i>
+      </span>
+    {% endif %}
+  </a>
+</li>

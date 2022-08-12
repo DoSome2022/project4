@@ -1,0 +1,112 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% load common_extras %}
+{% load i18n %}
+
+{% block title_prepend %}{{ character_showcase.showcase.title }} -{% trans 'Character Showcase' %}- {% endblock title_prepend %}
+
+{% block meta %}
+  {% with title=character_showcase.title description=character_showcase.description|unmarkdown image_url=character_showcase.static_asset.thumbnail_m_url %}
+    {% include 'common/components/meta.html' %}
+  {% endwith %}
+{% endblock %}
+
+{% block content %}
+  <div class="container-xxl py-2 py-md-3">
+
+    <div class="row justify-content-center mb-3">
+      <div class="col-lg-10">
+        {% if character_showcase.preview_video_static_asset.video %}
+          {% with video=character_showcase.preview_video_static_asset.video %}
+            {% get_video_progress_seconds video as start_position %}
+            <div class="col">
+              {% if character_showcase.is_free or request.user|has_active_subscription %}
+                {% include 'common/components/video_player.html' with url=video.source.url progress_url=video.progress_url start_position=start_position poster=video.thumbnail_m_url tracks=video.tracks.all loop=video.loop %}
+              {% else %}
+                {% include 'common/components/content_locked.html' with background=character_showcase.static_asset.thumbnail_m_url %}
+              {% endif %}
+            </div>
+          {% endwith %}
+        {% elif character_showcase.preview_youtube_link %}
+          {% include 'common/components/video_player_embed.html' with url=character_showcase.preview_youtube_link rounded=True poster=character_showcase.static_asset.thumbnail_m_url %}
+        {% elif character_showcase.static_asset.thumbnail %}
+          <img class="img-fluid rounded" src="{{ character_showcase.static_asset.thumbnail.url }}">
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="row align-items-start">
+
+          <div class="col-12 col-md mb-2 mb-md-3">
+            <div class="">
+              <p class="subtitle">
+              {% trans 'Character Showcase' |%}
+                <a href="{{ character_showcase.character.get_absolute_url }}">
+                  <span class="d-inline-block">{{ character_showcase.character.name }}</span>
+                </a>
+              </p>
+              <h1 class="mb-0 d-inline-block">{{ character_showcase.title|linebreaksbr }}</h1>
+            </div>
+
+            <div class="text-muted small">
+
+              <p class="d-inline me-2">{{ character_showcase.date_published|date:"jS F Y" }}</p>
+              {% if character_showcase.static_asset.license %}
+                <a href="{{ character_showcase.static_asset.license.url }}" target="_blank" class="d-inline me-2 text-muted"
+                  data-bs-toggle="tooltip" data-placement="bottom" title="{{ character_showcase.static_asset.license.description }}">
+                  <i class="material-icons icon-inline small">info</i>
+                  {{ character_showcase.static_asset.license }}
+                </a>
+              {% endif %}
+              {% if character.film %}
+                <a class="d-inline me-2 text-muted" href="{{ character.film.url }}">
+                  <i class="material-icons icon-inline small">movie</i>
+                  {{ character.film }}
+                </a>
+              {% endif %}
+              {% if character_showcase.is_free %}
+                {% include "common/components/cards/pill.html" with label=_('Free') %}
+              {% endif %}
+              <p class="d-inline me-2 text-muted">
+               {% trans 'Blender Version:' %} {{ character_showcase.min_blender_version }}
+              </p>
+
+            </div>
+          </div>
+
+          <div class="col-12 col-md-auto mb-2 mb-md-0 mt-0 mt-md-3">
+            {% include "common/components/navigation/buttons_toolbar.html" with item=character_showcase like_url=character.like_url likes_count=character.likes.count liked=character.liked %}
+          </div>
+        </div>
+
+        <div class="text-muted small row">
+          <div class="col-auto d-flex mb-2">
+            <div class="row">
+              <div class="col-auto pe-0">
+                {% if character_showcase.static_asset.author_image_url %}
+                  <img src="{{ character_showcase.static_asset.author_image_url }}" class="profile">
+                {% else %}
+                  <img src="{% static 'common/images/blank-profile-pic.png' %}" class="profile">
+                {% endif %}
+              </div>
+              <div class="col-auto">
+                <p class="subtitle text-white-50 x-small">{% trans 'Published by' %}</p>
+                <h4 class="comment-name mb-0">{{ character_showcase.static_asset.author_name }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="mb-3 markdown-text">{% with_shortcodes character_showcase.description|markdown_unsafe %}</section>
+
+        <section class="mb-3">{% include 'comments/components/comment_section.html' %}</section>
+
+      </div>
+
+    </div>
+
+  </section>
+  </div>
+{% endblock %}

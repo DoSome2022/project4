@@ -1,0 +1,78 @@
+
+{% load i18n%}
+{% comment %} EXAMPLE USAGE:
+{% include 'common/components/cards/card_carousel.html' with title=_("Title") subtitle=_("Subtitle") slides=3 card_set=recently_watched_sections media_type="sections" id="carouselId" %}
+{% endcomment %}
+
+<section class="mb-4">
+  <div class="row justify-content-center mb-2">
+    <div class="col">
+      {% if title_link %}
+        <a href="{{ title_link }}" class="mb-0 h2">{{ title|default:"Title" }}</a>
+      {% else %}
+        <h2 class="mb-0">{{ title|default:"Title" }}</h2>
+      {% endif %}
+      <p class="mb-0">{{ subtitle|default:"Subtitle" }}</p>
+    </div>
+    <div class="col-md-auto d-none d-md-block carousel-card-toolbar">
+      <a class="btn btn-lg btn-transparent btn-icon {% if card_set|length <= 1 %}onlyOne{% elif card_set|length <= slides %} lessThanSlides {% endif %}"
+        data-bs-target="#{{ id }}" role="button" data-bs-slide="prev">
+        <i class="material-icons">arrow_back</i>
+      </a>
+      <a class="btn btn-lg btn-transparent btn-icon {% if card_set|length <= 1 %}onlyOne{% elif card_set|length <= slides %} lessThanSlides {% endif %}"
+        data-bs-target="#{{ id }}" role="button" data-bs-slide="next">
+        <i class="material-icons">arrow_forward</i>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div id="{{ id }}" class="carousel carousel-card carousel-card-{{ slides|default:"3" }} slide w-100" data-bs-touch="true"
+      data-bs-ride="carousel" data-bs-interval="0">
+      <div class="carousel-inner" aria-roledescription="carousel">
+        {% for card in card_set|slice:':1' %}
+          <div class="carousel-item row active">
+            {% if media_type == "file" %}
+              {% include "common/components/file_carousel.html" with film_asset=card card_sizes="col-lg-3 col-6 col-md-4" %}
+            {% elif media_type == "section" %}
+              {% include "training/components/card_training_section.html" with section=card card_sizes="col-lg-3 col-6 col-md-4" %}
+            {% elif media_type == "blog" %}
+              {% include 'blog/card_blog.html' with post=card %}
+            {% elif media_type == "training" %}
+              {% include "training/components/card_training.html" with training=card card_sizes="col-12 col-sm-6 col-lg-4" %}
+            {% elif media_type == "film" %}
+              {% include "films/components/card_film.html" with film=card card_sizes="col-lg-3 col-6 col-md-4" %}
+            {% endif %}
+          </div>
+        {% endfor %}
+        {% for card in card_set|slice:'1:6' %}
+          <div class="carousel-item row">
+            {% if media_type == "file" %}
+              {% include "common/components/file_carousel.html" with film_asset=card card_sizes="col-lg-3 col-6 col-md-4" %}
+            {% elif media_type == "section" %}
+              {% include "training/components/card_training_section.html" with section=card card_sizes="col-lg-3 col-6 col-md-4" %}
+            {% elif media_type == "blog" %}
+              {% include 'blog/card_blog.html' with post=card %}
+            {% elif media_type == "training" %}
+              {% include "training/components/card_training.html" with training=card card_sizes="col-12 col-sm-6 col-lg-4" %}
+            {% elif media_type == "film" %}
+              {% include "films/components/card_film.html" with film=card card_sizes="col-lg-3 col-6 col-md-4" %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-block d-md-none">
+    <div class="col-md-auto carousel-card-toolbar">
+      <a class="btn btn-lg btn-transparent btn-icon {% if card_set|length <= 1 %}onlyOne{% elif card_set|length <= slides %} lessThanSlides {% endif %}"
+        data-bs-target="#{{ id }}" role="button" data-bs-slide="prev">
+        <i class="material-icons">arrow_back</i>
+      </a>
+      <a class="btn btn-lg btn-transparent btn-icon {% if card_set|length <= 1 %}onlyOne{% elif card_set|length <= slides %} lessThanSlides {% endif %}"
+        data-bs-target="#{{ id }}" role="button" data-bs-slide="next">
+        <i class="material-icons">arrow_forward</i>
+      </a>
+    </div>
+  </div>
+</section>

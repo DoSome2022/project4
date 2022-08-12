@@ -1,0 +1,5 @@
+{% if url is none %}
+  <span class="badge badge-pill">{{ label }}</span>
+{% else %}
+  <a class="badge badge-pill" href="{{ url }}">{{ label }}</a>
+{% endif %}

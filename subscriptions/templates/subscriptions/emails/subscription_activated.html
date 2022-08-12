@@ -1,0 +1,9 @@
+{% extends "subscriptions/emails/base.html" %}
+{% load i18n %}
+{% block content %}
+  <p>{% trans 'Your' %} {{ subscription.plan.name }}{% trans 'subscription has been activated. Thank you for subscribing to Blender Studio!'%}</p>
+  {% url 'training-home' as training_url %}
+  <p>{% trans 'Explore all Blender Studio Training:' %}
+    <a href="{{ site_url }}{{ training_url }}">{{ site_url }}{{ training_url }}</a>!
+  </p>
+{% endblock %}

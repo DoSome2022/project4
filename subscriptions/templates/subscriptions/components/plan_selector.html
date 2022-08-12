@@ -1,0 +1,94 @@
+{% spaceless %}
+  {% load looper %}
+  {% load subscriptions %}
+  {% load i18n %}
+
+
+  <div class="payment-header">
+    <h2 class="payment-header-title">{% trans 'Join the Studio' %}</h2>
+    <div class="d-flex justify-content-between">
+      <p class="mb-0  small">{% trans 'Step 1: Choose your' %} {% if select_team_plans %}{% trans 'team' %} {% endif %} {% trans 'plan.' %}</p>
+      <p class="small  mb-0">{% trans '1 of 3' %}</p>
+    </div>
+
+  </div>
+  {% comment %}
+          <div class="payment-tabs">
+            <div class="payment-tab active" data-tab='individual'>
+              <h3 class="payment-tab-title">{% trans 'Individual' %}</h3>
+            </div>
+            <div class="payment-tab" data-tab='team'>
+              <h3 class="payment-tab-title">{% trans 'Team' %}</h3>
+            </div>
+          </div>
+        {% endcomment %}
+  <div class="payment-content">
+
+    <div class="payment-content-inner">
+
+      <div class="row mb-2">
+        {# Collection method dropdown #}
+        <div class="col">
+          <label class="h4 mb-1 {% if disabled == True %} subtitle {% endif %}" for="renewal-type">{% trans 'Renewal Type' %}</label>
+          <select id="renewal-type" class="select-plan form-select form-control" autocomplete="off"
+            {% if disabled == True %} readonly {% endif %}>
+            {% for plan in plans %}
+              <option {% if current_plan_variation.plan_id == plan.pk %}selected{% endif %} value="{{ plan.pk }}"
+                title="{{ plan.description }}">{{ plan.name }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        {# Renewal interval dropdown: selected option is submitted with the form #}
+        {% if plans.count and plans.first.variations.active.count %}
+          <div class="col">
+            <label class="h4 mb-1 {% if disabled == True %} subtitle {% endif %}" for="renewal-period">{% trans 'Renewal Period' %}</label>
+            <select id="renewal-period" name="plan_variation_id"
+              class="select-plan-variation form-select form-control" autocomplete="off" {% if disabled == True %}
+                readonly {% endif %}>
+              {% for plan in plans %}
+                {% for variation in plan.variations.active_ordered_by_renewal %}
+                  {% if variation.currency == preferred_currency %}
+                    {% get_taxable variation.price plan.product.type as taxable %}
+                    <option {% if current_plan_variation.id == variation.pk %}selected{% endif %}
+                      {% if plan.team_properties %}
+                        data-team-seats="{% if plan.team_properties.seats %}{{ plan.team_properties.seats }}{% else %}unlimited{% endif %}"
+                      {% endif %}
+                      data-renewal-period="{{ variation.interval_length }} {{ variation.interval_unit }}"
+                      data-currency-symbol="{{ variation.price.currency_symbol }}"
+                      data-plan-id="{{ variation.plan_id }}"
+                      data-price="{{ taxable.price.decimals_string }}"
+                      {% if taxable.tax_is_charged %}
+                        data-price-tax="{{ taxable.tax.decimals_string }}"
+                        data-tax-rate="{{ taxable.tax_rate }}"
+                        data-tax-display-name="{{ taxable.tax_type.display_name }}"
+                      {% endif %}
+                      {% if current_plan_variation.plan_id != plan.id %}
+                        aria-disabled="true" disabled="true" hidden="true"
+                      {% endif %}
+                      data-next-url="{% if select_team_plans %}{% url "subscriptions:join-team" plan_variation_id=variation.pk %}{% else %}{% url "subscriptions:join" plan_variation_id=variation.pk %}{% endif %}"
+                      value="{{ variation.pk }}">
+                      {% trans 'Every' %} {{ variation.interval_length }} {{ variation.interval_unit }}
+                    </option>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </select>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p class="subtitle x-small mb-0">{% trans 'Required fields are marked with (*).'%}</p>
+        </div>
+      </div>
+
+    </div>
+
+    {% include 'subscriptions/components/total.html' with button_text="Continue to Billing" %}
+
+{% endspaceless %}

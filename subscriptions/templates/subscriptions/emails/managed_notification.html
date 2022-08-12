@@ -1,0 +1,11 @@
+{% extends "subscriptions/emails/base.html" %}
+{% load i18n %}
+{% block body %}
+  <p>
+    {{ user.customer.full_name|default:user.email }}{% trans 'has a' %} {% include "subscriptions/components/info.html" %}{% trans 'that just passed its next payment date.'%}
+
+  </p>
+  <p>
+   {% trans 'See' %} <a href="{{ admin_url }}">{{ admin_url }}</a> {% trans 'in the Blender Studio admin.'%}
+  </p>
+{% endblock body %}

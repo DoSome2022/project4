@@ -1,0 +1,56 @@
+{% load i18n %}
+<section class="mb-4">
+  <h1>{% trans 'Buttons' %}</h1>
+  <div class="row mb-3">
+    <div class="col">
+      <h2>{% trans 'Regular Button'%}</h2>
+      <a href="#" class="btn btn-primary">{% trans 'Button' %}</a>
+      <a href="#" class="btn btn-primary">
+        <i class="material-icons">cancel</i>
+      {% trans 'Icon Button' %}
+      </a>
+      <a href="#" class="btn btn-primary btn-icon">
+        <i class="material-icons">cancel</i>
+      </a>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <h2>{% trans 'Large Button' %}</h2>
+      <a href="#" class="btn btn-lg btn-primary">{% trans 'Button' %}</a>
+      <a href="#" class="btn btn-lg btn-primary">
+        <i class="material-icons">cancel</i>
+        {% trans 'Button' %}
+      </a>
+      <a href="#" class="btn btn-lg btn-primary btn-icon">
+        <i class="material-icons">cancel</i>
+      </a>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <h2>{% trans 'Small Button' %}</h2>
+      <a href="#" class="btn btn-sm btn-primary">{% trans 'Button' %}</a>
+      <a href="#" class="btn btn-sm btn-primary">
+        <i class="material-icons">cancel</i>
+        {% trans 'Button' %}
+      </a>
+      <a href="#" class="btn btn-sm btn-primary btn-icon">
+        <i class="material-icons">cancel</i>
+      </a>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <h2>{% trans 'Extra Small Button' %}</h2>
+      <a href="#" class="btn btn-xs btn-primary">{% trans 'Button' %}</a>
+      <a href="#" class="btn btn-xs btn-primary">
+        <i class="material-icons">cancel</i>
+      {% trans 'Button' %}
+      </a>
+      <a href="#" class="btn btn-xs btn-primary btn-icon">
+        <i class="material-icons">cancel</i>
+      </a>
+    </div>
+  </div>
+</section>

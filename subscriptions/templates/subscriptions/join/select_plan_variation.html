@@ -1,0 +1,23 @@
+{% extends 'checkout/checkout_base.html' %}
+{% load common_extras %}
+{% load looper %}
+{% load pipeline %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+  {% if not plans %}
+    <p>{% trans 'No subscription plans available.' %}</p>
+  {% else %}
+    <form id="payment-form" class="checkout-form" method="post">
+      {% csrf_token %}
+      {% with form|add_form_classes as form %}
+        {% include "subscriptions/components/plan_selector.html" %}
+      {% endwith %}
+    </form>
+  {% endif %}
+{% endblock content %}
+
+{% block scripts %}
+  {% javascript "subscriptions" %}
+{% endblock scripts %}

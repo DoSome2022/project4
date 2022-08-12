@@ -1,0 +1,169 @@
+{% load static %}
+{% load common_extras %}
+{% load i18n %}
+{% static 'common/images/blank-profile-pic.png' as default_profile_image_url %}
+{% firstof comment.profile_image_url default_profile_image_url as profile_image_url %}
+
+<div
+  id="{{ comment.anchor }}"
+  class="comment {% if comment.is_archived and comment.is_top_level %}archived{% endif %} {% if comment.is_top_level %}top-level-comment{% endif %}"
+  data-comment-id="{{ comment.id }}" data-message="{{ comment.message }}"
+  data-profile-image-url="{{ profile_image_url }}" data-comment-like-url="{{ comment.like_url }}"
+  {% if comment.delete_tree_url is not None %} data-delete-tree-url="{{ comment.delete_tree_url }}" {% endif %}
+  {% if comment.hard_delete_tree_url is not None %} data-hard-delete-tree-url="{{ comment.hard_delete_tree_url }}"
+  {% endif %} {% if comment.edit_url is not None %} data-edit-url="{{ comment.edit_url }}" {% endif %}
+  {% if comment.delete_url is not None %} data-delete-url="{{ comment.delete_url }}" {% endif %}
+  {% if comment.archive_tree_url is not None %} data-archive-url="{{ comment.archive_tree_url }}" {% endif %}>
+  <div class="comment-name-date-wrapper">
+    <div
+      style="background-image:url('{{ profile_image_url }}');"
+      class="profile col-profile"></div>
+    <h4 class="comment-name">{{ comment.full_name }}</h4>
+    {% if comment.badges %}
+      <p class="badges">
+        {% with width=16 badges=comment.badges %}
+          {% include 'users/components/badges.html' %}
+        {% endwith %}
+      </p>
+    {% endif %}
+    <p class="comment-date">{{ comment.date|date:"jS F Y - H:i" }}</p>
+    {% if comment.is_archived %}
+      <p class="badge archived-badge">{% trans 'Archived' %}</p>
+      {% if comment.is_top_level %}
+        <a class="comment-expand-archived" data-bs-toggle="collapse" href="#collapse-{{ comment.id }}" role="button"
+          aria-expanded="false" aria-controls="collapseExample">
+          {% trans 'Show comment' %} {% if comment.replies|length >= 1 %}s{% endif %}</a>
+      {% endif %}
+    {% endif %}
+  </div>
+  {% if comment.is_archived and comment.is_top_level %}
+    <div class="collapse" id="collapse-{{ comment.id }}">
+  {% endif %}
+  <div class="col comment-content">
+    <div class="row comment-content-inner">
+      <div class="comment-body">
+
+        <div class="comment-text markdown-text">{% with_shortcodes comment.message_html %}</div>
+
+        {% if not comment.is_deleted %}
+          <div class="comment-toolbar row">
+            <div class="col d-flex align-items-center">
+
+              <button
+                class="btn btn-transparent btn-xs btn-icon comment-material-button checkbox-like {% if not user.is_authenticated %}disabled{% endif%}"
+                {% if not user.is_authenticated %}disabled{% endif%} {% if comment.liked %}data-checked="checked"
+                {% endif %}>
+                <i class="material-icons checkbox-like-icon-checked text-primary">favorite</i>
+                <i class="material-icons checkbox-like-icon-unchecked">favorite_border</i>
+                {% if comment.likes != 0 %}<span class="likes-count">{{ comment.likes }}</span>{% endif %}
+              </button>
+
+              <button class="btn btn-transparent btn-xs comment-action comment-reply {% if not user.is_authenticated %}disabled{% endif%}"
+                {% if not user|has_active_subscription %}disabled{% endif%}>{% trans 'Reply' %}</button>
+
+              {% if comment.edit_url or comment.archive_tree_url %}
+                <button class="btn btn-transparent btn-xs btn-icon comment-material-button comment-dropdown"
+                  data-bs-toggle="dropdown">
+                  <i class="material-icons">more_horiz</i>
+                </button>
+                <div class="dropdown-menu">
+
+                  {% if comment.edit_url %}
+                    <button class="dropdown-item comment-edit">
+                      <i class="material-icons">create</i>
+                      <span>{% trans 'Edit' %}</span>
+                    </button>
+                  {% endif %}
+
+                  {% if comment.delete_url %}
+                    <a href="{{ comment.delete_url }}" class="dropdown-item comment-delete">
+                      <i class="material-icons">delete</i>
+                      <span>{% trans 'Delete' %}</span>
+                    </a>
+                  {% endif %}
+
+                  {% comment %}
+                    <a href="" class="dropdown-item comment-report">
+                      <i class="material-icons">flag</i>
+                      <span>{% trans 'Report'%}</span>
+                    </a>
+                  {% endcomment %}
+
+                  {% if comment.delete_tree_url %}
+                    <a href="{{ comment.delete_tree_url }}" class="dropdown-item comment-delete-tree">
+                      <i class="material-icons">account_tree</i>
+                      <span>{% trans 'Delete Tree' %}</span>
+                    </a>
+                  {% endif %}
+
+                  {% if comment.hard_delete_tree_url %}
+                    <a href="{{ comment.hard_delete_tree_url }}" class="dropdown-item comment-hard-delete-tree">
+                      <i class="material-icons">delete_forever</i>
+                      <span>{% trans 'Hard Delete Tree' %}</span>
+                    </a>
+                  {% endif %}
+
+                  {% if comment.archive_tree_url %}
+
+                    <a href="{{ comment.archive_tree_url }}" class="dropdown-item comment-archive">
+                      {% if comment.is_archived and comment.is_top_level %}
+                        <i class="material-icons">unarchive</i>
+                        <span class="comment-archive-text">{% trans 'Un-archive comment' %}</span>
+                      {% else %}
+                        <i class="material-icons">archive</i>
+                        <span class="comment-archive-text">{% trans 'Archive comment' %}</span>
+                      {% endif %}
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% comment %}
+                <a href="" class="btn btn-transparent btn-ctrl-xs comment-action comment-edit">{% trans 'Edit' %}</a>
+                <a href="" class="btn btn-transparent btn-ctrl-xs comment-action comment-delete">{% trans 'Delete' %}</a>
+              {% endcomment %}
+            </div>
+
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+  <div class="comment-edit-inputs">
+  </div>
+  <div class="comment-reply-inputs">
+  </div>
+
+  <div class="replies">
+    <div class="comments">
+      {% if comment.is_top_level %}
+        {% if comment.is_top_level %}
+          {% include 'comments/components/comment_tree.html' with comment_trees=c.replies|slice:':1' %}
+          {% if c.replies|length > 1 %}
+
+            <a class="btn btn-dark btn-sm more-comments-button collapsed" data-bs-toggle="collapse"
+              href="#replies-collapse-{{ comment.id }}" role="button" aria-expanded="false"
+              aria-controls="replies-collapse-{{ comment.id }}">
+             {% trans 'Show more replies' %}
+            </a>
+
+            <div class="collapse" id="replies-collapse-{{ comment.id }}">
+              {% include 'comments/components/comment_tree.html' with comment_trees=c.replies|slice:'1:' %}
+            </div>
+          {% endif %}
+        {% else %}
+          {% include 'comments/components/comment_tree.html' with comment_trees=c.replies %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  {% if comment.is_archived and comment.is_top_level %}
+    </div>
+  {% endif %}
+</div>
+{% if comment.is_top_level is not True %}
+  {% include 'comments/components/comment_tree.html' with comment_trees=c.replies %}
+{% endif %}

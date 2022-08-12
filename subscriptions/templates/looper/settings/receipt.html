@@ -1,0 +1,187 @@
+{% extends 'users/settings/base.html' %}
+{% load common_extras %}
+{% load subscriptions %}
+{% load i18n %}
+{% block settings %}
+
+
+
+
+  <ul class="receipt list-group list-group-flush list-group-account">
+
+    <a class="btn btn-sm btn-secondary admin-float" href="{% url 'subscriptions:receipts' %}"><i class="material-icons">arrow_back</i> {% trans 'Back to invoices' %}</a>
+
+    <p class="subtitle">{% trans 'Invoices' %}</p>
+    <h1 class="h2 mb-2">{% trans 'Invoice # ' %}{{ order.display_number }}</h1>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <p class=" h4 mb-0 subtitle">{% trans 'Invoice ID' %}</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0 small">{{ order.display_number }}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <p class=" h4 mb-0 subtitle">{% trans 'Status' %}</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0 small">{% trans 'PAID' %}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <p class=" h4 mb-0 subtitle">{% trans 'Payment Received on' %}</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0 small">{{ order.paid_at|default:order.created_at }}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item pb-2">
+      <div class="row">
+        <div class="col">
+          <p class="h3 mt-2 mb-0">{% trans 'Subscription #' %}{{ order.subscription_id }}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <p class=" h4 mb-0 subtitle">{% trans 'Renewal Type' %}</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0 small">{{ order.subscription.collection_method|capfirst}}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <p class=" h4 mb-0 subtitle">{% trans 'Renewal Period' %}</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0 small">{{ order.subscription|renewal_period|capfirst }}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item pb-2">
+      <div class="row">
+        <div class="col">
+          <p class="h3  mt-2 mb-0">{% trans 'Billing Address' %}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col justify-content-start">
+          <p class=" h4 mb-0 subtitle">{% trans 'Address' %}</p>
+        </div>
+        <div class="col-auto text-end">
+          <div class="mb-0 small mb-0-child">{{ order.billing_address|linebreaks }}</p>
+        </div>
+      </div>
+    </li>
+
+    {% if order.vat_number %}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col">
+            <p class=" h4 mb-0 subtitle">{% trans 'VATIN' %}</p>
+          </div>
+          <div class="col-auto">
+            <p class="mb-0 small">{{ order.vat_number }}</p>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+
+    {% if order.external_reference %}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col">
+            <p class=" h4 mb-0 subtitle">{% trans 'Invoice ref.' %}</p>
+          </div>
+          <div class="col-auto">
+            <p class="mb-0 small">{{ order.external_reference }}</p>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <p class=" h4 mb-0 subtitle">{% trans 'Email' %}</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0 small">{{ order.email }}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item pb-2">
+      <div class="row">
+        <div class="col">
+          <p class="h3 mt-2 mb-0">{% trans 'Payment Information' %}</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col justify-content-start">
+          <p class=" h4 mb-0 subtitle">{% trans 'Amount Paid' %}</p>
+        </div>
+        <div class="col-auto text-end">
+          <p class="mb-0 small">{{ order.price.with_currency_symbol_nonocents }}</p>
+          {% with taxable=order.taxable %}
+            {% if taxable.tax_is_charged %}
+              <p class="mb-0 small">{{ taxable.format_tax_amount }}</p>
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+    </li>
+
+    {% with refunded=order.total_refunded %}
+      {% if refunded %}
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <p class=" h4 mb-0 subtitle">{% trans 'Amount Refunded' %}</p>
+            </div>
+            <div class="col-auto">
+              <p class="mb-0 small">{{ refunded.with_currency_symbol_nonocents }}</p>
+            </div>
+          </div>
+        </li>
+      {% endif %}
+    {% endwith %}
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <p class=" h4 mb-0 subtitle">{% trans 'Payment Method' %}</p>
+        </div>
+        <div class="col-auto">
+          <p class="mb-0 small">{{ order.payment_method.recognisable_name }}</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+{% endblock settings %}
