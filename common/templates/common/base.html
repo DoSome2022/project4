@@ -263,8 +263,8 @@
               {% if request.user.is_authenticated and request.user.image_url %}
                 <div style="background-image:url('{{ request.user.image_url }}');" class="profile"></div>
               {% else %}
-                <div style="background-image:url('{% static 'common/images/blank-profile-pic.png' %}');" class="profile">
-                </div>
+              <div style="background-image:url('{% static 'common/images/blank-profile-pic.png' %}');" class="profile">
+              </div>
               {% endif %}
               {% if request.user|has_group:"demo"  %}
                 <i class="profile-subscription-badge demo material-icons">favorite</i>
@@ -354,6 +354,7 @@
 
       <ul class="nav navbar-nav navbar-right language menu">
         {% get_current_language as LANGUAGE_CODE %}
+       
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
         {% for language in languages %}
@@ -429,7 +430,7 @@
                   </div>
 
                   <div class="col-6 p-0">
-                    <a class="h3 drawer-nav-dropdown" href="{% url 'search' %}">{% trans 'Search'</a>
+                    <a class="h3 drawer-nav-dropdown" href="{% url 'search' %}">{% trans 'Search'%}</a>
                   </div>
 
                   {% if not request.user.is_authenticated %}

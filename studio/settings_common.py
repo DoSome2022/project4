@@ -1,10 +1,11 @@
 # noqa: D100
 from datetime import timedelta
+from gettext import gettext
 from dateutil.relativedelta import relativedelta
 import os  # noqa: F401
 import pathlib
 import sys
-
+from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = pathlib.Path(__file__).absolute().parent.parent
 
@@ -87,6 +88,7 @@ TEMPLATES = [
             str(BASE_DIR / 'films/templates'),
             str(BASE_DIR / 'search/templates'),
             str(BASE_DIR / 'training/templates'),
+            os.path.join(BASE_DIR,'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -132,7 +134,17 @@ LOGOUT_REDIRECT_URL = '/'
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hant'
+LANGUAGES = [
+    #('en',('English')),
+   ('zh-hant','中文'),
+   ('zh-hans','中文簡體'),
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR,'locale'),
+]
+
+LANGUAGE_CODE = 'zh-cn'
 
 TIME_ZONE = 'Europe/Amsterdam'
 
@@ -474,12 +486,12 @@ if TESTS_IN_PROGRESS:
     STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
     AWS_STORAGE_BUCKET_NAME = 'blender-studio-test'
 
-LANGUAGES = (
-    #('en',('English')),
-    ('zh-hant',('中文繁體')),
-    ('zh-hans',('中文簡體')),
-)
+# LANGUAGES = [
+#     #('en',('English')),
+#     ('zh-hant',_('中文繁體')),
+#     ('zh-hans',_('中文簡體')),
+# ]
 
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR,'locale'),
-)
+# LOCALE_PATHS = [
+#     os.path.join(BASE_DIR,'locale'),
+# ]

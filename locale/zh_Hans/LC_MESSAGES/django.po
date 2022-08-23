@@ -1,0 +1,3133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, #fuzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-20 14:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\blog\templates\blog\blog_toolbar.html:67
+#: .\common\templates\common\components\modal_asset_zoom.html:22
+#: .\common\templates\common\components\navigation\buttons_toolbar.html:65
+#: .\films\templates\films\components\breadcrumbs.html:65
+#: .\training\templates\training\chapter.html:61
+#: .\training\templates\training\flatpage.html:52
+#: .\training\templates\training\training.html:67
+#, #fuzy
+msgid "Report Problem"
+msgstr "报告问题"
+
+#: .\blog\templates\blog\post_detail.html:11
+#: .\blog\templates\blog\post_list.html:3
+#: .\blog\templates\blog\post_list.html:16
+#: .\common\templates\common\base.html:187
+#: .\common\templates\common\base.html:409
+#: .\common\templates\common\components\navigation\footer.html:42
+msgid "Blog"
+msgstr "博客"
+
+#: .\blog\templates\blog\post_list.html:5
+#: .\characters\templates\characters\character_list.html:9
+#: .\films\templates\films\films.html:3
+#: .\users\templates\users\settings\base.html:7
+msgid "spacer"
+msgstr "间隔"
+
+#: .\blog\templates\blog\post_list.html:16
+#, #fuzy
+msgid "Follow the latest updates from the Blender Studio."
+msgstr "关注Blender Studio的最新更新。"
+
+#: .\blog\templates\blog\subscribe_jumbotron.html:11
+#: .\common\templates\common\welcome.html:151
+#, #fuzy
+msgid "Subscribe to Blender Studio today"
+msgstr "立即订阅Blender Studio"
+
+#: .\characters\templates\characters\character_list.html:7
+#: .\characters\templates\characters\character_list.html:12
+#: .\common\templates\common\base.html:200
+#: .\common\templates\common\base.html:209
+#: .\common\templates\common\base.html:417
+#: .\common\templates\common\components\navigation\footer.html:72
+msgid "Characters"
+msgstr "动画角色"
+
+#: .\characters\templates\characters\character_list.html:12
+#, #fuzy
+msgid "Follow the latest updates from the Blender Cloud."
+msgstr "关注Blender Cloud的最新更新。"
+
+#: .\characters\templates\characters\character_list.html:27
+#, #fuzy
+msgid "Character Library"
+msgstr "动画角色库"
+
+#: .\characters\templates\characters\character_list.html:28
+#, #fuzy
+msgid "Characters from Blender Studio Open Movies."
+msgstr "Blender Studio Open Movies中的角色。"
+
+#: .\characters\templates\characters\character_list.html:42
+#, #fuzy
+msgid "All Characters"
+msgstr "所有动画角色"
+
+#: .\characters\templates\characters\charactershowcase_detail.html:6
+#: .\characters\templates\characters\charactershowcase_detail.html:45
+#, #fuzy
+msgid "Character Showcase"
+msgstr "角色展示"
+
+#: .\characters\templates\characters\charactershowcase_detail.html:70
+#: .\characters\templates\characters\components\card_character.html:42
+#: .\characters\templates\characters\components\card_character_showcase.html:42
+#: .\common\templates\common\components\cards\card_training.html:37
+#: .\common\templates\common\components\file.html:68
+#: .\common\templates\common\components\file_production_log.html:74
+#: .\common\templates\common\components\file_section.html:27
+#: .\common\templates\common\components\modal_asset.html:93
+#: .\common\templates\common\components\navigation\nav_drawer_section_file.html:10
+#: .\common\templates\common\components\navigation\nav_drawer_section_progress.html:22
+#: .\training\templates\training\components\card_production_log.html:17
+#: .\training\templates\training\components\card_training.html:49
+#: .\training\templates\training\section.html:71
+#: .\training\templates\training\training.html:36
+msgid "Free"
+msgstr "免费"
+
+#: .\characters\templates\characters\charactershowcase_detail.html:73
+#: .\characters\templates\characters\characterversion_detail.html:89
+msgid "Blender Version:"
+msgstr "Blender版本："
+
+#: .\characters\templates\characters\charactershowcase_detail.html:95
+#: .\characters\templates\characters\characterversion_detail.html:112
+#: .\common\templates\common\components\published_by.html:6
+#: .\common\templates\common\components\published_by.html:9
+msgid "Published by"
+msgstr "发布者"
+
+#: .\characters\templates\characters\characterversion_detail.html:6
+#: .\characters\templates\characters\characterversion_detail.html:44
+#, #fuzy
+msgid "Character Rig"
+msgstr "角色装备"
+
+#: .\characters\templates\characters\characterversion_detail.html:59
+#, #fuzy
+msgid "visibility_off"
+msgstr "visibility_off"
+
+#: .\characters\templates\characters\characterversion_detail.html:123
+msgid "Showcases"
+msgstr "展示"
+
+#: .\characters\templates\characters\components\card_character.html:19
+#: .\characters\templates\characters\components\card_character_showcase.html:19
+#: .\common\templates\common\components\cards\card_blog.html:16
+#, #fuzy
+msgid "New"
+msgstr "新"
+
+#: .\characters\templates\characters\components\card_character.html:30
+#: .\characters\templates\characters\components\card_character_showcase.html:30
+#: .\common\templates\common\components\cards\card_blog.html:32
+msgid "Unpublished"
+msgstr "未发布"
+
+#: .\comments\templates\comments\components\comment.html:31
+msgid "Archived"
+msgstr "已存档"
+
+#: .\comments\templates\comments\components\comment.html:35
+msgid "Show comment"
+msgstr "显示评论"
+
+#: .\comments\templates\comments\components\comment.html:62
+msgid "Reply"
+msgstr "回复"
+
+#: .\comments\templates\comments\components\comment.html:74
+msgid "Edit"
+msgstr "编辑"
+
+#: .\comments\templates\comments\components\comment.html:81
+#: .\films\templates\films\components\breadcrumbs.html:53
+msgid "Delete"
+msgstr "删除"
+
+#: .\comments\templates\comments\components\comment.html:96
+#, #fuzy
+msgid "Delete Tree"
+msgstr "删除树"
+
+#: .\comments\templates\comments\components\comment.html:103
+#, #fuzy
+msgid "Hard Delete Tree"
+msgstr "硬删除树"
+
+#: .\comments\templates\comments\components\comment.html:112
+#, #fuzy
+msgid "Un-archive comment"
+msgstr "取消存档注释"
+
+#: .\comments\templates\comments\components\comment.html:115
+#, #fuzy
+msgid "Archive comment"
+msgstr "存档评论"
+
+#: .\comments\templates\comments\components\comment.html:151
+#, #fuzy
+msgid "Show more replies"
+msgstr "显示更多回复"
+
+#: .\comments\templates\comments\components\comment_section.html:12
+#: .\common\templates\common\base.html:353
+#: .\common\templates\common\base.html:431
+#: .\films\templates\films\base_films.html:191
+msgid "Join"
+msgstr "加入"
+
+#: .\comments\templates\comments\components\comment_section.html:12
+#, #fuzy
+msgid "to comment publicly."
+msgstr "公开发表评论。"
+
+#: .\common\templates\admin\change_form_object_tools.html:5
+msgid "History"
+msgstr "历史"
+
+#: .\common\templates\admin\change_form_object_tools.html:8
+#: .\common\templates\admin\edit_inline\stacked.html:15
+#: .\common\templates\admin\edit_inline\tabular.html:37
+msgid "View on site"
+msgstr "在站点上查看"
+
+#: .\common\templates\admin\edit_inline\stacked.html:12
+#: .\common\templates\admin\edit_inline\tabular.html:34
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:53
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:57
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:70
+msgid "Change"
+msgstr "更改"
+
+#: .\common\templates\admin\edit_inline\stacked.html:12
+#: .\common\templates\admin\edit_inline\tabular.html:34
+#: .\subscriptions\templates\looper\settings\receipts.html:26
+msgid "View"
+msgstr "查看"
+
+#: .\common\templates\admin\edit_inline\tabular.html:20
+msgid "Delete?"
+msgstr "删除？"
+
+#: .\common\templates\common\base.html:12
+#: .\common\templates\common\base.html:86
+#: .\common\templates\common\base.html:175
+#: .\common\templates\common\base.html:354
+#: .\common\templates\common\components\navigation\footer.html:14
+#: .\common\templates\rest_framework\api.html:27
+#: .\films\templates\films\base_films.html:192
+#: .\subscriptions\templates\checkout\checkout_base.html:37
+msgid "Blender Studio"
+msgstr "Blender Studio"
+
+#: .\common\templates\common\base.html:76
+msgid "Development Fund"
+msgstr "发展基金"
+
+#: .\common\templates\common\base.html:77
+#, #fuzy
+msgid "Support Blender Core Development with a monthly contribution."
+msgstr "通过每月贡献支持Blender核心开发。"
+
+#: .\common\templates\common\base.html:87
+#, #fuzy
+msgid ""
+"The creators who share. Access production content and knowledge from the "
+"Open Movies."
+msgstr "分享的创作者。访问开放电影中的制作内容和知识。"
+
+#: .\common\templates\common\base.html:96
+#, #fuzy
+msgid "Blender Developer Blog"
+msgstr "搅拌机开发者博客"
+
+#: .\common\templates\common\base.html:97
+#, #fuzy
+msgid "Latest news and updates on Blender development."
+msgstr "有关Blender开发的最新消息和更新。"
+
+#: .\common\templates\common\base.html:106
+msgid "Get Involved"
+msgstr "参与 KiCad"
+
+#: .\common\templates\common\base.html:116
+#, #fuzy
+msgid "Open Data"
+msgstr "开放数据"
+
+#: .\common\templates\common\base.html:117
+#, #fuzy
+msgid "A platform to collect and display the Blender Benchmark results."
+msgstr "一个收集和显示Blender基准测试结果的平台。"
+
+#: .\common\templates\common\base.html:126
+#, #fuzy
+msgid "Blender Docs"
+msgstr "搅拌机文档"
+
+#: .\common\templates\common\base.html:127
+#, #fuzy
+msgid "Documentation on Blender`s features, tools and API."
+msgstr "有关Blender的功能，工具和API的文档。"
+
+#: .\common\templates\common\base.html:143
+#, #fuzy
+msgid "Blender Conference"
+msgstr "搅拌机会议"
+
+#: .\common\templates\common\base.html:144
+#, #fuzy
+msgid ""
+"The yearly event that brings together the Blender community in one place."
+msgstr "一年一度的活动，将Blender社区聚集在一个地方。"
+
+#: .\common\templates\common\base.html:154
+#, #fuzy
+msgid "Get Blender"
+msgstr "获取搅拌机"
+
+#: .\common\templates\common\base.html:155
+#, #fuzy
+msgid "Download the latest Blender version, or try the beta!"
+msgstr "下载最新的Blender版本，或尝试测试版！"
+
+#: .\common\templates\common\base.html:180
+#: .\common\templates\common\base.html:398
+#: .\common\templates\common\components\navigation\footer.html:39
+#: .\films\templates\films\films.html:8 .\films\templates\films\films.html:16
+msgid "Films"
+msgstr "电影"
+
+#: .\common\templates\common\base.html:183
+#: .\common\templates\common\base.html:404
+#: .\common\templates\common\components\navigation\footer.html:45
+#: .\training\templates\training\home_authenticated.html:28
+#: .\training\templates\training\home_not_authenticated.html:7
+#: .\training\templates\training\home_not_authenticated.html:12
+#: .\training\templates\training\home_not_authenticated.html:27
+msgid "Training"
+msgstr "培训"
+
+#: .\common\templates\common\base.html:196
+#: .\common\templates\common\base.html:206
+#: .\common\templates\common\base.html:413
+#: .\common\templates\common\components\navigation\footer.html:51
+#, #fuzy
+msgid "Pipeline and Tools"
+msgstr "管道和工具"
+
+#: .\common\templates\common\base.html:233
+#: .\common\templates\common\base.html:437
+#: .\films\templates\films\base_films.html:78
+#: .\users\templates\users\activity.html:11
+#: .\users\templates\users\notifications.html:7
+msgid "Notifications"
+msgstr "通知"
+
+#: .\common\templates\common\base.html:251
+#: .\films\templates\films\base_films.html:96
+#: .\users\templates\users\notifications.html:58
+msgid "No notifications yet"
+msgstr "沒有新通知！"
+
+#: .\common\templates\common\base.html:258
+#: .\films\templates\films\base_films.html:103
+msgid "See all notifications"
+msgstr "看到所有的通知"
+
+#: .\common\templates\common\base.html:284
+#: .\films\templates\films\base_films.html:122
+msgid "My Profile"
+msgstr "我的资料"
+
+#: .\common\templates\common\base.html:292
+#: .\films\templates\films\base_films.html:135
+#, #fuzy
+msgid "Free Account"
+msgstr "免费账户"
+
+#: .\common\templates\common\base.html:297
+#: .\films\templates\films\base_films.html:140
+#, #fuzy
+msgid "Subscription Active"
+msgstr "订阅有效"
+
+#: .\common\templates\common\base.html:302
+#: .\films\templates\films\base_films.html:145
+#, #fuzy
+msgid "Subscription Inactive"
+msgstr "订阅处于非活动状态"
+
+#: .\common\templates\common\base.html:309
+#: .\films\templates\films\base_films.html:152
+#: .\subscriptions\templates\subscriptions\manage.html:10
+#: .\users\templates\users\settings\base.html:17
+#: .\users\templates\users\settings\billing.html:7
+#: .\users\templates\users\settings\delete.html:6
+#: .\users\templates\users\settings\emails.html:5
+#: .\users\templates\users\settings\production_credits.html:5
+#: .\users\templates\users\settings\profile.html:7
+msgid "Settings"
+msgstr "设置"
+
+#: .\common\templates\common\base.html:314
+#: .\films\templates\films\base_films.html:157
+#: .\users\templates\users\settings\billing.html:8
+#: .\users\templates\users\settings\tabs.html:29
+msgid "Subscription"
+msgstr "订阅"
+
+#: .\common\templates\common\base.html:320
+#: .\films\templates\films\base_films.html:127
+msgid "My Activity"
+msgstr "我的活动"
+
+#: .\common\templates\common\base.html:326
+#: .\films\templates\films\base_films.html:164
+#, #fuzy
+msgid "Admin"
+msgstr "管理员"
+
+#: .\common\templates\common\base.html:332
+#: .\films\templates\films\base_films.html:170
+msgid "Sign Out"
+msgstr "登出"
+
+#: .\common\templates\common\base.html:339
+#: .\films\templates\films\base_films.html:177
+msgid "Switch back"
+msgstr "切换回经典Divi 生成器"
+
+#: .\common\templates\common\base.html:352
+#: .\common\templates\common\base.html:427
+#: .\films\templates\films\base_films.html:190
+msgid "Login"
+msgstr "登录"
+
+#: .\common\templates\common\base.html:477
+#: .\films\templates\films\gallery.html:240
+#, #fuzy
+msgid "Loading..."
+msgstr "载入中..."
+
+#: .\common\templates\common\components\content_locked.html:11
+#, #fuzy
+msgid "You need to login to view this content"
+msgstr "您需要登录才能查看此内容"
+
+#: .\common\templates\common\components\content_locked.html:12
+#: .\common\templates\common\components\content_locked.html:17
+#, #fuzy
+msgid ""
+"You can join Blender Studio for €9.90/month and get access to all of our "
+"training & film content instantly!"
+msgstr ""
+"您可以以每月9.90欧元的价格加入Blender Studio，并立即访问我们所有的培训和电影"
+"内容！"
+
+#: .\common\templates\common\components\content_locked.html:14
+#: .\common\templates\common\components\content_locked.html:18
+#, #fuzy
+msgid "Join Blender Studio"
+msgstr "加入搅拌机工作室"
+
+#: .\common\templates\common\components\content_locked.html:16
+#, #fuzy
+msgid "You need to subscribe to view this content "
+msgstr "您需要订阅才能查看此内容"
+
+#: .\common\templates\common\components\faq.html:5
+msgid "Frequently Asked Questions"
+msgstr "常见问题"
+
+#: .\common\templates\common\components\faq.html:6
+#, #fuzy
+msgid ""
+"If you have questions about the Studio, please contact one of the team on"
+msgstr "如果您对工作室有任何疑问，请联系其中一个团队"
+
+#: .\common\templates\common\components\faq.html:7
+#, #fuzy
+msgid "Blender Chat"
+msgstr "搅拌机聊天"
+
+#: .\common\templates\common\components\faq.html:7
+#, #fuzy
+msgid "by logging in with your Blender ID."
+msgstr "使用您的Blender ID登录。"
+
+#: .\common\templates\common\components\faq.html:12
+msgid "General"
+msgstr "常规"
+
+#: .\common\templates\common\components\faq.html:21
+#, #fuzy
+msgid "What is Blender Studio?"
+msgstr "什么是Blender Studio？"
+
+#: .\common\templates\common\components\faq.html:27
+#, #fuzy
+msgid ""
+"Blender Studio is a Film and Training publishing platform for everything "
+"produced by the Studio team."
+msgstr "Blender Studio是一个电影和培训出版平台，用于工作室团队制作的所有内容。"
+
+#: .\common\templates\common\components\faq.html:37
+#, #fuzy
+msgid "How is my money spent?"
+msgstr "我的钱是怎么花的？"
+
+#: .\common\templates\common\components\faq.html:43
+#, #fuzy
+msgid ""
+"The money Blender Studio makes through subscriptions is used to keep our "
+"services running, and to make open source and open content productions "
+"possible. Throughout the production cycle our team produce training, rigs "
+"and assets for publishing to Blender Studio subscribers."
+msgstr ""
+"Blender Studio通过订阅赚到的钱用于保持我们的服务运行，并使开源和开放内容制作"
+"成为可能。在整个制作周期中，我们的团队制作培训，装备和资产，以发布给Blender "
+"Studio订阅者。"
+
+#: .\common\templates\common\components\faq.html:53
+#, #fuzy
+msgid "How does Blender Studio support Blender?"
+msgstr "Blender Studio如何支持Blender？"
+
+#: .\common\templates\common\components\faq.html:59
+#, #fuzy
+msgid ""
+"The Blender Studio funds the Blender Studio team, who rigorously tests and "
+"use Blender in the Open Movie productions. The team works with core Blender "
+"developers at the Blender Institute to plan, design and test core Blender "
+"features."
+msgstr ""
+"Blender Studio为Blender Studio团队提供资金，该团队在Open Movie制作中严格测试"
+"和使用Blender。该团队与Blender Institute的核心Blender开发人员合作，规划，设计"
+"和测试Blender的核心功能。"
+
+#: .\common\templates\common\components\faq.html:69
+#, #fuzy
+msgid "Payment & Billing"
+msgstr "付款和账单"
+
+#: .\common\templates\common\components\faq.html:78
+#, #fuzy
+msgid "What payment methods do you accept?"
+msgstr "你们接受哪些付款方式？"
+
+#: .\common\templates\common\components\faq.html:85
+#, #fuzy
+msgid ""
+"Blender Studio offers payment through major credit cards, PayPal or direct "
+"bank transfer."
+msgstr "Blender Studio提供通过主要信用卡，PayPal或直接银行转账付款。"
+
+#: .\common\templates\common\components\faq.html:95
+#, #fuzy
+msgid "How easy is it to cancel my subscription?"
+msgstr "取消订阅有多容易？"
+
+#: .\common\templates\common\components\faq.html:102
+#, #fuzy
+msgid ""
+"You may cancel your subscription at any time via your personal account page, "
+"or by contacting us at"
+msgstr "您可以随时通过您的个人帐户页面取消订阅，或通过以下方式与我们联系"
+
+#: .\common\templates\common\components\faq.html:105
+#, #fuzy
+msgid ""
+"In case of suspected fraud or abuse of the service after registration and "
+"membership payment, the account owner will be contacted and asked for "
+"clarification. Failure to alleviate charges of fraud may result in the "
+"termination of the member’s account."
+msgstr ""
+"如果在注册和会员付款后涉嫌欺诈或滥用服务，将联系帐户所有者并要求澄清。未能减"
+"轻欺诈指控可能导致会员的帐户被终止。"
+
+#: .\common\templates\common\components\faq.html:107
+#, #fuzy
+msgid ""
+"Upon termination, all licenses granted by the Blender Studio will terminate. "
+"In the event of account deletion for any reason, content that you submitted "
+"may no longer be available. The Blender Studio shall not be responsible for "
+"the loss of such content."
+msgstr ""
+"终止后，Blender Studio授予的所有许可证都将终止。如果由于任何原因删除帐户，您"
+"提交的内容可能不再可用。Blender Studio对此类内容的丢失概不负责。"
+
+#: .\common\templates\common\components\faq.html:116
+#, #fuzy
+msgid "Can I get a refund?"
+msgstr "我可以获得退款吗？"
+
+#: .\common\templates\common\components\faq.html:122
+#, #fuzy
+msgid ""
+"Membership fees and supporter contributions are non-refundable. That money "
+"keeps our services running, and is used to make open source and open content "
+"productions possible."
+msgstr ""
+"会员费和支持者捐款不予退还。这笔钱使我们的服务保持运行，并用于使开源和开放内"
+"容制作成为可能。"
+
+#: .\common\templates\common\components\faq.html:124
+#, #fuzy
+msgid ""
+"We really care about our members and supporters though — in case you are "
+"really not happy with our Blender Studio we will kindly respond to your "
+"comments and try to settle a dispute with you in harmony."
+msgstr ""
+"我们真的很关心我们的会员和支持者 - 如果您真的对我们的Blender Studio不满意，我"
+"们将善意地回复您的评论，并尝试与您和谐地解决争议。"
+
+#: .\common\templates\common\components\faq.html:126
+#, #fuzy
+msgid ""
+"Refunds will happen without delay when we get a report of fraud, abuse or "
+"non-authorised usage of funds."
+msgstr "当我们收到欺诈，滥用或未经授权使用资金的报告时，退款将立即发生。"
+
+#: .\common\templates\common\components\faq.html:128
+#: .\common\templates\common\components\navigation\footer.html:92
+msgid "Contact"
+msgstr "联系"
+
+#: .\common\templates\common\components\file.html:17
+#: .\common\templates\common\components\file_production_log.html:15
+msgid "Spoiler"
+msgstr "扰流板"
+
+#: .\common\templates\common\components\file.html:32
+#: .\common\templates\common\components\file_production_log.html:35
+#, #fuzy
+msgid "Subscribe to view"
+msgstr "订阅查看"
+
+#: .\common\templates\common\components\home_headers\film_release_centered.html:15
+#, #fuzy
+msgid "New Open Movie Out Now!"
+msgstr "新开电影现在出来！"
+
+#: .\common\templates\common\components\home_headers\film_release_centered.html:17
+#, #fuzy
+msgid "Watch Sprite Fright"
+msgstr "观看精灵惊吓"
+
+#: .\common\templates\common\components\home_headers\film_release_centered.html:18
+#, #fuzy
+msgid "See the project"
+msgstr "查看项目"
+
+#: .\common\templates\common\components\home_headers\livestream.html:16
+msgid "Live"
+msgstr "生活"
+
+#: .\common\templates\common\components\home_headers\livestream.html:17
+#, #fuzy
+msgid "Artist Livestream"
+msgstr "艺术家直播"
+
+#: .\common\templates\common\components\home_headers\livestream.html:20
+#, #fuzy
+msgid ""
+"In this series, Julien Kaspar will guide you through the creation of \"Snow"
+"\", the next character in the lineup of creative commons rigs on the Blender "
+"Studio."
+msgstr ""
+"在本系列中，Julien Kaspar将指导您完成“Snow”的创作，这是Blender Studio上知识共"
+"享装备阵容中的下一个角色。"
+
+#: .\common\templates\common\components\home_headers\livestream.html:21
+#, #fuzy
+msgid ""
+"Join in the chat on YouTube while Julien answers questions from the "
+"community."
+msgstr "加入YouTube上的聊天，而Julien回答来自社区的问题。"
+
+#: .\common\templates\common\components\home_headers\livestream.html:24
+#, #fuzy
+msgid "Watch on YouTube"
+msgstr "在YouTube上观看"
+
+#: .\common\templates\common\components\modal_asset.html:125
+msgid "Contributors"
+msgstr "贡献者"
+
+#: .\common\templates\common\components\modal_asset.html:138
+#: .\films\templates\films\components\production_log_entry.html:98
+msgid "Other Contributors"
+msgstr "其他贡献者"
+
+#: .\common\templates\common\components\modal_asset_zoom.html:14
+#: .\common\templates\common\components\navigation\download_button.html:8
+#: .\common\templates\common\components\navigation\download_subtitles.html:7
+#: .\subscriptions\templates\looper\settings\receipts.html:28
+msgid "Download"
+msgstr "下载"
+
+#: .\common\templates\common\components\navigation\download_subtitles.html:7
+msgid "Subtitles"
+msgstr "字幕"
+
+#: .\common\templates\common\components\navigation\footer.html:17
+#, #fuzy
+msgid "The Creators Who Share."
+msgstr "分享的创造者。"
+
+#: .\common\templates\common\components\navigation\footer.html:54
+#, #fuzy
+msgid "Cloud Rig"
+msgstr "云钻机"
+
+#: .\common\templates\common\components\navigation\footer.html:57
+#, #fuzy
+msgid "Blender Kitsu"
+msgstr "搅拌机基苏"
+
+#: .\common\templates\common\components\navigation\footer.html:60
+#, #fuzy
+msgid "Contact Sheet Add-on"
+msgstr "联系表附加组件"
+
+#: .\common\templates\common\components\navigation\footer.html:63
+#, #fuzy
+msgid "Blender Purge"
+msgstr "搅拌机吹扫"
+
+#: .\common\templates\common\components\navigation\footer.html:66
+#, #fuzy
+msgid "Blender Cloud Services"
+msgstr "Blender Cloud Services"
+
+#: .\common\templates\common\components\navigation\footer.html:83
+msgid "Studio"
+msgstr "工作室"
+
+#: .\common\templates\common\components\navigation\footer.html:86
+#: .\common\templates\common\components\navigation\footer_simple.html:8
+#: .\subscriptions\templates\subscriptions\components\footer.html:9
+msgid "Terms"
+msgstr "条款"
+
+#: .\common\templates\common\components\navigation\footer.html:86
+#: .\common\templates\common\components\navigation\footer_simple.html:8
+#: .\subscriptions\templates\subscriptions\components\footer.html:9
+msgid "Conditions"
+msgstr "条件"
+
+#: .\common\templates\common\components\navigation\footer.html:89
+#: .\common\templates\common\components\navigation\footer_simple.html:11
+#: .\subscriptions\templates\subscriptions\components\footer.html:12
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+#: .\common\templates\common\components\navigation\footer.html:95
+#, #fuzy
+msgid "Remixing Music"
+msgstr "混音音乐"
+
+#: .\common\templates\common\components\navigation\footer.html:98
+#: .\common\templates\common\components\navigation\footer_simple.html:14
+#: .\subscriptions\templates\subscriptions\components\footer.html:15
+#, #fuzy
+msgid "Blender.org"
+msgstr "Blender.org"
+
+#: .\common\templates\common\components\navigation\pagination.html:12
+#: .\films\templates\films\components\production_log_pagination.html:8
+msgid "Previous"
+msgstr "上一个"
+
+#: .\common\templates\common\components\navigation\pagination.html:33
+#: .\films\templates\films\components\pagination_dates.html:12
+msgid "Prev"
+msgstr "上一页"
+
+#: .\common\templates\common\components\navigation\pagination.html:57
+#: .\common\templates\common\components\navigation\pagination.html:67
+#: .\films\templates\films\components\pagination_dates.html:53
+#: .\films\templates\films\components\production_log_pagination.html:16
+#, #fuzy
+msgid "Next"
+msgstr "下一个"
+
+#: .\common\templates\common\components\published_by.html:3
+msgid "Author"
+msgstr "作者"
+
+#: .\common\templates\common\components\spoiler_alert.html:4
+#, #fuzy
+msgid "Spoilers Ahead!"
+msgstr "前方剧透！"
+
+#: .\common\templates\common\components\spoiler_alert.html:5
+#, #fuzy
+msgid "Watch out friends, you"
+msgstr "小心朋友，你"
+
+#: .\common\templates\common\components\spoiler_alert.html:8
+#, #fuzy
+msgid "Reveal Spoilers"
+msgstr "揭示剧透"
+
+#: .\common\templates\common\errors\400.html:2
+#: .\common\templates\common\errors\400.html:3
+msgid "Bad Request"
+msgstr "请求错误"
+
+#: .\common\templates\common\errors\400.html:4
+#, #fuzy
+msgid "Your HTTP client sent a request that we did not understand."
+msgstr "您的 HTTP 客户端发送了一个我们无法理解的请求。"
+
+#: .\common\templates\common\errors\400.html:5
+#: .\common\templates\common\errors\403.html:8
+#: .\common\templates\common\errors\404.html:5
+#: .\common\templates\common\errors\500.html:5
+msgid "Try"
+msgstr "尝试"
+
+#: .\common\templates\common\errors\400.html:5
+#: .\common\templates\common\errors\500.html:5
+#, #fuzy
+msgid "the frontpage"
+msgstr "首页"
+
+#: .\common\templates\common\errors\400.html:5
+#: .\common\templates\common\errors\403.html:8
+#: .\common\templates\common\errors\404.html:5
+#: .\common\templates\common\errors\500.html:5
+msgid "instead."
+msgstr "替换."
+
+#: .\common\templates\common\errors\400.html:7
+#: .\common\templates\common\errors\500.html:7
+#, #fuzy
+msgid "If you need assistance, you may reference this error as"
+msgstr "如果您需要帮助，可以将此错误引用为"
+
+#: .\common\templates\common\errors\403.html:2
+msgid "Forbidden"
+msgstr "禁止"
+
+#: .\common\templates\common\errors\403.html:5
+msgid "Nope."
+msgstr "不，以后再说。"
+
+#: .\common\templates\common\errors\403.html:6
+#, #fuzy
+msgid "For some reason you are not allowed to do this."
+msgstr "由于某种原因，您不允许这样做。"
+
+#: .\common\templates\common\errors\403.html:8
+#, #fuzy
+msgid "exploring your homepage"
+msgstr "浏览您的主页"
+
+#: .\common\templates\common\errors\403.html:10
+#, #fuzy
+msgid "Maybe you"
+msgstr "也许你"
+
+#: .\common\templates\common\errors\403.html:11
+msgid "Sign in"
+msgstr "登录"
+
+#: .\common\templates\common\errors\403_csrf.html:2
+#, #fuzy
+msgid "CSRF error"
+msgstr "CSRF 错误"
+
+#: .\common\templates\common\errors\403_csrf.html:3
+#, #fuzy
+msgid "CSRF Protection"
+msgstr "CSRF 保护"
+
+#: .\common\templates\common\errors\403_csrf.html:4
+#, #fuzy
+msgid "TL;DR: Probably the best way to fix this is to"
+msgstr "TL;DR：解决这个问题的最好方法可能是"
+
+#: .\common\templates\common\errors\403_csrf.html:5
+#, #fuzy
+msgid "go back, strong refresh the page, and try again"
+msgstr "返回，强力刷新页面，然后重试"
+
+#: .\common\templates\common\errors\403_csrf.html:7
+#, #fuzy
+msgid ""
+"All forms on Blender ID are protected against Cross-Site Request Forgeries. "
+"This type of attack occurs when a malicious website contains a link, a form "
+"button or some JavaScript that is intended to perform some action on your "
+"website, using the credentials of a logged-in user who visits the malicious "
+"site in their browser. A related type of attack, ‘login CSRF’, where an "
+"attacking site tricks a user’s browser into logging into a site with someone "
+"else’s credentials, is also covered"
+msgstr ""
+"Blender ID上的所有表格都受到保护，以防止跨站点请求伪造。当恶意网站包含链接、"
+"表单按钮或某些 JavaScript，旨在使用在浏览器中访问恶意站点的登录用户的凭据，在"
+"您的网站上执行某些操作时，就会发生这种类型的攻击。还涵盖了一种相关的攻击类"
+"型，“登录CSRF”，其中攻击站点诱骗用户的浏览器使用其他人的凭据登录站点"
+
+#: .\common\templates\common\errors\403_csrf.html:7
+#, #fuzy
+msgid ""
+". For some reason, this protection rejected the data you just submitted."
+msgstr ".出于某种原因，此保护拒绝了您刚刚提交的数据。"
+
+#: .\common\templates\common\errors\403_csrf.html:9
+#, #fuzy
+msgid "Go back and try again (and make sure you refresh the page)"
+msgstr "返回并重试（并确保刷新页面）"
+
+#: .\common\templates\common\errors\403_csrf.html:11
+msgid "Source"
+msgstr "来源"
+
+#: .\common\templates\common\errors\403_csrf.html:11
+#, #fuzy
+msgid "Django documentation"
+msgstr "Django 文档"
+
+#: .\common\templates\common\errors\404.html:2
+#: .\common\templates\common\errors\404.html:3
+msgid "Page Not Found"
+msgstr "找不到网页"
+
+#: .\common\templates\common\errors\404.html:4
+#, #fuzy
+msgid "The page you tried to reach does not exist."
+msgstr "您尝试访问的页面不存在。"
+
+#: .\common\templates\common\errors\404.html:5
+#, #fuzy
+msgid "the homepage"
+msgstr "主页"
+
+#: .\common\templates\common\errors\500.html:2
+#: .\common\templates\common\errors\500.html:3
+msgid "Internal Server Error"
+msgstr "内部服务器错误"
+
+#: .\common\templates\common\errors\500.html:4
+#, #fuzy
+msgid "Oops, we made a mistake somewhere."
+msgstr "哎呀，我们在某个地方犯了一个错误。"
+
+#: .\common\templates\common\home.html:17
+#: .\films\templates\films\film_detail.html:33
+#: .\films\templates\films\film_landing_page.html:79
+msgid "Latest Blog Posts"
+msgstr "最新博客文章"
+
+#: .\common\templates\common\home.html:17
+#, #fuzy
+msgid "Hear the latest news about the Blender Studio right here."
+msgstr "在这里听到有关Blender Studio的最新消息。"
+
+#: .\common\templates\common\home.html:22
+#: .\training\templates\training\home_authenticated.html:44
+#, #fuzy
+msgid "Continue training"
+msgstr "继续培训"
+
+#: .\common\templates\common\home.html:22
+#: .\training\templates\training\home_authenticated.html:44
+#, #fuzy
+msgid ""
+"Recently watched videos appear here! Continue watching where you left off."
+msgstr "最近观看的视频出现在这里！从上次离开的地方继续观看。"
+
+#: .\common\templates\common\home.html:26
+#, #fuzy
+msgid "Latest Training"
+msgstr "最新培训"
+
+#: .\common\templates\common\home.html:33
+#: .\subscriptions\templates\checkout\checkout_done.html:67
+#, #fuzy
+msgid "Featured Open Movies"
+msgstr "精选开放电影"
+
+#: .\common\templates\common\home.html:34
+#: .\subscriptions\templates\checkout\checkout_done.html:68
+#, #fuzy
+msgid "The Blender"
+msgstr "搅拌机"
+
+#: .\common\templates\common\home.html:34
+#: .\subscriptions\templates\checkout\checkout_done.html:68
+#, #fuzy
+msgid "Open Movie projects"
+msgstr "打开影片项目"
+
+#: .\common\templates\common\home.html:34
+#: .\subscriptions\templates\checkout\checkout_done.html:68
+#, #fuzy
+msgid "are made possible by subscriptions to the Blender Studio."
+msgstr "通过订阅Blender Studio来实现。"
+
+#: .\common\templates\common\home.html:46
+#, #fuzy
+msgid "From The Archives"
+msgstr "来自档案馆"
+
+#: .\common\templates\common\refrence\buttons.html:3
+msgid "Buttons"
+msgstr "按钮"
+
+#: .\common\templates\common\refrence\buttons.html:6
+msgid "Regular Button"
+msgstr "常规按钮"
+
+#: .\common\templates\common\refrence\buttons.html:7
+#: .\common\templates\common\refrence\buttons.html:20
+#: .\common\templates\common\refrence\buttons.html:23
+#: .\common\templates\common\refrence\buttons.html:33
+#: .\common\templates\common\refrence\buttons.html:36
+#: .\common\templates\common\refrence\buttons.html:46
+#: .\common\templates\common\refrence\buttons.html:49
+#, #fuzy
+msgid "Button"
+msgstr "按钮"
+
+#: .\common\templates\common\refrence\buttons.html:10
+msgid "Icon Button"
+msgstr "图标按钮"
+
+#: .\common\templates\common\refrence\buttons.html:19
+msgid "Large Button"
+msgstr "大按钮"
+
+#: .\common\templates\common\refrence\buttons.html:32
+msgid "Small Button"
+msgstr "小按钮"
+
+#: .\common\templates\common\refrence\buttons.html:45
+#, #fuzy
+msgid "Extra Small Button"
+msgstr "超小按钮"
+
+#: .\common\templates\common\welcome.html:19
+#, #fuzy
+msgid "The Creators Who Share"
+msgstr "分享的创作者"
+
+#: .\common\templates\common\welcome.html:22
+#, #fuzy
+msgid ""
+"Blender Studio is the creative part of the Blender HQ. A dedicated team of "
+"artists and developers who challenge themselves with creative-technical "
+"targets to help Blender users and to drive Blender development forward. This "
+"happens in an open source production environment and by sharing everything "
+"they make in an open and free license. Want to know more? Join the studio "
+"today and help the team to create & share."
+msgstr ""
+"Blender Studio是Blender HQ的创意部分。一个由艺术家和开发人员组成的专业团队，"
+"他们通过创意技术目标挑战自己，以帮助Blender用户并推动Blender开发。这发生在开"
+"源生产环境中，并通过在开放和免费许可证中共享他们所做的一切。想知道更多吗？立"
+"即加入工作室，帮助团队创建和分享。"
+
+#: .\common\templates\common\welcome.html:28
+#, #fuzy
+msgid "Join the Blender Studio"
+msgstr "加入搅拌机工作室"
+
+#: .\common\templates\common\welcome.html:33
+#, #fuzy
+msgid "Access to all training, assets\\nand films for €9.90/month"
+msgstr "访问所有培训，资产\\电影，每月9.90欧元"
+
+#: .\common\templates\common\welcome.html:48
+#, #fuzy
+msgid "Sharing Production Knowledge"
+msgstr "分享生产知识"
+
+#: .\common\templates\common\welcome.html:50
+#, #fuzy
+msgid ""
+"With training and docs covering every major topic in Blender, the Blender "
+"Studio team shares real production knowledge, which can be freely adopted in "
+"a CG pipeline."
+msgstr ""
+"通过涵盖Blender中每个主要主题的培训和文档，Blender Studio团队分享了真实的制作"
+"知识，这些知识可以在CG管道中自由采用。"
+
+#: .\common\templates\common\welcome.html:61
+#: .\films\templates\films\film_detail.html:67
+#, #fuzy
+msgid "Want to see more?"
+msgstr "想看更多？"
+
+#: .\common\templates\common\welcome.html:61
+#, #fuzy
+msgid "Explore all Blender Studio Training ."
+msgstr "浏览所有 搅拌机工作室培训 ."
+
+#: .\common\templates\common\welcome.html:75
+#, #fuzy
+msgid "The Blender Studio Team"
+msgstr "搅拌机工作室团队"
+
+#: .\common\templates\common\welcome.html:76
+#, #fuzy
+msgid "Whether it’s Blender Developer Dr. Sybren teaching"
+msgstr "无论是Blender开发人员Sybren博士教学"
+
+#: .\common\templates\common\welcome.html:76
+#, #fuzy
+msgid "Scripting for Artists"
+msgstr "美术师脚本"
+
+#: .\common\templates\common\welcome.html:76
+#, #fuzy
+msgid "or Animation Director Hjalti teaching"
+msgstr "或动画导演Hjalti教学"
+
+#: .\common\templates\common\welcome.html:77
+#, #fuzy
+msgid "Animation Fundamentals"
+msgstr "动画基础知识"
+
+#: .\common\templates\common\welcome.html:77
+#, #fuzy
+msgid "the Blender Studio team shares actual production knowledge."
+msgstr "Blender Studio团队分享实际的制作知识。"
+
+#: .\common\templates\common\welcome.html:78
+#, #fuzy
+msgid ""
+"Ask questions and receive replies from the author, download resources and "
+"join the discussion."
+msgstr "提出问题并接收作者的回复，下载资源并加入讨论。"
+
+#: .\common\templates\common\welcome.html:80
+#: .\common\templates\common\welcome.html:103
+#: .\common\templates\common\welcome.html:154
+#, #fuzy
+msgid "Subscribe for €9.90/month"
+msgstr "订阅 €9.90/月"
+
+#: .\common\templates\common\welcome.html:81
+#, #fuzy
+msgid "Explore Training"
+msgstr "探索培训"
+
+#: .\common\templates\common\welcome.html:105
+#, #fuzy
+msgid "Explore the Film"
+msgstr "探索影片"
+
+#: .\common\templates\common\welcome.html:119
+#, #fuzy
+msgid "Support Blender Open Movies"
+msgstr "支持搅拌机打开电影"
+
+#: .\common\templates\common\welcome.html:120
+#, #fuzy
+msgid ""
+"The Blender Open Movie projects are made possible by subscriptions to the "
+"Blender Studio."
+msgstr "Blender Open Movie项目是通过订阅Blender Studio来实现的。"
+
+#: .\common\templates\common\welcome.html:130
+#, #fuzy
+msgid "Learn more about our other"
+msgstr "了解更多关于我们的其他"
+
+#: .\common\templates\common\welcome.html:130
+#, #fuzy
+msgid "open movies"
+msgstr "打开影片"
+
+#: .\common\templates\common\welcome.html:130
+msgid "and"
+msgstr "和"
+
+#: .\common\templates\common\welcome.html:131
+#, #fuzy
+msgid "how your contribution is used"
+msgstr "如何使用您的贡献"
+
+#: .\common\templates\common\welcome.html:137
+#, #fuzy
+msgid "Access all our production assets!"
+msgstr "访问我们所有的生产资产！"
+
+#: .\common\templates\common\welcome.html:137
+#, #fuzy
+msgid ""
+"You can access all the production files from our films with a Blender Studio "
+"subscription."
+msgstr "您可以通过Blender Studio订阅访问我们电影中的所有制作文件。"
+
+#: .\common\templates\common\welcome.html:152
+#: .\films\templates\films\film_landing_page.html:280
+#, #fuzy
+msgid ""
+"Join Blender Studio and get access to hundreds of hours of training, "
+"production assets and files from the Open Movies as well as a platform to "
+"learn at your own pace, in your own time."
+msgstr ""
+"加入Blender Studio，从Open Movies访问数百小时的培训，制作资源和文件，以及一个"
+"在自己的时间按照自己的节奏学习的平台。"
+
+#: .\common\templates\flatpages\default.html:16
+msgid "Edit Page"
+msgstr "编辑页面"
+
+#: .\common\templates\rest_framework\api.html:5
+#, #fuzy
+msgid "Blender Studio - API Documentation"
+msgstr "Blender Studio - API Documentation"
+
+#: .\common\templates\rest_framework\api.html:33
+msgid "Your API token:"
+msgstr "您的API令牌："
+
+#: .\emails\templates\admin\emails\subscriptionemailpreview\submit_line.html:5
+#, #fuzy
+msgid "Send a test email"
+msgstr "发送测试电子邮件"
+
+#: .\emails\templates\admin\emails\subscriptionemailpreview\submit_line.html:5
+#, #fuzy
+msgid "Save and view"
+msgstr "保存和查看"
+
+#: .\emails\templates\emails\email.html:8
+#, #fuzy
+msgid "Don"
+msgstr "哟³"
+
+#: .\emails\templates\emails\email.html:8
+msgid "Unsubscribe"
+msgstr "退订"
+
+#: .\emails\templates\emails\email_base.html:79
+#, #fuzy
+msgid "Do you want to renew or check the status of your account?"
+msgstr "您想续订或检查帐户的状态吗？"
+
+#: .\films\templates\films\base_films.html:34
+#: .\films\templates\films\gallery.html:35
+#, #fuzy
+msgid "Content Gallery"
+msgstr "内容库"
+
+#: .\films\templates\films\base_films.html:38
+#: .\films\templates\films\film_landing_page.html:137
+#: .\films\templates\films\productionlog.html:5
+#: .\films\templates\films\productionlog_month.html:4
+#: .\films\templates\films\productionlog_month.html:14
+#, #fuzy
+msgid "Production Logs"
+msgstr "生产日志"
+
+#: .\films\templates\films\base_films.html:45
+#: .\films\templates\films\production_credit.html:3
+#: .\films\templates\films\production_credit.html:10
+#, #fuzy
+msgid "Production Credit"
+msgstr "生产信用"
+
+#: .\films\templates\films\base_films.html:53
+#, #fuzy
+msgid "Admin Edit"
+msgstr "管理员编辑"
+
+#: .\films\templates\films\components\admin\production_log_manage.html:7
+#, #fuzy
+msgid "Add Production Log"
+msgstr "添加生产日志"
+
+#: .\films\templates\films\components\admin\production_log_manage.html:9
+#, #fuzy
+msgid "Manage Production Logs"
+msgstr "管理生产日志"
+
+#: .\films\templates\films\components\jumbotron_film.html:19
+msgid "Watch"
+msgstr "关注"
+
+#: .\films\templates\films\components\jumbotron_film.html:21
+#: .\films\templates\films\components\jumbotron_film.html:23
+#, #fuzy
+msgid "Explore Content Gallery"
+msgstr "探索内容库"
+
+#: .\films\templates\films\components\production_log_entry.html:26
+#, #fuzy
+msgid "calendar_today"
+msgstr "calendar_today"
+
+#: .\films\templates\films\components\production_log_entry.html:37
+msgid "Watch Video"
+msgstr "观看视频"
+
+#: .\films\templates\films\components\production_log_entry.html:81
+#, #fuzy
+msgid "Other Contributors:"
+msgstr "其他贡献者："
+
+#: .\films\templates\films\components\production_log_entry.html:157
+msgid "Show"
+msgstr "显示"
+
+#: .\films\templates\films\components\production_log_entry.html:172
+msgid "Add Entry"
+msgstr "添加条目"
+
+#: .\films\templates\films\film_detail.html:43
+#, #fuzy
+msgid "This week in Production"
+msgstr "本周投入生产"
+
+#: .\films\templates\films\film_detail.html:44
+#, #fuzy
+msgid "Check out what the teams been working on this week on "
+msgstr "看看团队本周在做什么"
+
+#: .\films\templates\films\film_detail.html:45
+#: .\films\templates\films\film_detail.html:58
+#, #fuzy
+msgid "See all production logs"
+msgstr "查看所有生产日志"
+
+#: .\films\templates\films\film_detail.html:57
+#, #fuzy
+msgid "Want to see more updates from"
+msgstr "想要查看更多更新"
+
+#: .\films\templates\films\film_detail.html:66
+#, #fuzy
+msgid "Featured Content Gallery"
+msgstr "特色内容库"
+
+#: .\films\templates\films\film_detail.html:68
+#, #fuzy
+msgid "Explore the Content Gallery"
+msgstr "浏览内容库"
+
+#: .\films\templates\films\film_detail.html:89
+#: .\films\templates\films\film_landing_page.html:256
+#: .\films\templates\films\gallery.html:229
+#, #fuzy
+msgid "No Featured Artwork to display"
+msgstr "没有要显示的特色图稿"
+
+#: .\films\templates\films\film_landing_page.html:51
+#, #fuzy
+msgid ""
+"Blender Studio is the creative part of the Blender HQ. A dedicated team of "
+"artists and developers challenge themselves with creative-technical targets "
+"to help Blender users and to drive Blender development forward. This happens "
+"in an open source production environment and by sharing everything they make "
+"in an open and free license."
+msgstr ""
+"Blender Studio是Blender HQ的创意部分。一个由艺术家和开发人员组成的专业团队通"
+"过创意技术目标挑战自己，以帮助Blender用户并推动Blender开发向前发展。这发生在"
+"开源生产环境中，并通过在开放和免费许可证中共享他们所做的一切。"
+
+#: .\films\templates\films\film_landing_page.html:53
+#, #fuzy
+msgid ""
+"Want to know more? Join the studio today and help the team to create & share."
+msgstr "想知道更多吗？立即加入工作室，帮助团队创建和分享。"
+
+#: .\films\templates\films\film_landing_page.html:56
+#: .\films\templates\films\film_landing_page.html:296
+#, #fuzy
+msgid "Subscribe to get access!"
+msgstr "订阅以获取访问权限！"
+
+#: .\films\templates\films\film_landing_page.html:58
+#: .\films\templates\films\film_landing_page.html:298
+#, #fuzy
+msgid "Access to all training, assets"
+msgstr "访问所有培训、资产"
+
+#: .\films\templates\films\film_landing_page.html:58
+#: .\films\templates\films\film_landing_page.html:298
+#, #fuzy
+msgid "and films for €9.90/month"
+msgstr "和电影 €9.90/月"
+
+#: .\films\templates\films\film_landing_page.html:92
+#, #fuzy
+msgid "The Blender Studio levels up its storytelling super-powers!"
+msgstr "搅拌机工作室升级其讲故事的超能力！"
+
+#: .\films\templates\films\film_landing_page.html:93
+#, #fuzy
+msgid ""
+"For this project, the Blender Studio team wanted to take a more story-"
+"focused approach to movie-making, as well as improving its 3D production "
+"pipeline. With Matthew Luhn (Pixar story artist veteran) as director, "
+"working with a team of 20+ artists and developers, this is Blender Studio’s "
+"most ambitious production to date."
+msgstr ""
+"对于这个项目，Blender Studio团队希望采取一种更加以故事为中心的方法来制作电"
+"影，并改进其3D制作流程。马修·卢恩（Matthew Luhn，皮克斯故事艺术家资深人士）担"
+"任导演，与20多位艺术家和开发人员合作，这是Blender Studio迄今为止最雄心勃勃的"
+"作品。"
+
+#: .\films\templates\films\film_landing_page.html:94
+#, #fuzy
+msgid ""
+"All assets, film versions and know-how are being shared as part of the "
+"process."
+msgstr "所有资产、电影版本和专有技术都作为流程的一部分进行共享。"
+
+#: .\films\templates\films\film_landing_page.html:97
+#, #fuzy
+msgid "Movie Versions"
+msgstr "电影版本"
+
+#: .\films\templates\films\film_landing_page.html:101
+#, #fuzy
+msgid "Pre-Production Assets"
+msgstr "预制作资产"
+
+#: .\films\templates\films\film_landing_page.html:132
+#, #fuzy
+msgid "Follow the production progress, week by week"
+msgstr "每周跟踪生产进度"
+
+#: .\films\templates\films\film_landing_page.html:133
+#, #fuzy
+msgid ""
+"Check the weekly progress of the team through “Production Logs”,  where "
+"artists share breakdowns, artwork and .blend files. This allows you to deep-"
+"dive into actual production content, and learn by example."
+msgstr ""
+"通过“生产日志”检查团队的每周进度，艺术家可以在其中共享细分、图稿和 .blend 文"
+"件。这使您可以深入了解实际的生产内容，并通过示例进行学习。"
+
+#: .\films\templates\films\film_landing_page.html:134
+#, #fuzy
+msgid "As an added bonus, check out the weekly updates on "
+msgstr "作为额外的奖励，请查看每周更新"
+
+#: .\films\templates\films\film_landing_page.html:134
+msgid "YouTube"
+msgstr "YouTube"
+
+#: .\films\templates\films\film_landing_page.html:141
+#, #fuzy
+msgid "Artist Entries"
+msgstr "艺术家作品"
+
+#: .\films\templates\films\film_landing_page.html:145
+#, #fuzy
+msgid "Film Assets"
+msgstr "电影资产"
+
+#: .\films\templates\films\film_landing_page.html:161
+#, #fuzy
+msgid "Discover how we built our pipeline for film making!"
+msgstr "了解我们如何构建电影制作流程！"
+
+#: .\films\templates\films\film_landing_page.html:162
+#, #fuzy
+msgid ""
+"One target for the team was to improve and extend the Blender Studio "
+"production pipeline, and to share those tools and insights with the "
+"community."
+msgstr ""
+"该团队的一个目标是改进和扩展Blender Studio的制作流程，并与社区分享这些工具和"
+"见解。"
+
+#: .\films\templates\films\film_landing_page.html:206
+#, #fuzy
+msgid "Sharing Production Lessons"
+msgstr "分享生产经验"
+
+#: .\films\templates\films\film_landing_page.html:207
+#, #fuzy
+msgid ""
+"During production, we regularly release short-form training to document "
+"techniques or creative processes."
+msgstr "在制作过程中，我们定期发布简短的培训，以记录技术或创作过程。"
+
+#: .\films\templates\films\film_landing_page.html:208
+#, #fuzy
+msgid "For example: lead animator"
+msgstr "例如：首席动画师"
+
+#: .\films\templates\films\film_landing_page.html:208
+#, #fuzy
+msgid "Rik Schutte"
+msgstr "里克·舒特"
+
+#: .\films\templates\films\film_landing_page.html:208
+#, #fuzy
+msgid ""
+"shows how he uses Grease Pencil for animating smear frames for cartoony "
+"animation, and shading artist "
+msgstr "展示了他如何使用Grease Pencil为卡通动画的涂抹框架和着色艺术家制作动画"
+
+#: .\films\templates\films\film_landing_page.html:208
+#, #fuzy
+msgid "Simon Thommes"
+msgstr "西蒙·汤姆斯"
+
+#: .\films\templates\films\film_landing_page.html:208
+#, #fuzy
+msgid "shares several procedural surfacing workflows."
+msgstr "共享多个程序化曲面工作流。"
+
+#: .\films\templates\films\film_landing_page.html:211
+#, #fuzy
+msgid "Production Lessons"
+msgstr "生产课程"
+
+#: .\films\templates\films\film_landing_page.html:215
+#, #fuzy
+msgid "Hours of content"
+msgstr "内容小时数"
+
+#: .\films\templates\films\film_landing_page.html:235
+#, #fuzy
+msgid "Access all the content, .blend files included!"
+msgstr "访问所有内容，包括.blend文件！"
+
+#: .\films\templates\films\film_landing_page.html:236
+#, #fuzy
+msgid "Download over"
+msgstr "下载于"
+
+#: .\films\templates\films\film_landing_page.html:236
+#, #fuzy
+msgid "5000 production files"
+msgstr "5000 个生产文件"
+
+#: .\films\templates\films\film_landing_page.html:236
+#, #fuzy
+msgid "directly from Blender Studio."
+msgstr "直接从Blender Studio。"
+
+#: .\films\templates\films\film_landing_page.html:279
+#, #fuzy
+msgid "Subscribe & get insider access to Sprite Fright today!"
+msgstr "立即订阅并获得内部人士对雪碧惊吓的访问权限！"
+
+#: .\films\templates\films\film_landing_page.html:284
+#, #fuzy
+msgid "Follow along with movie production"
+msgstr "跟随电影制作"
+
+#: .\films\templates\films\film_landing_page.html:287
+#, #fuzy
+msgid "Download film files, rigs and assets"
+msgstr "下载影片文件、装备和资产"
+
+#: .\films\templates\films\film_landing_page.html:290
+#, #fuzy
+msgid "Learn from our production lessons"
+msgstr "从我们的生产经验中学习"
+
+#: .\films\templates\films\films.html:5
+#, #fuzy
+msgid "Films - "
+msgstr "电影 -"
+
+#: .\films\templates\films\films.html:8 .\films\templates\films\films.html:16
+#, #fuzy
+msgid ""
+"The iconic Blender Open Movies. Featuring all the production files, assets, "
+"artwork, and never-seen-before content."
+msgstr "标志性的搅拌机打开电影。包含所有制作文件、资源、图稿和前所未见的内容。"
+
+#: .\films\templates\films\flatpage.html:6
+#: .\films\templates\films\productionlog.html:7
+#: .\films\templates\films\productionlog_detail.html:12
+#: .\films\templates\films\productionlog_month.html:6
+#, #fuzy
+msgid "spacer has-secondary-nav"
+msgstr "间隔条具有辅助导航"
+
+#: .\films\templates\films\gallery.html:43
+#: .\films\templates\films\gallery.html:136
+#, #fuzy
+msgid "Featured Artwork"
+msgstr "特色作品"
+
+#: .\films\templates\films\gallery.html:50
+#: .\films\templates\films\gallery.html:144
+#, #fuzy
+msgid "All Artwork"
+msgstr "所有艺术品"
+
+#: .\films\templates\films\latest_assets.html:32
+#: .\search\templates\search\search.html:45
+#: .\search\templates\search\search.html:111
+#: .\training\templates\training\home_authenticated.html:90
+#: .\training\templates\training\home_not_authenticated.html:65
+msgid "Sort by:"
+msgstr "排序方式："
+
+#: .\films\templates\films\latest_assets.html:52
+#, #fuzy
+msgid " \"film\": "
+msgstr "“电影”："
+
+#: .\films\templates\films\production_credit.html:10
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:35
+#: .\subscriptions\templates\subscriptions\cancel.html:12
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:8
+#: .\subscriptions\templates\subscriptions\emails\subscription_activated.html:4
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:13
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:14
+msgid "Your"
+msgstr "你的"
+
+#: .\films\templates\films\production_credit.html:12
+#: .\films\templates\films\production_credit.html:42
+#, #fuzy
+msgid "Thank you for supporting the"
+msgstr "感谢您对"
+
+#: .\films\templates\films\production_credit.html:12
+#, #fuzy
+msgid ""
+"production. Fill in the form to get your name in the end credits! If you don"
+msgstr "生产。填写表格，在片尾字幕中获得您的名字！如果您不"
+
+#: .\films\templates\films\production_credit.html:14
+#, #fuzy
+msgid ""
+"It looks like your name is missing from your profile. Make sure you add it "
+"to your Blender ID at"
+msgstr "您的个人资料中似乎缺少您的姓名。确保将其添加到您的Blender ID中，网址为"
+
+#: .\films\templates\films\production_credit.html:15
+#: .\films\templates\films\production_credit.html:37
+#, #fuzy
+msgid "id.blender.org"
+msgstr "id.blender.org"
+
+#: .\films\templates\films\production_credit.html:16
+#, #fuzy
+msgid "Then come back to configure your credit."
+msgstr "然后回来配置您的信用。"
+
+#: .\films\templates\films\production_credit.html:36
+msgid "The name"
+msgstr "名称"
+
+#: .\films\templates\films\production_credit.html:36
+#, #fuzy
+msgid "will be used.If you wish to change it, visit "
+msgstr "将使用。如果您想更改它，请访问"
+
+#: .\films\templates\films\production_credit.html:38
+#: .\users\templates\users\settings\emails.html:25
+msgid "Save changes"
+msgstr "保存更改"
+
+#: .\films\templates\films\production_credit.html:42
+#, #fuzy
+msgid "production."
+msgstr "生产。"
+
+#: .\films\templates\films\production_credit.html:44
+#, #fuzy
+msgid "You have a credit as"
+msgstr "您有一个信用"
+
+#: .\films\templates\films\production_credit.html:44
+#, #fuzy
+msgid "in the end scroll of the film."
+msgstr "在电影的结尾卷轴中。"
+
+#: .\films\templates\films\productionlog.html:16
+#: .\films\templates\films\productionlog_month.html:15
+#, #fuzy
+msgid "Follow the latest updates and progress on"
+msgstr "关注最新的更新和进度"
+
+#: .\films\templates\films\productionlog.html:40
+#: .\films\templates\films\productionlog_month.html:38
+#, #fuzy
+msgid "No Weeklies to show"
+msgstr "无需显示周刊"
+
+#: .\films\templates\films\productionlog_detail.html:7
+#, #fuzy
+msgid "Check out the latest progress in our weekly production log."
+msgstr "在我们的每周生产日志中查看最新进展。"
+
+#: .\films\templates\films\productionlog_month.html:15
+#, #fuzy
+msgid "right here."
+msgstr "就在这儿。"
+
+#: .\logentry_admin\admin.py:13
+msgctxt "logentry_admin:action_type"
+msgid "Addition"
+msgstr "加法"
+
+#: .\logentry_admin\admin.py:14
+msgctxt "logentry_admin:action_type"
+msgid "Deletion"
+msgstr "删除"
+
+#: .\logentry_admin\admin.py:15
+msgctxt "logentry_admin:action_type"
+msgid "Change"
+msgstr "更改"
+
+#: .\logentry_admin\admin.py:20 .\logentry_admin\admin.py:127
+msgid "action"
+msgstr "动作"
+
+#: .\logentry_admin\admin.py:44
+msgid "Metadata"
+msgstr "元数据"
+
+#: .\logentry_admin\admin.py:48
+msgid "Details"
+msgstr "详情"
+
+#: .\logentry_admin\admin.py:96
+msgid "object"
+msgstr "对象"
+
+#: .\logentry_admin\admin.py:113
+msgid "user"
+msgstr "用户"
+
+#: .\logentry_admin\admin.py:133
+#, #fuzy
+msgid "change message"
+msgstr "更改消息"
+
+#: .\search\templates\search\search.html:5
+msgid "Search"
+msgstr "搜索"
+
+#: .\search\templates\search\search.html:7
+#, #fuzy
+msgid "search spacer"
+msgstr "搜索间隔符"
+
+#: .\search\templates\search\search.html:38
+#, #fuzy
+msgid "Filters"
+msgstr "过滤器"
+
+#: .\search\templates\search\search.html:65
+msgid "Type:"
+msgstr "类型："
+
+#: .\search\templates\search\search.html:74
+msgid "Media:"
+msgstr "媒体："
+
+#: .\search\templates\search\search.html:82
+#, #fuzy
+msgid "Film:"
+msgstr "影片："
+
+#: .\stats\templates\stats\index.html:12
+#, #fuzy
+msgid "Subscriber Stats"
+msgstr "订阅者统计"
+
+#: .\stats\templates\stats\index.html:12
+#, #fuzy
+msgid "The latest Blender Studio numbers."
+msgstr "最新的Blender Studio编号。"
+
+#: .\stats\templates\stats\index.html:16
+msgid "Subscribers"
+msgstr "订阅者"
+
+#: .\subscriptions\templates\checkout\checkout_base.html:17
+#, #fuzy
+msgid "Blender Studio Subscription"
+msgstr "Blender Studio Subscription"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:41
+#, #fuzy
+msgid "Welcome to Blender Studio!"
+msgstr "欢迎来到搅拌机工作室！"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:42
+#: .\users\templates\users\components\action_summary.html:10
+msgid "You"
+msgstr "你"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:43
+#, #fuzy
+msgid "films"
+msgstr "电影"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:43
+#, #fuzy
+msgid "training"
+msgstr "训练"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:43
+#, #fuzy
+msgid "and assets from the Blender Studio team."
+msgstr "和来自Blender Studio团队的资产。"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:45
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:56
+#, #fuzy
+msgid "Manage subscription in"
+msgstr "管理订阅"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:45
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:56
+#, #fuzy
+msgid "your billing settings"
+msgstr "您的结算设置"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:47
+msgid "Start exploring"
+msgstr "开始探索"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:48
+#, #fuzy
+msgid "Celebrate!"
+msgstr "庆祝！"
+
+#: .\subscriptions\templates\checkout\checkout_done.html:60
+#, #fuzy
+msgid "Check out our latest training!"
+msgstr "查看我们最新的培训！"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:19
+#, #fuzy
+msgid "Thanks for subscribing to Blender Studio!"
+msgstr "感谢您订阅Blender Studio！"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:20
+#, #fuzy
+msgid "Make sure to follow the instructions below to activate your account."
+msgstr "请务必按照以下说明激活您的帐户。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:35
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:9
+#, #fuzy
+msgid ""
+"and will be activated as soon as we have received and handled your bank "
+"transfer."
+msgstr "一旦我们收到并处理您的银行转帐，就会立即激活。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:44
+msgid "Instructions:"
+msgstr "使用指南："
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:47
+#, #fuzy
+msgid ""
+"Use the adjacent bank details to pay the full amount with the following as a "
+"payment reference:"
+msgstr "使用相邻的银行详细信息支付全额，并使用以下作为付款参考："
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:50
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:20
+#, #fuzy
+msgid ""
+"You may need to wait a few days until the payment clears before one of our "
+"team members activates your account."
+msgstr "您可能需要等待几天，直到付款结算，我们的团队成员才能激活您的帐户。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:51
+#, #fuzy
+msgid "Once you receive an email to let you know it"
+msgstr "收到一封电子邮件后，告知您"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:54
+#, #fuzy
+msgid "This information is also sent to you by email."
+msgstr "此信息也会通过电子邮件发送给您。"
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:63
+#, #fuzy
+msgid "Bank details:"
+msgstr "银行详细信息："
+
+#: .\subscriptions\templates\checkout\checkout_done_transactionless.html:65
+#, #fuzy
+msgid "Payment reference:"
+msgstr "付款参考："
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:5
+#: .\subscriptions\templates\looper\settings\receipts.html:6
+#: .\subscriptions\templates\settings\billing_address.html:6
+#, #fuzy
+msgid "Settings: Subscription"
+msgstr "设置：订阅"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:6
+msgid "Payment Methods"
+msgstr "支付方式"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:8
+#, #fuzy
+msgid ""
+"Here you can view and delete payment methods.You can change subscription"
+msgstr "您可以在此处查看和删除付款方式。您可以更改订阅"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:8
+#, #fuzy
+msgid "subscriptions settings"
+msgstr "订阅设置"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:8
+#, #fuzy
+msgid ", or while manually paying for an order."
+msgstr "，或在手动支付订单时。"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:14
+#: .\subscriptions\templates\looper\settings\receipt.html:178
+msgid "Payment Method"
+msgstr "支付方式"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:15
+msgid "Expiry"
+msgstr "到期"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:16
+#: .\subscriptions\templates\looper\settings\payment_methods.html:46
+#: .\subscriptions\templates\subscriptions\components\billing_address_form.html:98
+msgid "Remove"
+msgstr "删除"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:25
+#, #fuzy
+msgid "Invalid or unsupported payment method."
+msgstr "无效或不受支持的付款方式。"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:26
+#, #fuzy
+msgid ""
+"The payment method was either deleted at the payment service provider or is "
+"no longer supported."
+msgstr "付款方式已在支付服务提供商处删除或不再受支持。"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:32
+msgid "Ending with"
+msgstr "结尾数字"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:34
+msgid "Expires"
+msgstr "到期"
+
+#: .\subscriptions\templates\looper\settings\payment_methods.html:38
+#, #fuzy
+msgid "With email"
+msgstr "通过电子邮件"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:12
+#, #fuzy
+msgid "Back to invoices"
+msgstr "返回发票"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:14
+#: .\subscriptions\templates\looper\settings\receipts.html:7
+#: .\users\templates\users\settings\tabs.html:48
+msgid "Invoices"
+msgstr "发票"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:15
+#, #fuzy
+msgid "Invoice # "
+msgstr "发票编号"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:20
+msgid "Invoice ID"
+msgstr "发票ID"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:31
+msgid "Status"
+msgstr "状态"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:34
+msgid "PAID"
+msgstr "已付"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:42
+#, #fuzy
+msgid "Payment Received on"
+msgstr "收到付款"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:53
+#: .\subscriptions\templates\subscriptions\manage.html:11
+msgid "Subscription #"
+msgstr "重复订阅"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:61
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:33
+msgid "Renewal Type"
+msgstr "续订类型"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:72
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:49
+msgid "Renewal Period"
+msgstr "更新周期"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:83
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:9
+#: .\subscriptions\templates\settings\billing_address.html:7
+msgid "Billing Address"
+msgstr "帐单地址"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:91
+msgid "Address"
+msgstr "地址"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:103
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:16
+#, #fuzy
+msgid "VATIN"
+msgstr "瓦汀"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:116
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:21
+#, #fuzy
+msgid "Invoice ref."
+msgstr "发票编号"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:128
+#: .\users\templates\users\settings\profile.html:26
+msgid "Email"
+msgstr "邮箱"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:139
+msgid "Payment Information"
+msgstr "支付信息"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:147
+msgid "Amount Paid"
+msgstr "已支付金额"
+
+#: .\subscriptions\templates\looper\settings\receipt.html:165
+msgid "Amount Refunded"
+msgstr "退款"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:4
+#, #fuzy
+msgid "Blender Studio Invoice"
+msgstr "搅拌机工作室发票"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:10
+msgid "E-mail:"
+msgstr "电子邮件："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:30
+msgid "Invoice Number:"
+msgstr "发票号码："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:38
+msgid "Invoice Date:"
+msgstr "发票日期："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:46
+msgid "Payment method:"
+msgstr "付款方式："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:73
+msgid "Product"
+msgstr "产品"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:74
+msgid "Quantity"
+msgstr "数量"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:75
+msgid "Price"
+msgstr "价格"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:85
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:13
+#: .\subscriptions\templates\subscriptions\manage.html:11
+msgid "Team"
+msgstr "团队"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:85
+#, #fuzy
+msgid "Subscription #:"
+msgstr "订阅编号："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:88
+#, #fuzy
+msgid "Renewal type:"
+msgstr "续订类型："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:91
+#, #fuzy
+msgid "Renewal period:"
+msgstr "续订期限："
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:95
+msgid "Seats:"
+msgstr "席位"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:95
+#: .\subscriptions\templates\subscriptions\components\total.html:20
+msgid "unlimited"
+msgstr "无限制"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:118
+#, #fuzy
+msgid ""
+"Under the regulations of the EU we do not charge VAT on services provided to "
+"VAT-registered businesses in other member countries. According to the "
+"reverse-charge regulations on tax liability transfers to the recipient of "
+"services."
+msgstr ""
+"根据欧盟法规，我们不对向其他成员国/地区的增值税注册企业提供的服务收取增值税。"
+"根据《逆向收费条例》将纳税义务转移给服务接受者。"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:122
+msgid "Subtotal"
+msgstr "小计"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:134
+msgid "VAT"
+msgstr "增值税"
+
+#: .\subscriptions\templates\looper\settings\receipt_pdf.html:140
+#: .\subscriptions\templates\subscriptions\components\current_plan_variation.html:17
+#: .\subscriptions\templates\subscriptions\components\total.html:31
+msgid "Total"
+msgstr "总计"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:13
+msgid "Date"
+msgstr "日期"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:14
+msgid "Description"
+msgstr "描述"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:15
+#: .\subscriptions\templates\pdf_layout.html:81
+msgid "Invoice"
+msgstr "发票"
+
+#: .\subscriptions\templates\looper\settings\receipts.html:16
+#, #fuzy
+msgid "Amount"
+msgstr "金额"
+
+#: .\subscriptions\templates\pdf_layout.html:87
+#, #fuzy
+msgid "Blender Studio B.V."
+msgstr "搅拌机工作室 B.V."
+
+#: .\subscriptions\templates\pdf_layout.html:88
+#, #fuzy
+msgid "Buikslotermeerplein 161"
+msgstr "布克斯洛特米尔广场 161"
+
+#: .\subscriptions\templates\pdf_layout.html:89
+#, #fuzy
+msgid "1025 ET Amsterdam, the Netherlands"
+msgstr "1025 ET 阿姆斯特丹， 荷兰"
+
+#: .\subscriptions\templates\pdf_layout.html:90
+#, #fuzy
+msgid "Tax number NL861711932B01"
+msgstr "税号 NL861711932B01"
+
+#: .\subscriptions\templates\settings\billing_address.html:14
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:6
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:7
+#, #fuzy
+msgid "Settings: Subscription #"
+msgstr "设置：订阅#"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:7
+#, #fuzy
+msgid "Cancel Subscription #"
+msgstr "取消订阅#"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:12
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:14
+#, #fuzy
+msgid "subscription is currently"
+msgstr "订阅当前是"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:18
+msgid "Are you sure you want to cancel?"
+msgstr "您确定要取消此上传吗?"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:28
+#, #fuzy
+msgid "Your subscription will remain active until"
+msgstr "您的订阅将保持有效状态，直到"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:28
+#, #fuzy
+msgid "since you have paid for your subscription until then."
+msgstr "因为在此之前您已经支付了订阅费用。"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:34
+#, #fuzy
+msgid "Keep Subscription"
+msgstr "保留订阅"
+
+#: .\subscriptions\templates\subscriptions\cancel.html:37
+#: .\subscriptions\templates\subscriptions\manage.html:222
+msgid "Cancel Subscription"
+msgstr "取消订阅"
+
+#: .\subscriptions\templates\subscriptions\components\billing_address_form.html:98
+msgid "Add"
+msgstr "添加"
+
+#: .\subscriptions\templates\subscriptions\components\billing_address_form.html:99
+#, #fuzy
+msgid "billing and VAT details (optional)"
+msgstr "帐单和增值税详细信息（可选）"
+
+#: .\subscriptions\templates\subscriptions\components\billing_address_form_readonly.html:69
+#, #fuzy
+msgid "VATIN:"
+msgstr "增值税："
+
+#: .\subscriptions\templates\subscriptions\components\current_plan_variation.html:8
+msgid "Renewal"
+msgstr "续订"
+
+#: .\subscriptions\templates\subscriptions\components\header_jumbotron.html:11
+#, #fuzy
+msgid "Subscribe to Blender Studio"
+msgstr "订阅Blender Studio"
+
+#: .\subscriptions\templates\subscriptions\components\header_jumbotron.html:13
+#, #fuzy
+msgid "Choose your plan below, you can stop or cancel at any time!"
+msgstr "在下面选择您的计划，您可以随时停止或取消！"
+
+#: .\subscriptions\templates\subscriptions\components\list.html:18
+#, #fuzy
+msgid "Team subscription #"
+msgstr "团队订阅#"
+
+#: .\subscriptions\templates\subscriptions\components\list.html:30
+msgid "Subscribe"
+msgstr "订阅"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:22
+#: .\subscriptions\templates\subscriptions\components\total.html:13
+msgid "Seats"
+msgstr "座位"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:23
+#, #fuzy
+msgid "Maximum number of team members allowed for this subscription"
+msgstr "此订阅允许的最大团队成员数"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:46
+#: .\training\templates\training\training.html:50
+msgid "Save"
+msgstr "保存"
+
+#: .\subscriptions\templates\subscriptions\components\manage_team.html:58
+#, #fuzy
+msgid "Active team members"
+msgstr "活跃的团队成员"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:8
+#, #fuzy
+msgid "Join the Studio"
+msgstr "加入工作室"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:10
+#, #fuzy
+msgid "Step 1: Choose your"
+msgstr "第 1 步：选择您的"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:10
+msgid "team"
+msgstr "团队"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:10
+#, #fuzy
+msgid "plan."
+msgstr "计划。"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:11
+#, #fuzy
+msgid "1 of 3"
+msgstr "1 页，共 3"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:75
+msgid "Every"
+msgstr "每"
+
+#: .\subscriptions\templates\subscriptions\components\plan_selector.html:87
+#, #fuzy
+msgid "Required fields are marked with (*)."
+msgstr "必填字段标有 （*）。"
+
+#: .\subscriptions\templates\subscriptions\components\pretty_status.html:2
+#: .\subscriptions\templates\subscriptions\manage.html:212
+msgid "Pending Cancellation"
+msgstr "待取消"
+
+#: .\subscriptions\templates\subscriptions\components\pretty_status.html:4
+#, #fuzy
+msgid "Active"
+msgstr "激活"
+
+#: .\subscriptions\templates\subscriptions\components\pretty_status.html:6
+msgid "Inactive"
+msgstr "未激活"
+
+#: .\subscriptions\templates\subscriptions\components\total.html:53
+#, #fuzy
+msgid "Sign in with Blender ID"
+msgstr "使用Blender ID登录"
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:6
+#, #fuzy
+msgid "Thank you for subscribing to Blender Studio!"
+msgstr "感谢您订阅Blender Studio！"
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:11
+#, #fuzy
+msgid "Please send your payment of"
+msgstr "请将您的付款发送给"
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:11
+msgid "to:"
+msgstr "到："
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:16
+#, #fuzy
+msgid "Use the following as a payment reference:"
+msgstr "使用以下内容作为付款参考："
+
+#: .\subscriptions\templates\subscriptions\emails\bank_transfer_required.html:23
+#, #fuzy
+msgid "Subscription information: "
+msgstr "订阅信息："
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:9
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:11
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:9
+msgid "Dear"
+msgstr "尊敬的"
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:11
+#, #fuzy
+msgid "Manage subscription in your billing settings:"
+msgstr "在结算设置中管理订阅："
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:14
+msgid "Kind regards,"
+msgstr "亲切的问候，"
+
+#: .\subscriptions\templates\subscriptions\emails\base.html:15
+#, #fuzy
+msgid "Blender Studio Team"
+msgstr "搅拌机工作室团队"
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:5
+msgid "has a"
+msgstr "has a "
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:5
+#, #fuzy
+msgid "that just passed its next payment date."
+msgstr "刚刚过了下一个付款日期。"
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:9
+msgid "See"
+msgstr "看到"
+
+#: .\subscriptions\templates\subscriptions\emails\managed_notification.html:9
+#, #fuzy
+msgid "in the Blender Studio admin."
+msgstr "在Blender Studio管理员中。"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:5
+#, #fuzy
+msgid ""
+"Automatic payment for your Blender Studio subscription has failed.We have "
+"tried"
+msgstr "您的Blender Studio订阅的自动付款失败。我们尝试过"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:7
+#, #fuzy
+msgid ""
+"times, but none of those attempts were successful.As a result, we have "
+"paused your subscription for now."
+msgstr "，但这些尝试都没有成功。因此，我们暂时暂停了您的订阅。"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:9
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:9
+#, #fuzy
+msgid "The error we received from the payment provider was:"
+msgstr "我们从支付服务提供商处收到的错误是："
+
+#: .\subscriptions\templates\subscriptions\emails\payment_failed.html:10
+#, #fuzy
+msgid "To resume your subscription, please visit"
+msgstr "要恢复订阅，请访问"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:6
+msgid "Automatic"
+msgstr "自动"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:6
+#, #fuzy
+msgid "payment for your Blender Studio subscription"
+msgstr "支付您的Blender Studio订阅费用"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:6
+#, #fuzy
+msgid "was successful. Thank you for subscribing to Blender Studio!"
+msgstr "是成功的。感谢您订阅Blender Studio！"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_paid.html:8
+#, #fuzy
+msgid "You will find the online invoice at "
+msgstr "您可以在以下位置找到在线发票"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:5
+#, #fuzy
+msgid "Automatic payment for your Blender Studio subscription failed.Don"
+msgstr "您的Blender Studio订阅的自动付款失败。唐"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:5
+#, #fuzy
+msgid "automatically try again"
+msgstr "自动重试"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:5
+#, #fuzy
+msgid "soon."
+msgstr "很快。"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:6
+#, #fuzy
+msgid "This was collection attempt"
+msgstr "这是收集尝试"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:6
+msgid "of"
+msgstr "的"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:7
+#, #fuzy
+msgid "If payment still fails after that, we"
+msgstr "如果在此之后付款仍然失败，我们"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:11
+#, #fuzy
+msgid "For now you can either wait for another automatic try,"
+msgstr "现在，您可以等待另一次自动尝试，"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:12
+#, #fuzy
+msgid "or visit"
+msgstr "或访问"
+
+#: .\subscriptions\templates\subscriptions\emails\payment_soft-failed.html:12
+#, #fuzy
+msgid "to pay manually."
+msgstr "手动支付。"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:13
+#, #fuzy
+msgid "As you may have heard, Blender Studio"
+msgstr "你可能听说过，Blender Studio"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:14
+#, #fuzy
+msgid "more on that in"
+msgstr "更多关于这一点"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:14
+#, #fuzy
+msgid "the blog post"
+msgstr "博客文章"
+
+#: .\subscriptions\templates\subscriptions\emails\paypal_subscription_cancelled.html:16
+#, #fuzy
+msgid ""
+"Due to this update, the old PayPal Subscriptions payment method is no longer "
+"supported."
+msgstr "由于此更新，不再支持旧的PayPal订阅付款方式。"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_activated.html:4
+#, #fuzy
+msgid ""
+"subscription has been activated. Thank you for subscribing to Blender Studio!"
+msgstr "订阅已激活。感谢您订阅Blender Studio！"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_activated.html:6
+#, #fuzy
+msgid "Explore all Blender Studio Training:"
+msgstr "探索所有搅拌机工作室培训："
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_deactivated.html:4
+#, #fuzy
+msgid "Your Blender Studio subscription has been deactivated."
+msgstr "您的Blender Studio订阅已被停用。"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:10
+#, #fuzy
+msgid "Your Blender Studio subscription #"
+msgstr "您的Blender Studio订阅#"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:10
+#, #fuzy
+msgid ""
+"has expired a while back. We miss you -- and you are missing some exciting "
+"content on Blender Studio as well."
+msgstr ""
+"已过期一段时间。我们想念你 - 你也错过了Blender Studio上一些令人兴奋的内容。"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:12
+#, #fuzy
+msgid "Just recently, we"
+msgstr "就在最近，我们"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:23
+#, #fuzy
+msgid "If you"
+msgstr "如果您"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:69
+#, #fuzy
+msgid "Hope to see you again soon!"
+msgstr "希望能很快见到你！"
+
+#: .\subscriptions\templates\subscriptions\emails\subscription_expired.html:73
+#, #fuzy
+msgid "Until then,"
+msgstr "在此之前，"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:11
+msgid "Billing"
+msgstr "账单"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:13
+#, #fuzy
+msgid "Step 2: Input your billing details."
+msgstr "第 2 步：输入您的账单详细信息。"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:14
+#, #fuzy
+msgid "2 of 3"
+msgstr "2 页，共 3"
+
+#: .\subscriptions\templates\subscriptions\join\billing_address.html:49
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:53
+msgid "Plan:"
+msgstr "计划："
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:9
+msgid "Payment"
+msgstr "付款"
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:11
+#, #fuzy
+msgid "Step 3: Select a payment method."
+msgstr "第 3 步：选择付款方式。"
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:12
+#, #fuzy
+msgid "3 of 3"
+msgstr "3 页，共 3"
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:63
+msgid "Billing:"
+msgstr "账单："
+
+#: .\subscriptions\templates\subscriptions\join\payment_method.html:75
+msgid "Confirm and Pay"
+msgstr "确认并支付"
+
+#: .\subscriptions\templates\subscriptions\join\select_plan_variation.html:10
+#, #fuzy
+msgid "No subscription plans available."
+msgstr "没有可用的订阅计划。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:23
+msgid "Subscription Status"
+msgstr "订阅状态"
+
+#: .\subscriptions\templates\subscriptions\manage.html:35
+#, #fuzy
+msgid "Subscription On Hold"
+msgstr "暂停订阅"
+
+#: .\subscriptions\templates\subscriptions\manage.html:36
+#, #fuzy
+msgid "Your subscription hasn"
+msgstr "您的订阅已"
+
+#: .\subscriptions\templates\subscriptions\manage.html:36
+msgid "on-hold"
+msgstr "搁置中"
+
+#: .\subscriptions\templates\subscriptions\manage.html:42
+#, #fuzy
+msgid "Pay subscription"
+msgstr "付费订阅"
+
+#: .\subscriptions\templates\subscriptions\manage.html:54
+msgid "Billing Period"
+msgstr "计费周期"
+
+#: .\subscriptions\templates\subscriptions\manage.html:58
+#, #fuzy
+msgid "Your subscription will renew"
+msgstr "您的订阅将续订"
+
+#: .\subscriptions\templates\subscriptions\manage.html:59
+#, #fuzy
+msgid "ally"
+msgstr "盟友"
+
+#: .\subscriptions\templates\subscriptions\manage.html:59
+#, #fuzy
+msgid "ly"
+msgstr "的"
+
+#: .\subscriptions\templates\subscriptions\manage.html:60
+#, #fuzy
+msgid "on"
+msgstr "开启"
+
+#: .\subscriptions\templates\subscriptions\manage.html:61
+#: .\subscriptions\templates\subscriptions\manage.html:64
+msgid "for"
+msgstr "对于"
+
+#: .\subscriptions\templates\subscriptions\manage.html:63
+#, #fuzy
+msgid "Your last"
+msgstr "您的上一页"
+
+#: .\subscriptions\templates\subscriptions\manage.html:63
+#, #fuzy
+msgid "payment is due on"
+msgstr "付款应在"
+
+#: .\subscriptions\templates\subscriptions\manage.html:67
+#, #fuzy
+msgid "Your subscription is pending cancellation. It will be deactivated on"
+msgstr "您的订阅正在等待取消。它将在"
+
+#: .\subscriptions\templates\subscriptions\manage.html:87
+msgid "Payment method"
+msgstr "支付方式"
+
+#: .\subscriptions\templates\subscriptions\manage.html:91
+msgid "Unknown"
+msgstr "未知"
+
+#: .\subscriptions\templates\subscriptions\manage.html:93
+#, #fuzy
+msgid "The payment method previously used for this subscription was removed."
+msgstr "以前用于此订阅的付款方式已删除。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:115
+#, #fuzy
+msgid "Bank details"
+msgstr "银行详细信息"
+
+#: .\subscriptions\templates\subscriptions\manage.html:123
+#, #fuzy
+msgid "Use the following payment reference:"
+msgstr "请使用以下付款参考号："
+
+#: .\subscriptions\templates\subscriptions\manage.html:202
+msgid "Subscription Cancelled"
+msgstr "订阅已取消"
+
+#: .\subscriptions\templates\subscriptions\manage.html:203
+#, #fuzy
+msgid "This subscription has been cancelled. :( "
+msgstr "此订阅已被取消。:("
+
+#: .\subscriptions\templates\subscriptions\manage.html:207
+#, #fuzy
+msgid "Subscription Cancelled "
+msgstr "已取消订阅"
+
+#: .\subscriptions\templates\subscriptions\manage.html:208
+#, #fuzy
+msgid "This subscription has expired."
+msgstr "此订阅已过期。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:213
+#: .\subscriptions\templates\subscriptions\manage.html:223
+#, #fuzy
+msgid ""
+"You will still have the remainder of the billing period to access content."
+msgstr "您仍将有剩余计费周期来访问内容。"
+
+#: .\subscriptions\templates\subscriptions\manage.html:217
+#, #fuzy
+msgid "Subscription expires on"
+msgstr "订阅到期日"
+
+#: .\subscriptions\templates\subscriptions\manage.html:228
+msgid "Cancel subscription"
+msgstr "取消订阅"
+
+#: .\subscriptions\templates\subscriptions\manage.html:243
+msgid "Back to Overview"
+msgstr "回到概述"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:11
+#, #fuzy
+msgid "back to subscription settings"
+msgstr "返回订阅设置"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:13
+#, #fuzy
+msgid ".It will be activated as soon as the outstanding amount is paid"
+msgstr ".一旦支付了未付款项，它将被激活"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:17
+#, #fuzy
+msgid "Paying for Order #"
+msgstr "支付订单#"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:19
+#, #fuzy
+msgid "billed on"
+msgstr "计费时间"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:31
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:36
+#, #fuzy
+msgid "change billing details"
+msgstr "更改账单详细信息"
+
+#: .\subscriptions\templates\subscriptions\pay_existing_order.html:46
+msgid "Pay"
+msgstr "支付"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:8
+msgid "Change Payment Method"
+msgstr "更改付款方式"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:21
+#, #fuzy
+msgid "is used as payment method. Feel free to change it below."
+msgstr "用作付款方式。请在下面随意更改。"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:26
+#, #fuzy
+msgid ""
+"You subscription is using an unsupported payment method, please use the form "
+"below to change it."
+msgstr "您的订阅使用的是不受支持的付款方式，请使用下面的表格进行更改。"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:47
+msgid "Cancel"
+msgstr "取消"
+
+#: .\subscriptions\templates\subscriptions\payment_method_change.html:52
+#, #fuzy
+msgid "Switch Payment method"
+msgstr "切换支付方式"
+
+#: .\subscriptions\validators.py:30
+#, #fuzy
+msgid ""
+"VAT identification number must start with a valid 2-letter country code."
+msgstr "增值税识别号必须以有效的 2 个字母的国家/地区代码开头。"
+
+#: .\subscriptions\validators.py:32
+#, #fuzy, python-format
+msgid "%(vatin)s is not a valid VAT identification number."
+msgstr "%(vatin)s不是有效的增值税识别号。"
+
+#: .\subscriptions\validators.py:33
+#, #fuzy, python-format
+msgid "%(vatin)s is not a registered VAT identification number."
+msgstr "%(vatin)s不是已注册的增值税识别号。"
+
+#: .\subscriptions\validators.py:34
+#, #fuzy
+msgid "Unable to verify VAT identification number. Please try again later."
+msgstr "无法验证增值税标识号。请稍后再试。"
+
+#: .\training\templates\training\base_with_navigation.html:19
+msgid "Overview"
+msgstr "概述"
+
+#: .\training\templates\training\components\card_button_favorite.html:6
+#: .\training\templates\training\training.html:49
+msgid "check"
+msgstr "检查"
+
+#: .\training\templates\training\components\card_button_favorite.html:8
+#: .\training\templates\training\training.html:49
+msgid "add"
+msgstr "添加"
+
+#: .\training\templates\training\home_authenticated.html:30
+#, #fuzy
+msgid ""
+"Learn by example. Courses, workshops and production lessons with .blend "
+"files included."
+msgstr "通过示例学习。课程、研讨会和生产课程，包括 .blend 文件。"
+
+#: .\training\templates\training\home_authenticated.html:48
+#: .\training\templates\training\home_authenticated.html:53
+#, #fuzy
+msgid "Your Saved Training"
+msgstr "您保存的培训"
+
+#: .\training\templates\training\home_authenticated.html:48
+#: .\training\templates\training\home_authenticated.html:54
+#, #fuzy
+msgid ""
+"You can add and remove items from this list by clicking the plus or the tick."
+msgstr "您可以通过单击加号或勾号来添加和删除此列表中的项目。"
+
+#: .\training\templates\training\home_authenticated.html:70
+#, #fuzy
+msgid "No saved training"
+msgstr "未保存培训"
+
+#: .\training\templates\training\home_authenticated.html:71
+#, #fuzy
+msgid "You can favorite a few below!"
+msgstr "您可以在下面收藏一些！"
+
+#: .\training\templates\training\home_authenticated.html:85
+#: .\training\templates\training\home_not_authenticated.html:59
+#, #fuzy
+msgid "All Training"
+msgstr "所有培训"
+
+#: .\training\templates\training\home_not_authenticated.html:12
+#: .\training\templates\training\home_not_authenticated.html:29
+#, #fuzy
+msgid ""
+"Learn from our expert team. Courses, workshops and production lessons with ."
+"blend files included."
+msgstr "向我们的专家团队学习。课程、研讨会和生产课程，包括 .blend 文件。"
+
+#: .\training\templates\training\training.html:50
+msgid "Saved"
+msgstr "已保存"
+
+#: .\users\admin.py:37
+msgid "subscriptions"
+msgstr "订阅"
+
+#: .\users\admin.py:60
+#, #fuzy
+msgid "Braintree Customer IDs"
+msgstr "布伦特里客户 ID"
+
+#: .\users\admin.py:121
+msgid "Personal info"
+msgstr "个人信息"
+
+#: .\users\admin.py:125
+msgid "Permissions"
+msgstr "权限"
+
+#: .\users\admin.py:129
+#, #fuzy
+msgid "Important dates"
+msgstr "重要日期"
+
+#: .\users\admin.py:132
+msgid "Activity"
+msgstr "动态"
+
+#: .\users\models.py:29
+msgid "email address"
+msgstr "邮箱地址  "
+
+#: .\users\templates\actstream\actor.html:9
+msgid "Viewing"
+msgstr "查看"
+
+#: .\users\templates\actstream\actor.html:9
+#, #fuzy
+msgid "`s activity"
+msgstr "的活动"
+
+#: .\users\templates\admin\users\user\change_form_object_tools.html:9
+#, #fuzy
+msgid "Show in Blender ID"
+msgstr "在搅拌机 ID 中显示"
+
+#: .\users\templates\admin\users\user\change_form_object_tools.html:14
+#, #fuzy
+msgid "Find in Blender ID"
+msgstr "在Blender ID中查找"
+
+#: .\users\templates\users\activity.html:9
+#: .\users\templates\users\components\links.html:6
+msgid "My activity"
+msgstr "活动"
+
+#: .\users\templates\users\activity.html:9
+#, #fuzy
+msgid "All your most recent acivity in the Studio is here."
+msgstr "您在工作室中所有最新的交流都在这里。"
+
+#: .\users\templates\users\activity.html:11
+#, #fuzy
+msgid "All the latest likes and replies to your content are here."
+msgstr "所有最新的喜欢和回复您的内容都在这里。"
+
+#: .\users\templates\users\components\action_summary.html:15
+msgid "Someone"
+msgstr "有人"
+
+#: .\users\templates\users\components\actions.html:7
+msgid "No activity yet"
+msgstr "尚未活动"
+
+#: .\users\templates\users\components\links.html:7
+#, #fuzy
+msgid "My notifications"
+msgstr "我的通知"
+
+#: .\users\templates\users\notifications.html:9
+#, #fuzy
+msgid "All the latest likes, comments and replies to your content are here."
+msgstr "所有最新的喜欢，评论和回复您的内容都在这里。"
+
+#: .\users\templates\users\notifications.html:11
+#, #fuzy
+msgid "All the latest comments and replies to your content are here."
+msgstr "所有最新的评论和回复您的内容都在这里。"
+
+#: .\users\templates\users\notifications.html:13
+#, #fuzy
+msgid "All the latest comments about your content are here."
+msgstr "有关您的内容的所有最新评论都在这里。"
+
+#: .\users\templates\users\notifications.html:15
+#, #fuzy
+msgid "All the latest replies to your comments are here."
+msgstr "所有对您的评论的最新回复都在这里。"
+
+#: .\users\templates\users\notifications.html:17
+#, #fuzy
+msgid "All the latest likes of your content are here."
+msgstr "您的内容的所有最新赞都在这里。"
+
+#: .\users\templates\users\notifications.html:29
+msgid "All"
+msgstr "所有"
+
+#: .\users\templates\users\notifications.html:30
+#, #fuzy
+msgid "Comments and replies"
+msgstr "评论和回复"
+
+#: .\users\templates\users\notifications.html:31
+msgid "Likes"
+msgstr "喜欢"
+
+#: .\users\templates\users\notifications.html:41
+msgid "Mark all as read"
+msgstr "全部标记为已读"
+
+#: .\users\templates\users\settings\billing.html:8
+msgid "s"
+msgstr "秒"
+
+#: .\users\templates\users\settings\billing.html:9
+#, #fuzy
+msgid "If you have any problems with billing, contact the team directly on"
+msgstr "如果您在结算方面遇到任何问题，请直接通过以下方式与团队联系"
+
+#: .\users\templates\users\settings\billing.html:9
+#, #fuzy
+msgid "studiosupport@blender.org"
+msgstr "studiosupport@blender.org"
+
+#: .\users\templates\users\settings\billing.html:17
+msgid "Manage Subscription"
+msgstr "网络研讨会订阅"
+
+#: .\users\templates\users\settings\billing.html:19
+#, #fuzy
+msgid ""
+"You have full access to the Blender Studio, provided by the Blender "
+"Institute. This account is meant for free evaluation of the service. Get in "
+"touch with "
+msgstr ""
+"您可以完全访问Blender Institute提供的Blender Studio。此帐户旨在免费评估服务。"
+"联系我们"
+
+#: .\users\templates\users\settings\billing.html:20
+#, #fuzy
+msgid "if you have any questions."
+msgstr "如果您有任何疑问。"
+
+#: .\users\templates\users\settings\delete.html:7
+#: .\users\templates\users\settings\tabs.html:63
+msgid "Delete account"
+msgstr "删除账户"
+
+#: .\users\templates\users\settings\delete.html:14
+#, #fuzy
+msgid "You can request deletion of your account in"
+msgstr "您可以在"
+
+#: .\users\templates\users\settings\delete.html:14
+#: .\users\templates\users\settings\profile.html:14
+#, #fuzy
+msgid "Blender ID"
+msgstr "搅拌机 ID"
+
+#: .\users\templates\users\settings\delete.html:19
+#, #fuzy
+msgid ""
+"Note that your account has publicly visible content, such as blog posts or "
+"assets, that cannot be deleted from Blender Studio."
+msgstr ""
+"请注意，您的帐户具有公开可见的内容，例如博客文章或资产，无法从Blender Studio"
+"中删除。"
+
+#: .\users\templates\users\settings\emails.html:6
+#: .\users\templates\users\settings\tabs.html:13
+msgid "Emails"
+msgstr "电子邮件"
+
+#: .\users\templates\users\settings\emails.html:10
+msgid "Newsletter"
+msgstr "通讯"
+
+#: .\users\templates\users\settings\emails.html:11
+#, #fuzy
+msgid ""
+"We occasionally send out emails with updates on whats new in the Blender "
+"Studio."
+msgstr "我们偶尔会发送电子邮件，其中包含Blender Studio中新功能的更新。"
+
+#: .\users\templates\users\settings\emails.html:21
+#, #fuzy
+msgid "Keep me updated with Blender Studio news."
+msgstr "让我了解Blender Studio新闻。"
+
+#: .\users\templates\users\settings\production_credits.html:6
+#: .\users\templates\users\settings\tabs.html:21
+#, #fuzy
+msgid "Production Credits"
+msgstr "制作人员名单"
+
+#: .\users\templates\users\settings\production_credits.html:8
+#, #fuzy
+msgid "It looks like you have no film production credits, yet."
+msgstr "看起来你还没有电影制作人员名单。"
+
+#: .\users\templates\users\settings\profile.html:8
+#: .\users\templates\users\settings\tabs.html:6
+msgid "Profile"
+msgstr "个人资料"
+
+#: .\users\templates\users\settings\profile.html:12
+#, #fuzy
+msgid "Blender ID Profile"
+msgstr "搅拌机 ID 配置文件"
+
+#: .\users\templates\users\settings\profile.html:13
+#, #fuzy
+msgid "To change the details below, visit the"
+msgstr "要更改以下详细信息，请访问"
+
+#: .\users\templates\users\settings\profile.html:14
+#, #fuzy
+msgid "website."
+msgstr "网站。"
+
+#: .\users\templates\users\settings\profile.html:20
+msgid "Full Name"
+msgstr "全名"
+
+#: .\users\templates\users\settings\profile.html:21
+#: .\users\templates\users\settings\profile.html:36
+#: .\users\templates\users\settings\profile.html:42
+#, #fuzy
+msgid "This is displayed in comments."
+msgstr "这将显示在注释中。"
+
+#: .\users\templates\users\settings\profile.html:27
+#, #fuzy
+msgid "This is how we contact you."
+msgstr "这就是我们与您联系的方式。"
+
+#: .\users\templates\users\settings\profile.html:35
+msgid "Username"
+msgstr "用户名"
+
+#: .\users\templates\users\settings\profile.html:41
+msgid "Profile Picture"
+msgstr "资料图片"
+
+#: .\users\templates\users\settings\profile.html:51
+msgid "Badges"
+msgstr "徽章"
+
+#: .\users\templates\users\settings\profile.html:52
+#, #fuzy
+msgid "These are displayed next to your name."
+msgstr "这些显示在您的姓名旁边。"
+
+#: .\users\templates\users\settings\profile.html:65
+msgid "Preview"
+msgstr "预览"
+
+#: .\users\templates\users\settings\profile.html:66
+#, #fuzy
+msgid "This is how your profile is displayed."
+msgstr "这是您的个人资料的显示方式。"
+
+#: .\users\templates\users\settings\tabs.html:42
+#, #fuzy
+msgid "Billing addresss"
+msgstr "账单地址"
+
+#: .\users\templates\users\settings\tabs.html:54
+msgid "Payment methods"
+msgstr "支付方式"
